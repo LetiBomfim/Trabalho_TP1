@@ -5,23 +5,21 @@
 #include <string>
 #include <array>
 
-/////////////////////
-// Code Class
-/////////////////////
+//Classe relativa ao código//
 
-bool Code::isValid(int val) const {
+bool Codigo::isValid(int val) const {
     return val >= -99999 && val <= 99999;
 }
 
-int Code::Get() const {
-    return value;
+int Codigo::Get() const {
+    return valor;
 }
 
-void Code::Set(int newValue) {
-    if (!isValid(newValue)) {
+void Codigo::Set(int novo_valor) {
+    if (!isValid(novo_valor)) {
         throw std::invalid_argument("Code value must be a 5-digit number or less");
     }
-    value = newValue;
+    valor = novo_valor;
 }
 
 /////////////////////

@@ -2,20 +2,20 @@
 #include <unordered_set>
 #include <string>
 
-class Code {
+class Codigo {
 private:
-    int value;  // Stores the numeric value
-    bool isValid(int val) const;  // Validator function
+    int valor;  
+    bool isValid(int val) const;  // Função de validação da classe
 
 public:
     int Get() const;
-    void Set(int newValue);
+    void Set(int novo_valor);
 };
 
 class Name {
 private:
     std::string value;
-    bool isValid(const std::string& val) const;  // Validator function
+    bool isValid(const std::string& val) const;  // Função de validação da classe
 
 public:
     const std::string& Get() const;
@@ -25,7 +25,7 @@ public:
 class TradeCode {
 private:
     std::string value;
-    bool isValid(const std::string& val) const;  // Validator function
+    bool isValid(const std::string& val) const;  // Função de validação da classe
 
 public:
     const std::string& Get() const;
@@ -35,7 +35,7 @@ public:
 class Date {
 private:
     std::string value;
-    bool isValid(const std::string& val) const;  // Validator function
+    bool isValid(const std::string& val) const;  // Função de validação da classe
 
 public:
     const std::string& Get() const;
@@ -46,7 +46,7 @@ class Profile {
 private:
     std::string value;
     std::unordered_set<std::string> validProfiles = {"Conservador", "Moderado", "Agressivo"};
-    bool isValid(const std::string& val) const;  // Validator function
+    bool isValid(const std::string& val) const;  // Função de validação da classe
 
 public:
     const std::string& Get() const;
@@ -56,7 +56,7 @@ public:
 class Amount {
 private:
     int value;
-    bool isValid(int val) const;  // Validator function
+    bool isValid(int val) const;  // Função de validação da classe
 
 public:
     int Get() const;
@@ -66,7 +66,7 @@ public:
 class Password {
 private:
     std::string value;
-    bool isValid(const std::string& val) const;  // Validator function
+    bool isValid(const std::string& val) const;  // Função de validação da classe
 
 public:
     const std::string& Get() const;
@@ -76,7 +76,7 @@ public:
 class Money {
 private:
     double value;
-    bool isValid(double val) const;  // Validator function
+    bool isValid(double val) const;  // Função de validação da classe
 
 public:
     double Get() const;
@@ -86,7 +86,7 @@ public:
 class Cpf {
 private:
     std::string value;
-    bool isValid(const std::string& val) const;  // Validator function
+    bool isValid(const std::string& val) const;  // Função de validação da classe
 
 public:
     const std::string& Get() const;

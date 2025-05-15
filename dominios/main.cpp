@@ -1,8 +1,8 @@
 #include "testes_dom.hpp"
 
 int main() {
-    CodeTest codeTest;
-    codeTest.Run();
+    CodigoTeste codigoTeste;
+    codigoTeste.Run();
 
     NameTest nameTest;
     nameTest.Run();

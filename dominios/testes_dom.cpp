@@ -5,29 +5,29 @@
 #include <stdexcept>
 #include <cassert>
 
-// CodeTest Implementation
-void CodeTest::Run() {
-    // Valid test case
+// Implementação do Teste da Classe Código
+void CodigoTeste::Run() {
+    // Teste de caso válido
     try {
-        Code code;
-        code.Set(12345);  // Valid value
-        assert(code.Get() == 12345);
-        std::cout << "Code test passed!" << std::endl;
+        Codigo codigo;
+        codigo.Set(12345);  
+        assert(codigo.Get() == 12345);
+        std::cout << "Teste de código passou no teste" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "Code test failed: " << e.what() << std::endl;
+        std::cout << "Teste de código falhou: " << e.what() << std::endl;
     }
 
-    // Invalid test case
+    // Teste de caso inválido
     try {
-        Code code;
-        code.Set(123456);  // Invalid value, too large
-        std::cout << "Code test failed: Exception not thrown." << std::endl;
+        Codigo codigo;
+        codigo.Set(123456);  
+        std::cout << "Teste de código falhou: Exceção não foi lançada" << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "Code invalid test passed: " << e.what() << std::endl;
+        std::cout << "Teste de código inválido foi aprovado: " << e.what() << std::endl;
     }
 }
 
-// NameTest Implementation
+// Implementação do Teste da Classe Nome
 void NameTest::Run() {
     // Valid test case
     try {

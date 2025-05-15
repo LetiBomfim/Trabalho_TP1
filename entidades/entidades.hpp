@@ -37,14 +37,14 @@ public:
 
 class Wallet {
 private:
-    Code code;
+    Codigo codigo;
     Name name;
     Profile profile;
 
 public:
     // Get methods
-    Code& GetCode() {
-        return code;
+    Codigo& GetCodigo() {
+        return codigo;
     }
 
     Name& GetName() {
@@ -56,8 +56,8 @@ public:
     }
 
     // Set methods
-    void SetCode(const Code& newCode) {
-        code = newCode;
+    void SetCode(const Codigo& novo_codigo) {
+        codigo = novo_codigo;
     }
 
     void SetName(const Name& newName) {
@@ -76,7 +76,7 @@ private:
     Money money;
     Amount amount;
     Date date;
-    Code code;
+    Codigo codigo;
 
 public:
     // Get methods
@@ -96,8 +96,8 @@ public:
         return date;
     }
 
-    Code& GetCode() {
-        return code;
+    Codigo& GetCodigo() {
+        return codigo;
     }
 
     // Set methods
@@ -117,7 +117,7 @@ public:
         date = newDate;
     }
 
-    void SetCode(const Code& newCode) {
-        code = newCode;
+    void SetCode(const Codigo& novo_codigo) {
+        codigo = novo_codigo;
     }
 };

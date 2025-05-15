@@ -1,6 +1,6 @@
 #pragma once
 
-class CodeTest;
+class CodigoTeste;
 class NameTest;
 class TradeCodeTest;
 class DateTest;
@@ -11,7 +11,7 @@ class MoneyTest;
 class CpfTest;
 
 // Test class for Code
-class CodeTest {
+class CodigoTeste {
 public:
     void Run();
 };

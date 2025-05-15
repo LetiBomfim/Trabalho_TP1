@@ -62,9 +62,9 @@ void WalletTest::TestValidWallet() {
     try {
         Wallet wallet;
 
-        Code code;
-        code.Set(12345);
-        wallet.SetCode(code);
+        Codigo codigo;
+        codigo.Set(12345);
+        wallet.SetCode(codigo);
 
         Name name;
         name.Set("My Wallet");
@@ -84,9 +84,9 @@ void WalletTest::TestInvalidWallet() {
     try {
         Wallet wallet;
 
-        Code code;
-        code.Set(12345);
-        wallet.SetCode(code);
+        Codigo codigo;
+        codigo.Set(12345);
+        wallet.SetCode(codigo);
 
         Name name;
         name.Set("My Wallet");
@@ -128,9 +128,9 @@ void CommandTest::TestValidCommand() {
         date.Set("2025/05/13");
         command.SetDate(date);
 
-        Code code;
-        code.Set(12345);
-        command.SetCode(code);
+        Codigo codigo;
+        codigo.Set(12345);
+        command.SetCode(codigo);
 
         std::cout << "Command Test Passed (Valid)" << std::endl;
     } catch (const std::exception& e) {
@@ -158,9 +158,9 @@ void CommandTest::TestInvalidCommand() {
         date.Set("2025/13/32");  // Invalid date
         command.SetDate(date);
 
-        Code code;
-        code.Set(12345);
-        command.SetCode(code);
+        Codigo codigo;
+        codigo.Set(12345);
+        command.SetCode(codigo);
 
         std::cout << "Command Test Failed (Invalid)" << std::endl;
     } catch (const std::exception& e) {
