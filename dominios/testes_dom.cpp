@@ -21,31 +21,31 @@ void CodigoTeste::Run() {
     try {
         Codigo codigo;
         codigo.Set(123456);  
-        std::cout << "Teste de código falhou: Exceção não foi lançada" << std::endl;
+        std::cout << "Teste de código falhou: Exceção não foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
         std::cout << "Teste de código inválido foi aprovado: " << e.what() << std::endl;
     }
 }
 
 // Implementação do Teste da Classe Nome
-void NameTest::Run() {
-    // Valid test case
+void NomeTeste::Run() {
+    // Teste de caso válido
     try {
-        Name name;
-        name.Set("John Doe");  // Valid name
-        assert(name.Get() == "John Doe");
-        std::cout << "Name test passed!" << std::endl;
+        Nome nome;
+        nome.Set("Fernando Chacon");  
+        assert(nome.Get() == "Fernando Chacon");
+        std::cout << "Teste de nome foi aprovado" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "Name test failed: " << e.what() << std::endl;
+        std::cout << "Teste de nome falhou: " << e.what() << std::endl;
     }
 
     // Invalid test case
     try {
-        Name name;
-        name.Set("John   Doe");  // Invalid name with consecutive spaces
-        std::cout << "Name test failed: Exception not thrown." << std::endl;
+        Nome nome;
+        nome.Set("Fernando   Chacon");  // Invalid name with consecutive spaces
+        std::cout << "Teste de nome falhou: Exceção não foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "Name invalid test passed: " << e.what() << std::endl;
+        std::cout << "Teste de nome inválido foi aprovado: " << e.what() << std::endl;
     }
 }
 

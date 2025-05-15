@@ -5,7 +5,7 @@
 #include <string>
 #include <array>
 
-//Classe relativa ao código//
+// Classe relativa ao código --> Implementação por Letícia Bomfim (241002411) 
 
 bool Codigo::isValid(int val) const {
     return val >= -99999 && val <= 99999;
@@ -22,11 +22,9 @@ void Codigo::Set(int novo_valor) {
     valor = novo_valor;
 }
 
-/////////////////////
-// Name Class
-/////////////////////
+// Classe relativa ao nome --> Implementação por 
 
-bool Name::isValid(const std::string& val) const {
+bool Nome::isValid(const std::string& val) const {
     if (val.length() > 20) return false;
 
     bool prevWasSpace = false;
@@ -44,18 +42,18 @@ bool Name::isValid(const std::string& val) const {
     return true;
 }
 
-const std::string& Name::Get() const {
-    return value;
+const std::string& Nome::Get() const {
+    return valor;
 }
 
-void Name::Set(const std::string& newValue) {
-    if (!isValid(newValue)) {
+void Nome::Set(const std::string& novo_valor) {
+    if (!isValid(novo_valor)) {
         throw std::invalid_argument(
-            "Name must be ≤20 chars, alphanumeric+spaces only, "
-            "and no consecutive spaces"
+            "O nome precisa ter 20 ou menos characteres, e ser constituído apenas por alfanuméricos e espaços, "
+            "e não pode ter espaços em branco em sequência"
         );
     }
-    value = newValue;
+    valor = novo_valor;
 }
 
 /////////////////////

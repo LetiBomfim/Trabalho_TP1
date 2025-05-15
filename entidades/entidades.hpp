@@ -4,7 +4,7 @@
 class Account {
 private:
     Cpf cpf;
-    Name name;
+    Nome nome;
     Password password;
 
 public:
@@ -13,8 +13,8 @@ public:
         return cpf;
     }
 
-    Name& GetName() {
-        return name;
+    Nome& GetNome() {
+        return nome;
     }
 
     Password& GetPassword() {
@@ -26,8 +26,8 @@ public:
         cpf = newCpf;
     }
 
-    void SetName(const Name& newName) {
-        name = newName;
+    void SetNome(const Nome& novo_nome) {
+        nome = novo_nome;
     }
 
     void SetPassword(const Password& newPassword) {
@@ -38,7 +38,7 @@ public:
 class Wallet {
 private:
     Codigo codigo;
-    Name name;
+    Nome nome;
     Profile profile;
 
 public:
@@ -47,8 +47,8 @@ public:
         return codigo;
     }
 
-    Name& GetName() {
-        return name;
+    Nome& GetNome() {
+        return nome;
     }
 
     Profile& GetProfile() {
@@ -56,12 +56,12 @@ public:
     }
 
     // Set methods
-    void SetCode(const Codigo& novo_codigo) {
+    void SetCodigo(const Codigo& novo_codigo) {
         codigo = novo_codigo;
     }
 
-    void SetName(const Name& newName) {
-        name = newName;
+    void SetNome(const Nome& novo_nome) {
+        nome = novo_nome;
     }
 
     void SetProfile(const Profile& newProfile) {

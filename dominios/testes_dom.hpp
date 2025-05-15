@@ -1,7 +1,7 @@
 #pragma once
 
 class CodigoTeste;
-class NameTest;
+class NomeTeste;
 class TradeCodeTest;
 class DateTest;
 class ProfileTest;
@@ -10,14 +10,14 @@ class PasswordTest;
 class MoneyTest;
 class CpfTest;
 
-// Test class for Code
+// Classe de teste para Código
 class CodigoTeste {
 public:
     void Run();
 };
 
-// Test class for Name
-class NameTest {
+// Classe de teste para Nome
+class NomeTeste {
 public:
     void Run();
 };

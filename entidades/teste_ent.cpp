@@ -16,9 +16,9 @@ void AccountTest::TestValidAccount() {
         cpf.Set("123.456.789-01");
         account.SetCpf(cpf);
 
-        Name name;
-        name.Set("John Doe");
-        account.SetName(name);
+        Nome nome;
+        nome.Set("Fernando Chacon");
+        account.SetNome(nome);
 
         Password password;
         password.Set("A1b#c2");
@@ -38,9 +38,9 @@ void AccountTest::TestInvalidAccount() {
         cpf.Set("123.456.789-01");
         account.SetCpf(cpf);
 
-        Name name;
-        name.Set("John Doe");
-        account.SetName(name);
+        Nome nome;
+        nome.Set("Fernando Chacon");
+        account.SetNome(nome);
 
         Password password;
         password.Set("123456");  // Invalid password (no symbol)
@@ -64,11 +64,11 @@ void WalletTest::TestValidWallet() {
 
         Codigo codigo;
         codigo.Set(12345);
-        wallet.SetCode(codigo);
+        wallet.SetCodigo(codigo);
 
-        Name name;
-        name.Set("My Wallet");
-        wallet.SetName(name);
+        Nome nome;
+        nome.Set("My Wallet");
+        wallet.SetNome(nome);
 
         Profile profile;
         profile.Set("moderate");
@@ -86,11 +86,11 @@ void WalletTest::TestInvalidWallet() {
 
         Codigo codigo;
         codigo.Set(12345);
-        wallet.SetCode(codigo);
+        wallet.SetCodigo(codigo);
 
-        Name name;
-        name.Set("My Wallet");
-        wallet.SetName(name);
+        Nome nome;
+        nome.Set("My Wallet");
+        wallet.SetNome(nome);
 
         Profile profile;
         profile.Set("invalid_profile");  // Invalid profile

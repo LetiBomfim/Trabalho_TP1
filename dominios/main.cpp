@@ -4,8 +4,8 @@ int main() {
     CodigoTeste codigoTeste;
     codigoTeste.Run();
 
-    NameTest nameTest;
-    nameTest.Run();
+    NomeTeste nomeTeste;
+    nomeTeste.Run();
 
     TradeCodeTest tradeCodeTest;
     tradeCodeTest.Run();
