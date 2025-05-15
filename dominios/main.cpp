@@ -22,8 +22,8 @@ int main() {
     SenhaTeste senhaTeste;
     senhaTeste.Run();
 
-    MoneyTest moneyTest;
-    moneyTest.Run();
+    DinheiroTeste dinheiroTeste;
+    dinheiroTeste.Run();
 
     CpfTest cpfTest;
     cpfTest.Run();

@@ -73,14 +73,14 @@ public:
     void Set(const std::string& novo_valor);
 };
 
-class Money {
+class Dinheiro {
 private:
-    double value;
+    double valor;
     bool isValid(double val) const;  // Função de validação da classe
 
 public:
     double Get() const;
-    void Set(double newValue);
+    void Set(double novo_valor);
 };
 
 class Cpf {

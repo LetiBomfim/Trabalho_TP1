@@ -53,7 +53,7 @@ public:
 };
 
 // Test class for Money
-class MoneyTest {
+class DinheiroTeste {
 public:
     void Run();
 };

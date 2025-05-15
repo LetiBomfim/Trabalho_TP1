@@ -198,25 +198,23 @@ void Senha::Set(const std::string& novo_valor) {
     valor = novo_valor;
 }
 
-/////////////////////
-// Money Class
-/////////////////////
+// Classe relativa a Dinheiro --> Implementação por 
 
-bool Money::isValid(double val) const {
+bool Dinheiro::isValid(double val) const {
     return val >= 0.01 && val <= 1000000.00;
 }
 
-double Money::Get() const {
-    return value;
+double Dinheiro::Get() const {
+    return valor;
 }
 
-void Money::Set(double newValue) {
-    if (!isValid(newValue)) {
+void Dinheiro::Set(double novo_valor) {
+    if (!isValid(novo_valor)) {
         throw std::invalid_argument(
-            "Money value must be between 0.01 and 1,000,000.00"
+            "O valor monetário deve estar entre 0,01 e 1.000.000,00."
         );
     }
-    value = newValue;
+    valor = novo_valor;
 }
 
 /////////////////////

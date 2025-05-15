@@ -116,9 +116,9 @@ void CommandTest::TestValidCommand() {
         codigo_de_negociacao.Set("A1B2C3");
         command.SetCodigoDeNegociacao(codigo_de_negociacao);
 
-        Money money;
-        money.Set(500.00);
-        command.SetMoney(money);
+        Dinheiro dinheiro;
+        dinheiro.Set(500.00);
+        command.SetDinheiro(dinheiro);
 
         Quantidade quantidade;
         quantidade.Set(1000);
@@ -146,9 +146,9 @@ void CommandTest::TestInvalidCommand() {
         codigo_de_negociacao.Set("A1B2C3");
         command.SetCodigoDeNegociacao(codigo_de_negociacao);
 
-        Money money;
-        money.Set(500.00);
-        command.SetMoney(money);
+        Dinheiro dinheiro;
+        dinheiro.Set(500.00);
+        command.SetDinheiro(dinheiro);
 
         Quantidade quantidade;
         quantidade.Set(1000);

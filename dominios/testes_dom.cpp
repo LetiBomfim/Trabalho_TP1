@@ -160,24 +160,24 @@ void SenhaTeste::Run() {
 }
 
 //  Implementação do Teste da Classe Dinheiro
-void MoneyTest::Run() {
+void DinheiroTeste::Run() {
     // Teste de caso válido
     try {
-        Money money;
-        money.Set(999999.99);  
-        assert(money.Get() == 999999.99);
-        std::cout << "Money test passed!" << std::endl;
+        Dinheiro dinheiro;
+        dinheiro.Set(999999.99);  
+        assert(dinheiro.Get() == 999999.99);
+        std::cout << "Teste de dinheiro passou!" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "Money test failed: " << e.what() << std::endl;
+        std::cout << "Teste de dinheiro falhou: " << e.what() << std::endl;
     }
 
     // Teste de caso inválido
     try {
-        Money money;
-        money.Set(1000000.01);  
-        std::cout << "Money test failed: Exception not thrown." << std::endl;
+        Dinheiro dinheiro;
+        dinheiro.Set(1000000.01);  
+        std::cout << "Teste de dinheiro falhou: Exceção não foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "Money invalid test passed: " << e.what() << std::endl;
+        std::cout << "Teste de dinheiro inválido passou: " << e.what() << std::endl;
     }
 }
 

@@ -73,7 +73,7 @@ public:
 class Command {
 private:
     Codigo_de_Negociacao codigo_de_negociacao;
-    Money money;
+    Dinheiro dinheiro;
     Quantidade quantidade;
     Data data;
     Codigo codigo;
@@ -84,8 +84,8 @@ public:
         return codigo_de_negociacao;
     }
 
-    Money& GetMoney() {
-        return money;
+    Dinheiro& GetDinheiro() {
+        return dinheiro;
     }
 
     Quantidade& GetQuantidade() {
@@ -105,8 +105,8 @@ public:
         codigo_de_negociacao = novo_codigo_de_negociacao;
     }
 
-    void SetMoney(const Money& newMoney) {
-        money = newMoney;
+    void SetDinheiro(const Dinheiro& novo_dinheiro) {
+        dinheiro = novo_dinheiro;
     }
 
     void SetQuantidade(const Quantidade& nova_quantidade) {
