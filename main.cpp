@@ -1,4 +1,6 @@
-#include "testes_dom.hpp"
+#include "dominios/testes_dom.hpp"
+#include "entidades/teste_ent.hpp"
+
 
 int main() {
     CodigoTeste codigoTeste;
@@ -27,6 +29,16 @@ int main() {
 
     CpfTeste cpfTeste;
     cpfTeste.Run();
+
+     ContaTeste contaTeste;
+    contaTeste.Run();
+
+    CarteiraTeste carteiraTeste;
+    carteiraTeste.Run();
+
+    OrdemTeste ordemTeste;
+    ordemTeste.Run();
+
 
     return 0;
 }

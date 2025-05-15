@@ -1,4 +1,3 @@
-#pragma once
 
 class CodigoTeste;
 class NomeTeste;

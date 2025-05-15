@@ -1,4 +1,3 @@
-#pragma once
 #include "../dominios/dominios.hpp"
 
 class Conta {
