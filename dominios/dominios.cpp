@@ -101,14 +101,14 @@ bool Data::isValid(const std::string& val) const {
     if (ano < 1900 || ano > 2100) return false;
     if (mes < 1 || mes > 12) return false;
 
-    constexpr std::array<int, 12> daysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    int maxDay = daysInMonth[mes - 1];
+    constexpr std::array<int, 12> dias_do_mes = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+    int max = dias_do_mes[mes - 1];
 
     if (mes == 2 && (ano % 400 == 0 || (ano % 100 != 0 && ano % 4 == 0))) {
-        maxDay = 29;
+        max = 29; //valor máximo de dias
     }
 
-    return dia >= 1 && dia <= maxDay;
+    return dia >= 1 && dia <= max;
 }
 
 const std::string& Data::Get() const {
@@ -173,15 +173,15 @@ bool Senha::isValid(const std::string& val) const {
         charSet.insert(c);
     }
 
-    bool hasNumber = false, hasLower = false, hasUpper = false, hasSymbol = false;
+    bool numero = false, letra = false, letra_maiuscula = false, simbolo = false;
     for (char c : val) {
-        if (isdigit(c)) hasNumber = true;
-        else if (islower(c)) hasLower = true;
-        else if (isupper(c)) hasUpper = true;
-        else if (c == '#' || c == '$' || c == '%' || c == '&') hasSymbol = true;
+        if (isdigit(c)) numero = true;
+        else if (islower(c)) letra = true;
+        else if (isupper(c)) letra_maiuscula = true;
+        else if (c == '#' || c == '$' || c == '%' || c == '&') simbolo = true;
     }
 
-    return hasNumber && hasLower && hasUpper && hasSymbol;
+    return numero && letra && letra_maiuscula && simbolo;
 }
 
 const std::string& Senha::Get() const {
