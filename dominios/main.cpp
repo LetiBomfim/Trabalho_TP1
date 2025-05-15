@@ -25,8 +25,8 @@ int main() {
     DinheiroTeste dinheiroTeste;
     dinheiroTeste.Run();
 
-    CpfTest cpfTest;
-    cpfTest.Run();
+    CpfTeste cpfTeste;
+    cpfTeste.Run();
 
     return 0;
 }

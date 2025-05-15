@@ -7,8 +7,8 @@ class DataTeste;
 class PerfilTeste;
 class QuantidadeTeste;
 class SenhaTeste;
-class MoneyTest;
-class CpfTest;
+class DinheiroTeste;
+class CpfTeste;
 
 // Classe de teste para Código
 class CodigoTeste {
@@ -22,44 +22,44 @@ public:
     void Run();
 };
 
-// Test class for TradeCode
+// Classe de Teste para Código de Negociação
 class Codigo_de_NegociacaoTeste {
 public:
     void Run();
 };
 
-// Test class for Date
+// Classe de Teste para Data
 class DataTeste {
 public:
     void Run();
 };
 
-// Test class for Profile
+// Classe de Teste para Perfil
 class PerfilTeste {
 public:
     void Run();
 };
 
-// Test class for Amount
+// Classe de Teste para Quantidade
 class QuantidadeTeste {
 public:
     void Run();
 };
 
-// Test class for Password
+// Classe de Teste para Senha
 class SenhaTeste {
 public:
     void Run();
 };
 
-// Test class for Money
+// Classe de Teste para Dinheiro
 class DinheiroTeste {
 public:
     void Run();
 };
 
-// Test class for Cpf
-class CpfTest {
+// Classe de Teste para CPF
+class CpfTeste {
 public:
     void Run();
 };

@@ -217,9 +217,7 @@ void Dinheiro::Set(double novo_valor) {
     valor = novo_valor;
 }
 
-/////////////////////
-// Cpf Class
-/////////////////////
+// Classe relativa a CPF --> Implementação por 
 
 bool Cpf::isValid(const std::string& val) const {
     if (val.length() != 14) return false;
@@ -238,14 +236,14 @@ bool Cpf::isValid(const std::string& val) const {
 }
 
 const std::string& Cpf::Get() const {
-    return value;
+    return valor;
 }
 
-void Cpf::Set(const std::string& newValue) {
-    if (!isValid(newValue)) {
+void Cpf::Set(const std::string& novo_valor) {
+    if (!isValid(novo_valor)) {
         throw std::invalid_argument(
-            "CPF must be in the format XXX.XXX.XXX-XX, where X is a digit"
+            "O CPF deve estar no formato XXX.XXX.XXX-XX, onde X é um dígito."
         );
     }
-    value = newValue;
+    valor = novo_valor;
 }

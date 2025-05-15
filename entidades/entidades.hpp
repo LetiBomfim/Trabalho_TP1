@@ -8,7 +8,7 @@ private:
     Senha senha;
 
 public:
-    // Get methods
+    // Definição dos métodos Get
     Cpf& GetCpf() {
         return cpf;
     }

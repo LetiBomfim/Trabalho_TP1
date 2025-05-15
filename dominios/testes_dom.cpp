@@ -182,23 +182,23 @@ void DinheiroTeste::Run() {
 }
 
 //  Implementação do Teste da Classe CPF
-void CpfTest::Run() {
+void CpfTeste::Run() {
     // Teste de caso válido
     try {
         Cpf cpf;
         cpf.Set("123.456.789-01");  
         assert(cpf.Get() == "123.456.789-01");
-        std::cout << "CPF test passed!" << std::endl;
+        std::cout << "Teste de CPF passou!" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "CPF test failed: " << e.what() << std::endl;
+        std::cout << "Teste de CPF falhou: " << e.what() << std::endl;
     }
 
     // Teste de caso inválido
     try {
         Cpf cpf;
         cpf.Set("123.456.78-01");  
-        std::cout << "CPF test failed: Exception not thrown." << std::endl;
+        std::cout << "Teste de CPF falhou: Exceção não foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "CPF invalid test passed: " << e.what() << std::endl;
+        std::cout << "Teste de CPF inválido passou: " << e.what() << std::endl;
     }
 }
