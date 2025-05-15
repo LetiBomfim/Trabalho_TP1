@@ -74,7 +74,7 @@ class Command {
 private:
     Codigo_de_Negociacao codigo_de_negociacao;
     Money money;
-    Amount amount;
+    Quantidade quantidade;
     Date date;
     Codigo codigo;
 
@@ -88,8 +88,8 @@ public:
         return money;
     }
 
-    Amount& GetAmount() {
-        return amount;
+    Quantidade& GetQuantidade() {
+        return quantidade;
     }
 
     Date& GetDate() {
@@ -109,8 +109,8 @@ public:
         money = newMoney;
     }
 
-    void SetAmount(const Amount& newAmount) {
-        amount = newAmount;
+    void SetAmount(const Quantidade& nova_quantidade) {
+        quantidade = nova_quantidade;
     }
 
     void SetDate(const Date& newDate) {

@@ -116,24 +116,24 @@ void PerfilTeste::Run() {
 }
 
 // AmountTest Implementation
-void AmountTest::Run() {
-    // Valid test case
+void QuantidadeTeste::Run() {
+    // Teste de caso válido
     try {
-        Amount amount;
-        amount.Set(500000);  // Valid amount
-        assert(amount.Get() == 500000);
-        std::cout << "Amount test passed!" << std::endl;
+        Quantidade quantidade;
+        quantidade.Set(500000); 
+        assert(quantidade.Get() == 500000);
+        std::cout << "Teste de quantidade passou!" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "Amount test failed: " << e.what() << std::endl;
+        std::cout << "Teste de quantidade falhou: " << e.what() << std::endl;
     }
 
-    // Invalid test case
+    // Teste de caso inválido
     try {
-        Amount amount;
-        amount.Set(1000001);  // Invalid amount, too large
-        std::cout << "Amount test failed: Exception not thrown." << std::endl;
+        Quantidade quantidade;
+        quantidade.Set(1000001); 
+        std::cout << "Teste de valor falhou: Exceção não foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "Amount invalid test passed: " << e.what() << std::endl;
+        std::cout << "Teste de valor inválido passou: " << e.what() << std::endl;
     }
 }
 

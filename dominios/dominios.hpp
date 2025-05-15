@@ -53,14 +53,14 @@ public:
     void Set(const std::string& novo_valor);
 };
 
-class Amount {
+class Quantidade {
 private:
-    int value;
+    int valor;
     bool isValid(int val) const;  // Função de validação da classe
 
 public:
     int Get() const;
-    void Set(int newValue);
+    void Set(int novo_valor);
 };
 
 class Password {

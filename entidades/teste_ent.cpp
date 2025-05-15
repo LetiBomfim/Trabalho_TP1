@@ -120,9 +120,9 @@ void CommandTest::TestValidCommand() {
         money.Set(500.00);
         command.SetMoney(money);
 
-        Amount amount;
-        amount.Set(1000);
-        command.SetAmount(amount);
+        Quantidade quantidade;
+        quantidade.Set(1000);
+        command.SetAmount(quantidade);
 
         Date date;
         date.Set("2025/05/13");
@@ -150,9 +150,9 @@ void CommandTest::TestInvalidCommand() {
         money.Set(500.00);
         command.SetMoney(money);
 
-        Amount amount;
-        amount.Set(1000);
-        command.SetAmount(amount);
+        Quantidade quantidade;
+        quantidade.Set(1000);
+        command.SetAmount(quantidade);
 
         Date date;
         date.Set("2025/13/32");  // Invalid date

@@ -16,8 +16,8 @@ int main() {
     PerfilTeste perfilTeste;
     perfilTeste.Run();
 
-    AmountTest amountTest;
-    amountTest.Run();
+    QuantidadeTeste quantidadeTeste;
+    quantidadeTeste.Run();
 
     PasswordTest passwordTest;
     passwordTest.Run();

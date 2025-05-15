@@ -41,7 +41,7 @@ public:
 };
 
 // Test class for Amount
-class AmountTest {
+class QuantidadeTeste {
 public:
     void Run();
 };

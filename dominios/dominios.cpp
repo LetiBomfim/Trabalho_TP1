@@ -143,25 +143,23 @@ void Perfil::Set(const std::string& novo_valor) {
     valor = novo_valor;
 }
 
-/////////////////////
-// Amount Class
-/////////////////////
+// Classe relativa a Quantidade --> Implementação por 
 
-bool Amount::isValid(int val) const {
+bool Quantidade::isValid(int val) const {
     return val >= 1 && val <= 1000000;
 }
 
-int Amount::Get() const {
-    return value;
+int Quantidade::Get() const {
+    return valor;
 }
 
-void Amount::Set(int newValue) {
-    if (!isValid(newValue)) {
+void Quantidade::Set(int novo_valor) {
+    if (!isValid(novo_valor)) {
         throw std::invalid_argument(
-            "Amount must be between 1 and 1,000,000"
+            "A Quantidade deve estar entre 1 e 1.000.000."
         );
     }
-    value = newValue;
+    valor = novo_valor;
 }
 
 /////////////////////
