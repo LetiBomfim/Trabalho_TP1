@@ -22,14 +22,14 @@ public:
     void Set(const std::string& novo_valor);
 };
 
-class TradeCode {
+class Codigo_de_Negociacao {
 private:
-    std::string value;
+    std::string valor;
     bool isValid(const std::string& val) const;  // Função de validação da classe
 
 public:
     const std::string& Get() const;
-    void Set(const std::string& newValue);
+    void Set(const std::string& novo_valor);
 };
 
 class Date {

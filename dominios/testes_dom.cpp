@@ -50,24 +50,24 @@ void NomeTeste::Run() {
 }
 
 // TradeCodeTest Implementation
-void TradeCodeTest::Run() {
+void Codigo_de_NegociacaoTeste::Run() {
     // Valid test case
     try {
-        TradeCode tradeCode;
-        tradeCode.Set("A1B2C3");  // Valid trade code
-        assert(tradeCode.Get() == "A1B2C3");
-        std::cout << "TradeCode test passed!" << std::endl;
+        Codigo_de_Negociacao codigo_de_negociacao;
+        codigo_de_negociacao.Set("A1B2C3");  // Valid trade code
+        assert(codigo_de_negociacao.Get() == "A1B2C3");
+        std::cout << "Teste do código de negociação passou" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "TradeCode test failed: " << e.what() << std::endl;
+        std::cout << "Teste do código de negociação falhou: " << e.what() << std::endl;
     }
 
     // Invalid test case
     try {
-        TradeCode tradeCode;
-        tradeCode.Set("A1B@C3");  // Invalid character '@'
-        std::cout << "TradeCode test failed: Exception not thrown." << std::endl;
+        Codigo_de_Negociacao codigo_de_negociacao;
+        codigo_de_negociacao.Set("A1B@C3");  // Invalid character '@'
+        std::cout << "Teste de código de negociação falhou: Exceção não foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "TradeCode invalid test passed: " << e.what() << std::endl;
+        std::cout << "Teste de código de negociação inválido foi aprovado: " << e.what() << std::endl;
     }
 }
 

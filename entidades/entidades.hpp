@@ -72,7 +72,7 @@ public:
 
 class Command {
 private:
-    TradeCode tradeCode;
+    Codigo_de_Negociacao codigo_de_negociacao;
     Money money;
     Amount amount;
     Date date;
@@ -80,8 +80,8 @@ private:
 
 public:
     // Get methods
-    TradeCode& GetTradeCode() {
-        return tradeCode;
+    Codigo_de_Negociacao& GetCodigoDeNegociacao() {
+        return codigo_de_negociacao;
     }
 
     Money& GetMoney() {
@@ -101,8 +101,8 @@ public:
     }
 
     // Set methods
-    void SetTradeCode(const TradeCode& newTradeCode) {
-        tradeCode = newTradeCode;
+    void SetCodigoDeNegociacao(const Codigo_de_Negociacao& novo_codigo_de_negociacao) {
+        codigo_de_negociacao = novo_codigo_de_negociacao;
     }
 
     void SetMoney(const Money& newMoney) {
@@ -117,7 +117,7 @@ public:
         date = newDate;
     }
 
-    void SetCode(const Codigo& novo_codigo) {
+    void SetCodigo(const Codigo& novo_codigo) {
         codigo = novo_codigo;
     }
 };

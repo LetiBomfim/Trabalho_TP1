@@ -7,8 +7,8 @@ int main() {
     NomeTeste nomeTeste;
     nomeTeste.Run();
 
-    TradeCodeTest tradeCodeTest;
-    tradeCodeTest.Run();
+    Codigo_de_NegociacaoTeste codigo_de_negociacaoTeste;
+    codigo_de_negociacaoTeste.Run();
 
     DateTest dateTest;
     dateTest.Run();

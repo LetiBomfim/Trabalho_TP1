@@ -112,9 +112,9 @@ void CommandTest::TestValidCommand() {
     try {
         Command command;
 
-        TradeCode tradeCode;
-        tradeCode.Set("A1B2C3");
-        command.SetTradeCode(tradeCode);
+        Codigo_de_Negociacao codigo_de_negociacao;
+        codigo_de_negociacao.Set("A1B2C3");
+        command.SetCodigoDeNegociacao(codigo_de_negociacao);
 
         Money money;
         money.Set(500.00);
@@ -130,7 +130,7 @@ void CommandTest::TestValidCommand() {
 
         Codigo codigo;
         codigo.Set(12345);
-        command.SetCode(codigo);
+        command.SetCodigo(codigo);
 
         std::cout << "Command Test Passed (Valid)" << std::endl;
     } catch (const std::exception& e) {
@@ -142,9 +142,9 @@ void CommandTest::TestInvalidCommand() {
     try {
         Command command;
 
-        TradeCode tradeCode;
-        tradeCode.Set("A1B2C3");
-        command.SetTradeCode(tradeCode);
+        Codigo_de_Negociacao codigo_de_negociacao;
+        codigo_de_negociacao.Set("A1B2C3");
+        command.SetCodigoDeNegociacao(codigo_de_negociacao);
 
         Money money;
         money.Set(500.00);
@@ -160,7 +160,7 @@ void CommandTest::TestInvalidCommand() {
 
         Codigo codigo;
         codigo.Set(12345);
-        command.SetCode(codigo);
+        command.SetCodigo(codigo);
 
         std::cout << "Command Test Failed (Invalid)" << std::endl;
     } catch (const std::exception& e) {

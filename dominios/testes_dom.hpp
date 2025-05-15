@@ -2,7 +2,7 @@
 
 class CodigoTeste;
 class NomeTeste;
-class TradeCodeTest;
+class Codigo_de_NegociacaoTeste;
 class DateTest;
 class ProfileTest;
 class AmountTest;
@@ -23,7 +23,7 @@ public:
 };
 
 // Test class for TradeCode
-class TradeCodeTest {
+class Codigo_de_NegociacaoTeste {
 public:
     void Run();
 };

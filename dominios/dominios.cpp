@@ -27,16 +27,16 @@ void Codigo::Set(int novo_valor) {
 bool Nome::isValid(const std::string& val) const {
     if (val.length() > 20) return false;
 
-    bool prevWasSpace = false;
+    bool espaco = false; // bool que verifica se o caracter anterior é um espaço
     for (char c : val) {
         if (!(isalnum(c) || c == ' ')) {
             return false;
         }
         if (c == ' ') {
-            if (prevWasSpace) return false;
-            prevWasSpace = true;
+            if (espaco) return false;
+            espaco = true;
         } else {
-            prevWasSpace = false;
+            espaco = false;
         }
     }
     return true;
@@ -56,11 +56,9 @@ void Nome::Set(const std::string& novo_valor) {
     valor = novo_valor;
 }
 
-/////////////////////
-// TradeCode Class
-/////////////////////
+// Classe relativa ao código de negociação --> Implementação por 
 
-bool TradeCode::isValid(const std::string& val) const {
+bool Codigo_de_Negociacao::isValid(const std::string& val) const {
     if (val.length() > 12) return false;
 
     for (char c : val) {
@@ -71,17 +69,17 @@ bool TradeCode::isValid(const std::string& val) const {
     return true;
 }
 
-const std::string& TradeCode::Get() const {
-    return value;
+const std::string& Codigo_de_Negociacao::Get() const {
+    return valor;
 }
 
-void TradeCode::Set(const std::string& newValue) {
-    if (!isValid(newValue)) {
+void Codigo_de_Negociacao::Set(const std::string& novo_valor) {
+    if (!isValid(novo_valor)) {
         throw std::invalid_argument(
-            "TradeCode must be ≤12 chars and contain only letters, numbers, and spaces"
+            "O código de negociação precisa ter até 12 caracteres e conter apenas dígitos, letras e espaços em branco."
         );
     }
-    value = newValue;
+    valor = novo_valor;
 }
 
 /////////////////////
