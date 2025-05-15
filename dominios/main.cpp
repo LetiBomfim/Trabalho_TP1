@@ -13,8 +13,8 @@ int main() {
     DateTest dateTest;
     dateTest.Run();
 
-    ProfileTest profileTest;
-    profileTest.Run();
+    PerfilTeste perfilTeste;
+    perfilTeste.Run();
 
     AmountTest amountTest;
     amountTest.Run();

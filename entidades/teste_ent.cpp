@@ -70,9 +70,9 @@ void WalletTest::TestValidWallet() {
         nome.Set("My Wallet");
         wallet.SetNome(nome);
 
-        Profile profile;
-        profile.Set("moderate");
-        wallet.SetProfile(profile);
+        Perfil perfil;
+        perfil.Set("moderate");
+        wallet.SetPerfil(perfil);
 
         std::cout << "Wallet Test Passed (Valid)" << std::endl;
     } catch (const std::exception& e) {
@@ -92,9 +92,9 @@ void WalletTest::TestInvalidWallet() {
         nome.Set("My Wallet");
         wallet.SetNome(nome);
 
-        Profile profile;
-        profile.Set("invalid_profile");  // Invalid profile
-        wallet.SetProfile(profile);
+        Perfil perfil;
+        perfil.Set("invalid_profile");  // Invalid profile
+        wallet.SetPerfil(perfil);
 
         std::cout << "Wallet Test Failed (Invalid)" << std::endl;
     } catch (const std::exception& e) {

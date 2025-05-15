@@ -23,7 +23,7 @@ void CodigoTeste::Run() {
         codigo.Set(123456);  
         std::cout << "Teste de código falhou: Exceção não foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "Teste de código inválido foi aprovado: " << e.what() << std::endl;
+        std::cout << "Teste de código inválido passou: " << e.what() << std::endl;
     }
 }
 
@@ -45,7 +45,7 @@ void NomeTeste::Run() {
         nome.Set("Fernando   Chacon");  
         std::cout << "Teste de nome falhou: Exceção não foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "Teste de nome inválido foi aprovado: " << e.what() << std::endl;
+        std::cout << "Teste de nome inválido passou: " << e.what() << std::endl;
     }
 }
 
@@ -67,7 +67,7 @@ void Codigo_de_NegociacaoTeste::Run() {
         codigo_de_negociacao.Set("A1B@C3");  
         std::cout << "Teste de código de negociação falhou: Exceção não foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "Teste de código de negociação inválido foi aprovado: " << e.what() << std::endl;
+        std::cout << "Teste de código de negociação inválido passou: " << e.what() << std::endl;
     }
 }
 
@@ -93,25 +93,25 @@ void DateTest::Run() {
     }
 }
 
-// ProfileTest Implementation
-void ProfileTest::Run() {
-    // Valid test case
+// Implementação da Classe Perfil
+void PerfilTeste::Run() {
+    // Teste de caso válido
     try {
-        Profile profile;
-        profile.Set("moderate");  // Valid profile
-        assert(profile.Get() == "moderate");
-        std::cout << "Profile test passed!" << std::endl;
+        Perfil perfil;
+        perfil.Set("Moderado");  
+        assert(perfil.Get() == "Moderado");
+        std::cout << "Teste do perfil passou" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "Profile test failed: " << e.what() << std::endl;
+        std::cout << "Teste do perfil falhou: " << e.what() << std::endl;
     }
 
-    // Invalid test case
+    // Teste de caso inválido
     try {
-        Profile profile;
-        profile.Set("extreme");  // Invalid profile
-        std::cout << "Profile test failed: Exception not thrown." << std::endl;
+        Perfil perfil;
+        perfil.Set("Extreme");  
+        std::cout << "Teste de perfil falhou: Exceção não foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "Profile invalid test passed: " << e.what() << std::endl;
+        std::cout << "Teste de perfil inválido passou: " << e.what() << std::endl;
     }
 }
 

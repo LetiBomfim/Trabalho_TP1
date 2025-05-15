@@ -124,25 +124,23 @@ void Date::Set(const std::string& newValue) {
     value = newValue;
 }
 
-/////////////////////
-// Profile Class
-/////////////////////
+// Classe relativa ao Perfil --> Implementação por 
 
-bool Profile::isValid(const std::string& val) const {
-    return validProfiles.find(val) != validProfiles.end();
+bool Perfil::isValid(const std::string& val) const {
+    return perfilvalido.find(val) != perfilvalido.end();
 }
 
-const std::string& Profile::Get() const {
-    return value;
+const std::string& Perfil::Get() const {
+    return valor;
 }
 
-void Profile::Set(const std::string& newValue) {
-    if (!isValid(newValue)) {
+void Perfil::Set(const std::string& novo_valor) {
+    if (!isValid(novo_valor)) {
         throw std::invalid_argument(
-            "Profile must be one of the following: conservative, moderate, aggressive"
+            "O Perfil deve ser um dos seguintes: conservador, moderado, agressivo."
         );
     }
-    value = newValue;
+    valor = novo_valor;
 }
 
 /////////////////////

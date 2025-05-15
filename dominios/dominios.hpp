@@ -42,15 +42,15 @@ public:
     void Set(const std::string& newValue);
 };
 
-class Profile {
+class Perfil {
 private:
-    std::string value;
-    std::unordered_set<std::string> validProfiles = {"Conservador", "Moderado", "Agressivo"};
+    std::string valor;
+    std::unordered_set<std::string> perfilvalido = {"Conservador", "Moderado", "Agressivo"};
     bool isValid(const std::string& val) const;  // Função de validação da classe
 
 public:
     const std::string& Get() const;
-    void Set(const std::string& newValue);
+    void Set(const std::string& novo_valor);
 };
 
 class Amount {

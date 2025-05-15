@@ -35,7 +35,7 @@ public:
 };
 
 // Test class for Profile
-class ProfileTest {
+class PerfilTeste {
 public:
     void Run();
 };

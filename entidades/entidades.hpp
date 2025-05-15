@@ -39,7 +39,7 @@ class Wallet {
 private:
     Codigo codigo;
     Nome nome;
-    Profile profile;
+    Perfil perfil;
 
 public:
     // Get methods
@@ -51,8 +51,8 @@ public:
         return nome;
     }
 
-    Profile& GetProfile() {
-        return profile;
+    Perfil& GetPerfil() {
+        return perfil;
     }
 
     // Set methods
@@ -64,8 +64,8 @@ public:
         nome = novo_nome;
     }
 
-    void SetProfile(const Profile& newProfile) {
-        profile = newProfile;
+    void SetPerfil(const Perfil& novo_perfil) {
+        perfil = novo_perfil;
     }
 };
 
