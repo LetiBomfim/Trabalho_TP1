@@ -2,168 +2,168 @@
 #include "entidades.hpp"
 #include <iostream>
 
-// AccountTest Class Implementation
-void AccountTest::Run() {
+// Implementação da Classe ContaTeste
+void ContaTeste::Run() {
     TestValidAccount();
     TestInvalidAccount();
 }
 
-void AccountTest::TestValidAccount() {
+void ContaTeste::TestValidAccount() {
     try {
-        Account account;
+        Conta conta;
 
         Cpf cpf;
         cpf.Set("123.456.789-01");
-        account.SetCpf(cpf);
+        conta.SetCpf(cpf);
 
         Nome nome;
         nome.Set("Fernando Chacon");
-        account.SetNome(nome);
+        conta.SetNome(nome);
 
         Senha senha;
         senha.Set("A1b#c2");
-        account.SetSenha(senha);
+        conta.SetSenha(senha);
 
-        std::cout << "Account Test Passed (Valid)" << std::endl;
+        std::cout << "Teste de Conta passou - Valido" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "Error setting Account: " << e.what() << std::endl;
+        std::cout << "Ocorreu erro ao definir Conta: " << e.what() << std::endl;
     }
 }
 
-void AccountTest::TestInvalidAccount() {
+void ContaTeste::TestInvalidAccount() {
     try {
-        Account account;
+        Conta conta;
 
         Cpf cpf;
         cpf.Set("123.456.789-01");
-        account.SetCpf(cpf);
+        conta.SetCpf(cpf);
 
         Nome nome;
         nome.Set("Fernando Chacon");
-        account.SetNome(nome);
+        conta.SetNome(nome);
 
         Senha senha;
-        senha.Set("123456");  // Invalid password (no symbol)
-        account.SetSenha(senha);
+        senha.Set("123456");  
+        conta.SetSenha(senha);
 
-        std::cout << "Account Test Failed (Invalid)" << std::endl;
+        std::cout << "Teste de Carteira falhou - Invalido" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "Error setting Account: " << e.what() << std::endl;
+        std::cout << "Ocorreu erro ao definir Conta: " << e.what() << std::endl;
     }
 }
 
-// WalletTest Class Implementation
-void WalletTest::Run() {
+// Implementação da Classe CarteiraTeste
+void CarteiraTeste::Run() {
     TestValidWallet();
     TestInvalidWallet();
 }
 
-void WalletTest::TestValidWallet() {
+void CarteiraTeste::TestValidWallet() {
     try {
-        Wallet wallet;
+        Carteira carteira;
 
         Codigo codigo;
         codigo.Set(12345);
-        wallet.SetCodigo(codigo);
+        carteira.SetCodigo(codigo);
 
         Nome nome;
-        nome.Set("My Wallet");
-        wallet.SetNome(nome);
+        nome.Set("Minha Carteira");
+        carteira.SetNome(nome);
 
         Perfil perfil;
-        perfil.Set("moderate");
-        wallet.SetPerfil(perfil);
+        perfil.Set("Moderado");
+        carteira.SetPerfil(perfil);
 
-        std::cout << "Wallet Test Passed (Valid)" << std::endl;
+        std::cout << "Teste de Carteira passou - Valido" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "Error setting Wallet: " << e.what() << std::endl;
+        std::cout << "Ocorreu erro ao definir Carteira: " << e.what() << std::endl;
     }
 }
 
-void WalletTest::TestInvalidWallet() {
+void CarteiraTeste::TestInvalidWallet() {
     try {
-        Wallet wallet;
+        Carteira carteira;
 
         Codigo codigo;
         codigo.Set(12345);
-        wallet.SetCodigo(codigo);
+        carteira.SetCodigo(codigo);
 
         Nome nome;
-        nome.Set("My Wallet");
-        wallet.SetNome(nome);
+        nome.Set("Minha Carteira");
+        carteira.SetNome(nome);
 
         Perfil perfil;
-        perfil.Set("invalid_profile");  // Invalid profile
-        wallet.SetPerfil(perfil);
+        perfil.Set("perfil_invalido");  
+        carteira.SetPerfil(perfil);
 
-        std::cout << "Wallet Test Failed (Invalid)" << std::endl;
+        std::cout << "Teste de Carteira falhou - Invalido" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "Error setting Wallet: " << e.what() << std::endl;
+        std::cout << "Ocorreu erro ao definir Carteira: " << e.what() << std::endl;
     }
 }
 
-// CommandTest Class Implementation
-void CommandTest::Run() {
+// Implementação da Classe OrdemTeste
+void OrdemTeste::Run() {
     TestValidCommand();
     TestInvalidCommand();
 }
 
-void CommandTest::TestValidCommand() {
+void OrdemTeste::TestValidCommand() {
     try {
-        Command command;
+        Ordem ordem;
 
         Codigo_de_Negociacao codigo_de_negociacao;
         codigo_de_negociacao.Set("A1B2C3");
-        command.SetCodigoDeNegociacao(codigo_de_negociacao);
+        ordem.SetCodigoDeNegociacao(codigo_de_negociacao);
 
         Dinheiro dinheiro;
         dinheiro.Set(500.00);
-        command.SetDinheiro(dinheiro);
+        ordem.SetDinheiro(dinheiro);
 
         Quantidade quantidade;
         quantidade.Set(1000);
-        command.SetQuantidade(quantidade);
+        ordem.SetQuantidade(quantidade);
 
         Data data;
         data.Set("2025/05/13");
-        command.SetData(data);
+        ordem.SetData(data);
 
         Codigo codigo;
         codigo.Set(12345);
-        command.SetCodigo(codigo);
+        ordem.SetCodigo(codigo);
 
-        std::cout << "Command Test Passed (Valid)" << std::endl;
+        std::cout << "Teste de Ordem passou - Valido" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "Error setting Command: " << e.what() << std::endl;
+        std::cout << "Ocorreu erro ao definir Ordem: " << e.what() << std::endl;
     }
 }
 
-void CommandTest::TestInvalidCommand() {
+void OrdemTeste::TestInvalidCommand() {
     try {
-        Command command;
+        Ordem ordem;
 
         Codigo_de_Negociacao codigo_de_negociacao;
         codigo_de_negociacao.Set("A1B2C3");
-        command.SetCodigoDeNegociacao(codigo_de_negociacao);
+        ordem.SetCodigoDeNegociacao(codigo_de_negociacao);
 
         Dinheiro dinheiro;
         dinheiro.Set(500.00);
-        command.SetDinheiro(dinheiro);
+        ordem.SetDinheiro(dinheiro);
 
         Quantidade quantidade;
         quantidade.Set(1000);
-        command.SetQuantidade(quantidade);
+        ordem.SetQuantidade(quantidade);
 
         Data data;
         data.Set("2025/13/32");  
-        command.SetData(data);
+        ordem.SetData(data);
 
         Codigo codigo;
         codigo.Set(12345);
-        command.SetCodigo(codigo);
+        ordem.SetCodigo(codigo);
 
-        std::cout << "Command Test Failed (Invalid)" << std::endl;
+        std::cout << "Teste de Ordem falhou - Invalido" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "Error setting Command: " << e.what() << std::endl;
+        std::cout << "Ocorreu erro ao definir Ordem: " << e.what() << std::endl;
     }
 }

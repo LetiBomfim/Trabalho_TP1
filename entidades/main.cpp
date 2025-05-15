@@ -1,14 +1,14 @@
 #include "teste_ent.hpp"
 
 int main() {
-    AccountTest accountTest;
-    accountTest.Run();
+    ContaTeste contaTeste;
+    contaTeste.Run();
 
-    WalletTest walletTest;
-    walletTest.Run();
+    CarteiraTeste carteiraTeste;
+    carteiraTeste.Run();
 
-    CommandTest commandTest;
-    commandTest.Run();
+    OrdemTeste ordemTeste;
+    ordemTeste.Run();
 
     return 0;
 }

@@ -1,29 +1,29 @@
-// AccountTest Class Declaration
-class AccountTest {
+// // Declaração da Classe de Teste de Conta
+class ContaTeste {
 public:
-    void Run();  // Run the tests
+    void Run();  
 
 private:
-    void TestValidAccount();   // Test with valid data
-    void TestInvalidAccount(); // Test with invalid data
+    void TestValidAccount();   
+    void TestInvalidAccount();
 };
 
-// WalletTest Class Declaration
-class WalletTest {
+// // Declaração da Classe de Teste de Carteira
+class CarteiraTeste {
 public:
-    void Run();  // Run the tests
+    void Run();  
 
 private:
-    void TestValidWallet();   // Test with valid data
-    void TestInvalidWallet(); // Test with invalid data
+    void TestValidWallet();   
+    void TestInvalidWallet(); 
 };
 
-// CommandTest Class Declaration
-class CommandTest {
+// Declaração da Classe de Teste de Ordem
+class OrdemTeste {
 public:
-    void Run();  // Run the tests
+    void Run();  
 
 private:
-    void TestValidCommand();   // Test with valid data
-    void TestInvalidCommand(); // Test with invalid data
+    void TestValidCommand();   
+    void TestInvalidCommand(); 
 };

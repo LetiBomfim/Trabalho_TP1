@@ -1,7 +1,7 @@
 #pragma once
 #include "../dominios/dominios.hpp"
 
-class Account {
+class Conta {
 private:
     Cpf cpf;
     Nome nome;
@@ -35,7 +35,7 @@ public:
     }
 };
 
-class Wallet {
+class Carteira {
 private:
     Codigo codigo;
     Nome nome;
@@ -70,7 +70,7 @@ public:
 };
 
 
-class Command {
+class Ordem {
 private:
     Codigo_de_Negociacao codigo_de_negociacao;
     Dinheiro dinheiro;
