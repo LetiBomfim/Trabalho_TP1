@@ -20,9 +20,9 @@ void AccountTest::TestValidAccount() {
         nome.Set("Fernando Chacon");
         account.SetNome(nome);
 
-        Password password;
-        password.Set("A1b#c2");
-        account.SetPassword(password);
+        Senha senha;
+        senha.Set("A1b#c2");
+        account.SetSenha(senha);
 
         std::cout << "Account Test Passed (Valid)" << std::endl;
     } catch (const std::exception& e) {
@@ -42,9 +42,9 @@ void AccountTest::TestInvalidAccount() {
         nome.Set("Fernando Chacon");
         account.SetNome(nome);
 
-        Password password;
-        password.Set("123456");  // Invalid password (no symbol)
-        account.SetPassword(password);
+        Senha senha;
+        senha.Set("123456");  // Invalid password (no symbol)
+        account.SetSenha(senha);
 
         std::cout << "Account Test Failed (Invalid)" << std::endl;
     } catch (const std::exception& e) {
@@ -122,11 +122,11 @@ void CommandTest::TestValidCommand() {
 
         Quantidade quantidade;
         quantidade.Set(1000);
-        command.SetAmount(quantidade);
+        command.SetQuantidade(quantidade);
 
         Data data;
         data.Set("2025/05/13");
-        command.SetDate(data);
+        command.SetData(data);
 
         Codigo codigo;
         codigo.Set(12345);
@@ -152,11 +152,11 @@ void CommandTest::TestInvalidCommand() {
 
         Quantidade quantidade;
         quantidade.Set(1000);
-        command.SetAmount(quantidade);
+        command.SetQuantidade(quantidade);
 
         Data data;
         data.Set("2025/13/32");  
-        command.SetDate(data);
+        command.SetData(data);
 
         Codigo codigo;
         codigo.Set(12345);

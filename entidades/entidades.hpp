@@ -5,7 +5,7 @@ class Account {
 private:
     Cpf cpf;
     Nome nome;
-    Password password;
+    Senha senha;
 
 public:
     // Get methods
@@ -17,11 +17,11 @@ public:
         return nome;
     }
 
-    Password& GetPassword() {
-        return password;
+    Senha& GetSenha() {
+        return senha;
     }
 
-    // Set methods
+    // Definição dos métodos Set
     void SetCpf(const Cpf& newCpf) {
         cpf = newCpf;
     }
@@ -30,8 +30,8 @@ public:
         nome = novo_nome;
     }
 
-    void SetPassword(const Password& newPassword) {
-        password = newPassword;
+    void SetSenha(const Senha& nova_senha) {
+        senha = nova_senha;
     }
 };
 
@@ -42,7 +42,7 @@ private:
     Perfil perfil;
 
 public:
-    // Get methods
+    // Definição dos métodos Get
     Codigo& GetCodigo() {
         return codigo;
     }
@@ -55,7 +55,7 @@ public:
         return perfil;
     }
 
-    // Set methods
+    // Definição dos métodos Set
     void SetCodigo(const Codigo& novo_codigo) {
         codigo = novo_codigo;
     }
@@ -79,7 +79,7 @@ private:
     Codigo codigo;
 
 public:
-    // Get methods
+    // Definição dos métodos Get
     Codigo_de_Negociacao& GetCodigoDeNegociacao() {
         return codigo_de_negociacao;
     }
@@ -100,7 +100,7 @@ public:
         return codigo;
     }
 
-    // Set methods
+    // Definição dos métodos Set
     void SetCodigoDeNegociacao(const Codigo_de_Negociacao& novo_codigo_de_negociacao) {
         codigo_de_negociacao = novo_codigo_de_negociacao;
     }
@@ -109,11 +109,11 @@ public:
         money = newMoney;
     }
 
-    void SetAmount(const Quantidade& nova_quantidade) {
+    void SetQuantidade(const Quantidade& nova_quantidade) {
         quantidade = nova_quantidade;
     }
 
-    void SetDate(const Data& nova_data) {
+    void SetData(const Data& nova_data) {
         data = nova_data;
     }
 

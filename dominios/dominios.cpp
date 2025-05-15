@@ -162,11 +162,9 @@ void Quantidade::Set(int novo_valor) {
     valor = novo_valor;
 }
 
-/////////////////////
-// Password Class
-/////////////////////
+// Classe relativa a Senha --> Implementação por 
 
-bool Password::isValid(const std::string& val) const {
+bool Senha::isValid(const std::string& val) const {
     if (val.length() != 6) return false;
 
     std::unordered_set<char> charSet;
@@ -186,18 +184,18 @@ bool Password::isValid(const std::string& val) const {
     return hasNumber && hasLower && hasUpper && hasSymbol;
 }
 
-const std::string& Password::Get() const {
-    return value;
+const std::string& Senha::Get() const {
+    return valor;
 }
 
-void Password::Set(const std::string& newValue) {
-    if (!isValid(newValue)) {
+void Senha::Set(const std::string& novo_valor) {
+    if (!isValid(novo_valor)) {
         throw std::invalid_argument(
-            "Password must be exactly 6 characters, contain at least one number, "
-            "one lowercase letter, one uppercase letter, and one of these symbols: #, $, %, or &"
+            "A senha deve ter exatamente 6 caracteres, conter ao menos um número, "
+            "uma letra minúscula, uma letra maiúscula e um dos seguintes símbolos: #, $, % ou &."
         );
     }
-    value = newValue;
+    valor = novo_valor;
 }
 
 /////////////////////

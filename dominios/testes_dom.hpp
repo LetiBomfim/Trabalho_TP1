@@ -3,10 +3,10 @@
 class CodigoTeste;
 class NomeTeste;
 class Codigo_de_NegociacaoTeste;
-class DateTest;
-class ProfileTest;
-class AmountTest;
-class PasswordTest;
+class DataTeste;
+class PerfilTeste;
+class QuantidadeTeste;
+class SenhaTeste;
 class MoneyTest;
 class CpfTest;
 
@@ -47,7 +47,7 @@ public:
 };
 
 // Test class for Password
-class PasswordTest {
+class SenhaTeste {
 public:
     void Run();
 };

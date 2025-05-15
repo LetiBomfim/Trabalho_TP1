@@ -19,8 +19,8 @@ int main() {
     QuantidadeTeste quantidadeTeste;
     quantidadeTeste.Run();
 
-    PasswordTest passwordTest;
-    passwordTest.Run();
+    SenhaTeste senhaTeste;
+    senhaTeste.Run();
 
     MoneyTest moneyTest;
     moneyTest.Run();

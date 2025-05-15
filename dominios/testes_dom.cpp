@@ -93,7 +93,7 @@ void DataTeste::Run() {
     }
 }
 
-// Implementação da Classe Perfil
+// Implementação do Teste da Classe Perfil
 void PerfilTeste::Run() {
     // Teste de caso válido
     try {
@@ -115,7 +115,7 @@ void PerfilTeste::Run() {
     }
 }
 
-// AmountTest Implementation
+//  Implementação do Teste da Classe Quantidade
 void QuantidadeTeste::Run() {
     // Teste de caso válido
     try {
@@ -137,66 +137,66 @@ void QuantidadeTeste::Run() {
     }
 }
 
-// PasswordTest Implementation
-void PasswordTest::Run() {
-    // Valid test case
+//  Implementação do Teste da Classe Senha
+void SenhaTeste::Run() {
+    // Teste de caso válido
     try {
-        Password password;
-        password.Set("A1b#c2");  // Valid password
-        assert(password.Get() == "A1b#c2");
-        std::cout << "Password test passed!" << std::endl;
+        Senha senha;
+        senha.Set("A1b#c2");  
+        assert(senha.Get() == "A1b#c2");
+        std::cout << "Teste de senha passou!" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "Password test failed: " << e.what() << std::endl;
+        std::cout << "Teste de senha falhou: " << e.what() << std::endl;
     }
 
-    // Invalid test case
+    // Teste de caso inválido
     try {
-        Password password;
-        password.Set("A1bc2");  // Invalid password (too short)
-        std::cout << "Password test failed: Exception not thrown." << std::endl;
+        Senha senha;
+        senha.Set("A1bc2");  
+        std::cout << "Teste de senha falhou: Exceção não foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "Password invalid test passed: " << e.what() << std::endl;
+        std::cout << "Teste de senha inválido passou: " << e.what() << std::endl;
     }
 }
 
-// MoneyTest Implementation
+//  Implementação do Teste da Classe Dinheiro
 void MoneyTest::Run() {
-    // Valid test case
+    // Teste de caso válido
     try {
         Money money;
-        money.Set(999999.99);  // Valid money value
+        money.Set(999999.99);  
         assert(money.Get() == 999999.99);
         std::cout << "Money test passed!" << std::endl;
     } catch (const std::exception& e) {
         std::cout << "Money test failed: " << e.what() << std::endl;
     }
 
-    // Invalid test case
+    // Teste de caso inválido
     try {
         Money money;
-        money.Set(1000000.01);  // Invalid value (too large)
+        money.Set(1000000.01);  
         std::cout << "Money test failed: Exception not thrown." << std::endl;
     } catch (const std::invalid_argument& e) {
         std::cout << "Money invalid test passed: " << e.what() << std::endl;
     }
 }
 
-// CpfTest Implementation
+//  Implementação do Teste da Classe CPF
 void CpfTest::Run() {
-    // Valid test case
+    // Teste de caso válido
     try {
         Cpf cpf;
-        cpf.Set("123.456.789-01");  // Valid CPF
+        cpf.Set("123.456.789-01");  
         assert(cpf.Get() == "123.456.789-01");
         std::cout << "CPF test passed!" << std::endl;
     } catch (const std::exception& e) {
         std::cout << "CPF test failed: " << e.what() << std::endl;
     }
 
-    // Invalid test case
+    // Teste de caso inválido
     try {
         Cpf cpf;
-        cpf.Set("123.456.78-01");  // Invalid CPF (wrong length)
+        cpf.Set("123.456.78-01");  
         std::cout << "CPF test failed: Exception not thrown." << std::endl;
     } catch (const std::invalid_argument& e) {
         std::cout << "CPF invalid test passed: " << e.what() << std::endl;
