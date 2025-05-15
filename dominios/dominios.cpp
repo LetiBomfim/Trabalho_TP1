@@ -82,9 +82,7 @@ void Codigo_de_Negociacao::Set(const std::string& novo_valor) {
     valor = novo_valor;
 }
 
-/////////////////////
-// Date Class
-/////////////////////
+// Classe relativa a Data --> Implementação por 
 
 bool Date::isValid(const std::string& val) const {
     if (val.length() != 10 || val[4] != '/' || val[7] != '/') {

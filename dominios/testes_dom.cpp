@@ -39,41 +39,41 @@ void NomeTeste::Run() {
         std::cout << "Teste de nome falhou: " << e.what() << std::endl;
     }
 
-    // Invalid test case
+    // Teste de caso inválido
     try {
         Nome nome;
-        nome.Set("Fernando   Chacon");  // Invalid name with consecutive spaces
+        nome.Set("Fernando   Chacon");  
         std::cout << "Teste de nome falhou: Exceção não foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
         std::cout << "Teste de nome inválido foi aprovado: " << e.what() << std::endl;
     }
 }
 
-// TradeCodeTest Implementation
+// Implementação do Teste da Classe Codigo_de_Negociacao
 void Codigo_de_NegociacaoTeste::Run() {
-    // Valid test case
+    // Teste de caso válido
     try {
         Codigo_de_Negociacao codigo_de_negociacao;
-        codigo_de_negociacao.Set("A1B2C3");  // Valid trade code
+        codigo_de_negociacao.Set("A1B2C3"); 
         assert(codigo_de_negociacao.Get() == "A1B2C3");
         std::cout << "Teste do código de negociação passou" << std::endl;
     } catch (const std::exception& e) {
         std::cout << "Teste do código de negociação falhou: " << e.what() << std::endl;
     }
 
-    // Invalid test case
+    // Teste de caso inválido
     try {
         Codigo_de_Negociacao codigo_de_negociacao;
-        codigo_de_negociacao.Set("A1B@C3");  // Invalid character '@'
+        codigo_de_negociacao.Set("A1B@C3");  
         std::cout << "Teste de código de negociação falhou: Exceção não foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
         std::cout << "Teste de código de negociação inválido foi aprovado: " << e.what() << std::endl;
     }
 }
 
-// DateTest Implementation
+// Implementação do Teste da Classe Data
 void DateTest::Run() {
-    // Valid test case
+    // Teste de caso válido
     try {
         Date date;
         date.Set("2025/05/13");  // Valid date
@@ -83,7 +83,7 @@ void DateTest::Run() {
         std::cout << "Date test failed: " << e.what() << std::endl;
     }
 
-    // Invalid test case
+    // Teste de caso inválido
     try {
         Date date;
         date.Set("2025/13/32");  // Invalid date
