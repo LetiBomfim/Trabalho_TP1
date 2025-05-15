@@ -10,8 +10,8 @@ int main() {
     Codigo_de_NegociacaoTeste codigo_de_negociacaoTeste;
     codigo_de_negociacaoTeste.Run();
 
-    DateTest dateTest;
-    dateTest.Run();
+    DataTeste dataTeste;
+    dataTeste.Run();
 
     PerfilTeste perfilTeste;
     perfilTeste.Run();

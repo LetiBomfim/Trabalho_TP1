@@ -75,7 +75,7 @@ private:
     Codigo_de_Negociacao codigo_de_negociacao;
     Money money;
     Quantidade quantidade;
-    Date date;
+    Data data;
     Codigo codigo;
 
 public:
@@ -92,8 +92,8 @@ public:
         return quantidade;
     }
 
-    Date& GetDate() {
-        return date;
+    Data& GetData() {
+        return data;
     }
 
     Codigo& GetCodigo() {
@@ -113,8 +113,8 @@ public:
         quantidade = nova_quantidade;
     }
 
-    void SetDate(const Date& newDate) {
-        date = newDate;
+    void SetDate(const Data& nova_data) {
+        data = nova_data;
     }
 
     void SetCodigo(const Codigo& novo_codigo) {

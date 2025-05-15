@@ -124,9 +124,9 @@ void CommandTest::TestValidCommand() {
         quantidade.Set(1000);
         command.SetAmount(quantidade);
 
-        Date date;
-        date.Set("2025/05/13");
-        command.SetDate(date);
+        Data data;
+        data.Set("2025/05/13");
+        command.SetDate(data);
 
         Codigo codigo;
         codigo.Set(12345);
@@ -154,9 +154,9 @@ void CommandTest::TestInvalidCommand() {
         quantidade.Set(1000);
         command.SetAmount(quantidade);
 
-        Date date;
-        date.Set("2025/13/32");  // Invalid date
-        command.SetDate(date);
+        Data data;
+        data.Set("2025/13/32");  
+        command.SetDate(data);
 
         Codigo codigo;
         codigo.Set(12345);

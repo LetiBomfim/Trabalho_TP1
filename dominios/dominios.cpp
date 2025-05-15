@@ -84,44 +84,44 @@ void Codigo_de_Negociacao::Set(const std::string& novo_valor) {
 
 // Classe relativa a Data --> Implementação por 
 
-bool Date::isValid(const std::string& val) const {
+bool Data::isValid(const std::string& val) const {
     if (val.length() != 10 || val[4] != '/' || val[7] != '/') {
         return false;
     }
 
-    int year, month, day;
+    int ano, mes, dia;
     try {
-        year = std::stoi(val.substr(0, 4));
-        month = std::stoi(val.substr(5, 2));
-        day = std::stoi(val.substr(8, 2));
+        ano = std::stoi(val.substr(0, 4));
+        mes = std::stoi(val.substr(5, 2));
+        dia = std::stoi(val.substr(8, 2));
     } catch (...) {
         return false;
     }
 
-    if (year < 1900 || year > 2100) return false;
-    if (month < 1 || month > 12) return false;
+    if (ano < 1900 || ano > 2100) return false;
+    if (mes < 1 || mes > 12) return false;
 
     constexpr std::array<int, 12> daysInMonth = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    int maxDay = daysInMonth[month - 1];
+    int maxDay = daysInMonth[mes - 1];
 
-    if (month == 2 && (year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))) {
+    if (mes == 2 && (ano % 400 == 0 || (ano % 100 != 0 && ano % 4 == 0))) {
         maxDay = 29;
     }
 
-    return day >= 1 && day <= maxDay;
+    return dia >= 1 && dia <= maxDay;
 }
 
-const std::string& Date::Get() const {
-    return value;
+const std::string& Data::Get() const {
+    return valor;
 }
 
-void Date::Set(const std::string& newValue) {
-    if (!isValid(newValue)) {
+void Data::Set(const std::string& novo_valor) {
+    if (!isValid(novo_valor)) {
         throw std::invalid_argument(
-            "Date must be in YYYY/MM/DD format with valid date values"
+            "A data deve estar no formato AAAA/MM/DD com valores de data válidos."
         );
     }
-    value = newValue;
+    valor = novo_valor;
 }
 
 // Classe relativa ao Perfil --> Implementação por 

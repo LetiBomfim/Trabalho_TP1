@@ -29,7 +29,7 @@ public:
 };
 
 // Test class for Date
-class DateTest {
+class DataTeste {
 public:
     void Run();
 };

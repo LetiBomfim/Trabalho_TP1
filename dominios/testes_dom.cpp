@@ -72,24 +72,24 @@ void Codigo_de_NegociacaoTeste::Run() {
 }
 
 // Implementação do Teste da Classe Data
-void DateTest::Run() {
+void DataTeste::Run() {
     // Teste de caso válido
     try {
-        Date date;
-        date.Set("2025/05/13");  // Valid date
-        assert(date.Get() == "2025/05/13");
-        std::cout << "Date test passed!" << std::endl;
+        Data data;
+        data.Set("2025/05/13");  
+        assert(data.Get() == "2025/05/13");
+        std::cout << "Teste de data passou!" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "Date test failed: " << e.what() << std::endl;
+        std::cout << "Teste de data falhou: " << e.what() << std::endl;
     }
 
     // Teste de caso inválido
     try {
-        Date date;
-        date.Set("2025/13/32");  // Invalid date
-        std::cout << "Date test failed: Exception not thrown." << std::endl;
+        Data data;
+        data.Set("2025/13/32");  
+        std::cout << "Teste de data falhou: Exceção não foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "Date invalid test passed: " << e.what() << std::endl;
+        std::cout << "Teste de data inválido passou: " << e.what() << std::endl;
     }
 }
 
