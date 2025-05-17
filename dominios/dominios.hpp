@@ -37,7 +37,7 @@ public:
 /// @brief Representa uma string para caracterizar o usuario com no maximo 20 caracteres.
 class Nome {
 private:
-    std::string valor;
+    std::string valor; ///< Nome armazenado.
 
         /**
      * @brief Verifica se o parametro possui menos de 20 caracteres e nao é um espaco.
@@ -65,7 +65,7 @@ public:
 /// @brief Representa um codigo de negociaçao de ate 12 caracteres.
 class Codigo_de_Negociacao {
 private:
-    std::string valor;
+    std::string valor;  ///< Código armazenado.
 
         /**
      * @brief Verifica se o codigo de negociaçao tem menos de 12 caracteres.
@@ -93,7 +93,7 @@ public:
 /// @brief Representa um marco temporal no formato AAAA/MM/DD.
 class Data {
 private:
-    std::string valor;
+    std::string valor; ///< Data armazenada.
 
         /**
      * @brief Verifica se a data possui dez digitos com barras
@@ -122,7 +122,8 @@ public:
 /// @brief Representa a caracteristica do usuario no mundo dos investimentos.
 class Perfil {
 private:
-    std::string valor;
+    std::string valor; ///< Perfil armazenado.
+
     /// Conjunto de perfis válidos.
     std::unordered_set<std::string> perfilvalido = {"Conservador", "Moderado", "Agressivo"};
         /**
@@ -151,7 +152,7 @@ public:
 /// @brief Representa uma quantidade de ativos ou operaçoes.
 class Quantidade {
 private:
-    int valor;
+    int valor; ///< Quantidade armazenada.
 
         /**
      * @brief Verifica se a quantidade eh valida.
@@ -180,7 +181,7 @@ public:
 /// @brief Representa um conjunto de caracteres com funcao de segurança.
 class Senha {
 private:
-    std::string valor;
+    std::string valor; ///< Senha armazenada.
 
         /**
      * @brief Verifica se a senha eh valida.
@@ -208,7 +209,7 @@ public:
 /// @brief Representa um valor monetario.
 class Dinheiro {
 private:
-    double valor;
+    double valor; ///< Valor monetário armazenado.
 
         /**
      * @brief Verifica se o valor esta dentro do intervalo permitido.
@@ -238,7 +239,7 @@ public:
 /// @brief Representa um numero unico de identificacao pessoal no formato XXX.XXX.XXX-XX.
 class Cpf {
 private:
-    std::string valor;
+    std::string valor; ///< CPF armazenado.
 
         /**
      * @brief Verifica se o CPF tem o formato correto.
