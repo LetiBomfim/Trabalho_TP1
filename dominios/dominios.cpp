@@ -17,7 +17,7 @@ int Codigo::Get() const {
 
 void Codigo::Set(int novo_valor) {
     if (!isValid(novo_valor)) {
-        throw std::invalid_argument("Code value must be a 5-digit number or less");
+        throw std::invalid_argument("Valor precisa ter 5 digitos ou menos");
     }
     valor = novo_valor;
 }
@@ -49,8 +49,8 @@ const std::string& Nome::Get() const {
 void Nome::Set(const std::string& novo_valor) {
     if (!isValid(novo_valor)) {
         throw std::invalid_argument(
-            "O nome precisa ter 20 ou menos characteres, e ser constituído apenas por alfanuméricos e espaços, "
-            "e não pode ter espaços em branco em sequência"
+            "O nome precisa ter 20 ou menos characteres, e ser constituido apenas por alfanumericos e espaços, "
+            "e nao pode ter espaços em branco em sequencia"
         );
     }
     valor = novo_valor;
@@ -76,7 +76,7 @@ const std::string& Codigo_de_Negociacao::Get() const {
 void Codigo_de_Negociacao::Set(const std::string& novo_valor) {
     if (!isValid(novo_valor)) {
         throw std::invalid_argument(
-            "O código de negociação precisa ter até 12 caracteres e conter apenas dígitos, letras e espaços em branco."
+            "O codigo de negociacao precisa ter até 12 caracteres e conter apenas digitos, letras e espaços em branco."
         );
     }
     valor = novo_valor;
@@ -118,7 +118,7 @@ const std::string& Data::Get() const {
 void Data::Set(const std::string& novo_valor) {
     if (!isValid(novo_valor)) {
         throw std::invalid_argument(
-            "A data deve estar no formato AAAA/MM/DD com valores de data válidos."
+            "A data deve estar no formato AAAA/MM/DD com valores de data validos."
         );
     }
     valor = novo_valor;
@@ -191,8 +191,8 @@ const std::string& Senha::Get() const {
 void Senha::Set(const std::string& novo_valor) {
     if (!isValid(novo_valor)) {
         throw std::invalid_argument(
-            "A senha deve ter exatamente 6 caracteres, conter ao menos um número, "
-            "uma letra minúscula, uma letra maiúscula e um dos seguintes símbolos: #, $, % ou &."
+            "A senha deve ter exatamente 6 caracteres, conter ao menos um numero, "
+            "uma letra minuscula, uma letra maiuscula e um dos seguintes simbolos: #, $, % ou &."
         );
     }
     valor = novo_valor;
@@ -211,7 +211,7 @@ double Dinheiro::Get() const {
 void Dinheiro::Set(double novo_valor) {
     if (!isValid(novo_valor)) {
         throw std::invalid_argument(
-            "O valor monetário deve estar entre 0,01 e 1.000.000,00."
+            "O valor monetario deve estar entre 0,01 e 1.000.000,00."
         );
     }
     valor = novo_valor;
@@ -242,7 +242,7 @@ const std::string& Cpf::Get() const {
 void Cpf::Set(const std::string& novo_valor) {
     if (!isValid(novo_valor)) {
         throw std::invalid_argument(
-            "O CPF deve estar no formato XXX.XXX.XXX-XX, onde X é um dígito."
+            "O CPF deve estar no formato XXX.XXX.XXX-XX, onde X eh um digito."
         );
     }
     valor = novo_valor;

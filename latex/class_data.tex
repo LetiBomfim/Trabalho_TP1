@@ -1,0 +1,63 @@
+\doxysection{Data Class Reference}
+\hypertarget{class_data}{}\label{class_data}\index{Data@{Data}}
+
+
+Representa um marco temporal no formato AAAA/\+MM/\+DD.  
+
+
+
+
+{\ttfamily \#include $<$dominios.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& \mbox{\hyperlink{class_data_adca876374f7f74bd800b4ed7f4e8738e}{Get}} () const
+\begin{DoxyCompactList}\small\item\em Retorna a data armazenada. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_data_afd70a57800fc4ed2af39b3cb9780e5a2}{Set}} (const std\+::string \&novo\+\_\+valor)
+\begin{DoxyCompactList}\small\item\em Define uma nova data. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa um marco temporal no formato AAAA/\+MM/\+DD. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_data_adca876374f7f74bd800b4ed7f4e8738e}\index{Data@{Data}!Get@{Get}}
+\index{Get@{Get}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily \label{class_data_adca876374f7f74bd800b4ed7f4e8738e} 
+const std\+::string \& Data\+::\+Get (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retorna a data armazenada. 
+
+\begin{DoxyReturn}{Returns}
+Referencia constante a string da data. 
+\end{DoxyReturn}
+\Hypertarget{class_data_afd70a57800fc4ed2af39b3cb9780e5a2}\index{Data@{Data}!Set@{Set}}
+\index{Set@{Set}!Data@{Data}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}}
+{\footnotesize\ttfamily \label{class_data_afd70a57800fc4ed2af39b3cb9780e5a2} 
+void Data\+::\+Set (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{novo\+\_\+valor}{}\end{DoxyParamCaption})}
+
+
+
+Define uma nova data. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em novo\+\_\+valor} & \doxylink{class_data}{Data} no formato AAAA/\+MM/\+DD. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & se a data nao estiver no formato AAAA/\+MM/\+DD. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+dominios/\mbox{\hyperlink{dominios_8hpp}{dominios.\+hpp}}\item 
+dominios/dominios.\+cpp\end{DoxyCompactItemize}

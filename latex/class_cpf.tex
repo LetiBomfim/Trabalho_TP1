@@ -1,0 +1,63 @@
+\doxysection{Cpf Class Reference}
+\hypertarget{class_cpf}{}\label{class_cpf}\index{Cpf@{Cpf}}
+
+
+Representa um numero unico de identificacao pessoal no formato XXX.\+XXX.\+XXX-\/XX.  
+
+
+
+
+{\ttfamily \#include $<$dominios.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& \mbox{\hyperlink{class_cpf_afc62f2bdc8385e4f238a107936f890df}{Get}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o CPF atual. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_cpf_acfb9ede14cc18409782e3e63e0cd82c5}{Set}} (const std\+::string \&novo\+\_\+valor)
+\begin{DoxyCompactList}\small\item\em Define um novo CPF. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa um numero unico de identificacao pessoal no formato XXX.\+XXX.\+XXX-\/XX. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_cpf_afc62f2bdc8385e4f238a107936f890df}\index{Cpf@{Cpf}!Get@{Get}}
+\index{Get@{Get}!Cpf@{Cpf}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily \label{class_cpf_afc62f2bdc8385e4f238a107936f890df} 
+const std\+::string \& Cpf\+::\+Get (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retorna o CPF atual. 
+
+\begin{DoxyReturn}{Returns}
+Referencia constante a string do CPF. 
+\end{DoxyReturn}
+\Hypertarget{class_cpf_acfb9ede14cc18409782e3e63e0cd82c5}\index{Cpf@{Cpf}!Set@{Set}}
+\index{Set@{Set}!Cpf@{Cpf}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}}
+{\footnotesize\ttfamily \label{class_cpf_acfb9ede14cc18409782e3e63e0cd82c5} 
+void Cpf\+::\+Set (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{novo\+\_\+valor}{}\end{DoxyParamCaption})}
+
+
+
+Define um novo CPF. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em novo\+\_\+valor} & Novo CPF no formato XXX.\+XXX.\+XXX-\/XX. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & se o formato estiver incorreto. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+dominios/\mbox{\hyperlink{dominios_8hpp}{dominios.\+hpp}}\item 
+dominios/dominios.\+cpp\end{DoxyCompactItemize}

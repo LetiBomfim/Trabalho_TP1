@@ -1,0 +1,27 @@
+var annotated_dup =
+[
+    [ "Carteira", "class_carteira.html", null ],
+    [ "CarteiraTeste", "class_carteira_teste.html", null ],
+    [ "Codigo", "class_codigo.html", "class_codigo" ],
+    [ "Codigo_de_Negociacao", "class_codigo__de___negociacao.html", "class_codigo__de___negociacao" ],
+    [ "Codigo_de_NegociacaoTeste", "class_codigo__de___negociacao_teste.html", null ],
+    [ "CodigoTeste", "class_codigo_teste.html", null ],
+    [ "Conta", "class_conta.html", null ],
+    [ "ContaTeste", "class_conta_teste.html", null ],
+    [ "Cpf", "class_cpf.html", "class_cpf" ],
+    [ "CpfTeste", "class_cpf_teste.html", null ],
+    [ "Data", "class_data.html", "class_data" ],
+    [ "DataTeste", "class_data_teste.html", null ],
+    [ "Dinheiro", "class_dinheiro.html", "class_dinheiro" ],
+    [ "DinheiroTeste", "class_dinheiro_teste.html", null ],
+    [ "Nome", "class_nome.html", "class_nome" ],
+    [ "NomeTeste", "class_nome_teste.html", null ],
+    [ "Ordem", "class_ordem.html", null ],
+    [ "OrdemTeste", "class_ordem_teste.html", null ],
+    [ "Perfil", "class_perfil.html", "class_perfil" ],
+    [ "PerfilTeste", "class_perfil_teste.html", null ],
+    [ "Quantidade", "class_quantidade.html", "class_quantidade" ],
+    [ "QuantidadeTeste", "class_quantidade_teste.html", null ],
+    [ "Senha", "class_senha.html", "class_senha" ],
+    [ "SenhaTeste", "class_senha_teste.html", null ]
+];

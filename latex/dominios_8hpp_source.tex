@@ -1,0 +1,121 @@
+\doxysection{dominios.\+hpp}
+\hypertarget{dominios_8hpp_source}{}\label{dominios_8hpp_source}\index{dominios/dominios.hpp@{dominios/dominios.hpp}}
+\mbox{\hyperlink{dominios_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_codigo}{Codigo}}\ \{\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ valor;\ \ }
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid(\textcolor{keywordtype}{int}\ val)\ \textcolor{keyword}{const};\ \ \textcolor{comment}{//\ Função\ de\ validação\ da\ classe}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_codigo_a8873f23e466575ca5a0741c89de4a6a8}{Get}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_codigo_aeb243aaf63229eb94ab8730d4cfeaaf3}{Set}}(\textcolor{keywordtype}{int}\ novo\_valor);}
+\DoxyCodeLine{00034\ \};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_nome}{Nome}}\ \{}
+\DoxyCodeLine{00039\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00040\ \ \ \ \ std::string\ valor;}
+\DoxyCodeLine{00041\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid(\textcolor{keyword}{const}\ std::string\&\ val)\ \textcolor{keyword}{const};\ \ \textcolor{comment}{//\ Função\ de\ validação\ da\ classe}}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_nome_a692a4c2f6167ecbd40d849aadabebd2e}{Get}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_nome_a45cf13ee5288a1b482db7f09fdb08ad6}{Set}}(\textcolor{keyword}{const}\ std::string\&\ novo\_valor);}
+\DoxyCodeLine{00062\ \};}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00066\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_codigo__de___negociacao}{Codigo\_de\_Negociacao}}\ \{}
+\DoxyCodeLine{00067\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00068\ \ \ \ \ std::string\ valor;}
+\DoxyCodeLine{00069\ }
+\DoxyCodeLine{00075\ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid(\textcolor{keyword}{const}\ std::string\&\ val)\ \textcolor{keyword}{const};\ \ \textcolor{comment}{//\ Função\ de\ validação\ da\ classe}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00077\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_codigo__de___negociacao_afdc1c214d3a7d2f58802e572aae7f015}{Get}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00089\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_codigo__de___negociacao_a90e5da6fab7e3c379072c4efca2b341c}{Set}}(\textcolor{keyword}{const}\ std::string\&\ novo\_valor);}
+\DoxyCodeLine{00090\ \};}
+\DoxyCodeLine{00091\ }
+\DoxyCodeLine{00094\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_data}{Data}}\ \{}
+\DoxyCodeLine{00095\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00096\ \ \ \ \ std::string\ valor;}
+\DoxyCodeLine{00097\ }
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid(\textcolor{keyword}{const}\ std::string\&\ val)\ \textcolor{keyword}{const};\ \ \textcolor{comment}{//\ Função\ de\ validação\ da\ classe}}
+\DoxyCodeLine{00104\ }
+\DoxyCodeLine{00105\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_data_adca876374f7f74bd800b4ed7f4e8738e}{Get}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00118\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_data_afd70a57800fc4ed2af39b3cb9780e5a2}{Set}}(\textcolor{keyword}{const}\ std::string\&\ novo\_valor);}
+\DoxyCodeLine{00119\ \};}
+\DoxyCodeLine{00120\ }
+\DoxyCodeLine{00123\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_perfil}{Perfil}}\ \{}
+\DoxyCodeLine{00124\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00125\ \ \ \ \ std::string\ valor;}
+\DoxyCodeLine{00127\ \ \ \ \ std::unordered\_set<std::string>\ perfilvalido\ =\ \{\textcolor{stringliteral}{"{}Conservador"{}},\ \textcolor{stringliteral}{"{}Moderado"{}},\ \textcolor{stringliteral}{"{}Agressivo"{}}\};}
+\DoxyCodeLine{00133\ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid(\textcolor{keyword}{const}\ std::string\&\ val)\ \textcolor{keyword}{const};\ \ \textcolor{comment}{//\ Função\ de\ validação\ da\ classe}}
+\DoxyCodeLine{00134\ }
+\DoxyCodeLine{00135\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00140\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_perfil_a4e0f3292c12531693a431a27298ec24d}{Get}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00147\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_perfil_a5cc0e141a4e032ed3e466b7657d3671e}{Set}}(\textcolor{keyword}{const}\ std::string\&\ novo\_valor);}
+\DoxyCodeLine{00148\ \};}
+\DoxyCodeLine{00149\ }
+\DoxyCodeLine{00152\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_quantidade}{Quantidade}}\ \{}
+\DoxyCodeLine{00153\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00154\ \ \ \ \ \textcolor{keywordtype}{int}\ valor;}
+\DoxyCodeLine{00155\ }
+\DoxyCodeLine{00161\ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid(\textcolor{keywordtype}{int}\ val)\ \textcolor{keyword}{const};\ \ \textcolor{comment}{//\ Função\ de\ validação\ da\ classe}}
+\DoxyCodeLine{00162\ }
+\DoxyCodeLine{00163\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_quantidade_ad6fbb4a9a8200e2acd1e4306d84b0bf1}{Get}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00169\ }
+\DoxyCodeLine{00175\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_quantidade_a4e5b9e67ce277e3f6173e7b47daf9f7c}{Set}}(\textcolor{keywordtype}{int}\ novo\_valor);}
+\DoxyCodeLine{00176\ \};}
+\DoxyCodeLine{00177\ }
+\DoxyCodeLine{00178\ }
+\DoxyCodeLine{00181\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_senha}{Senha}}\ \{}
+\DoxyCodeLine{00182\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00183\ \ \ \ \ std::string\ valor;}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00190\ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid(\textcolor{keyword}{const}\ std::string\&\ val)\ \textcolor{keyword}{const};\ \ \textcolor{comment}{//\ Função\ de\ validação\ da\ classe}}
+\DoxyCodeLine{00191\ }
+\DoxyCodeLine{00192\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_senha_a3e61e04b4e75c2f401aaecc96beeb372}{Get}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00198\ }
+\DoxyCodeLine{00204\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_senha_a8d90245435cce5a1b18bb20a42ac9717}{Set}}(\textcolor{keyword}{const}\ std::string\&\ novo\_valor);}
+\DoxyCodeLine{00205\ \};}
+\DoxyCodeLine{00206\ }
+\DoxyCodeLine{00209\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_dinheiro}{Dinheiro}}\ \{}
+\DoxyCodeLine{00210\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00211\ \ \ \ \ \textcolor{keywordtype}{double}\ valor;}
+\DoxyCodeLine{00212\ }
+\DoxyCodeLine{00218\ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid(\textcolor{keywordtype}{double}\ val)\ \textcolor{keyword}{const};\ \ \textcolor{comment}{//\ Função\ de\ validação\ da\ classe}}
+\DoxyCodeLine{00219\ }
+\DoxyCodeLine{00220\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00225\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_dinheiro_a535185e06bc185448bc7b18e8b63106d}{Get}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00226\ }
+\DoxyCodeLine{00232\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_dinheiro_a3ef056c8ff972cc2346411ea2ff0346b}{Set}}(\textcolor{keywordtype}{double}\ novo\_valor);}
+\DoxyCodeLine{00233\ \};}
+\DoxyCodeLine{00234\ }
+\DoxyCodeLine{00235\ }
+\DoxyCodeLine{00236\ }
+\DoxyCodeLine{00239\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_cpf}{Cpf}}\ \{}
+\DoxyCodeLine{00240\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00241\ \ \ \ \ std::string\ valor;}
+\DoxyCodeLine{00242\ }
+\DoxyCodeLine{00248\ \ \ \ \ \textcolor{keywordtype}{bool}\ isValid(\textcolor{keyword}{const}\ std::string\&\ val)\ \textcolor{keyword}{const};\ \ \textcolor{comment}{//\ Função\ de\ validação\ da\ classe}}
+\DoxyCodeLine{00249\ }
+\DoxyCodeLine{00250\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00255\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_cpf_afc62f2bdc8385e4f238a107936f890df}{Get}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00261\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_cpf_acfb9ede14cc18409782e3e63e0cd82c5}{Set}}(\textcolor{keyword}{const}\ std::string\&\ novo\_valor);}
+\DoxyCodeLine{00262\ \};}
+
+\end{DoxyCode}

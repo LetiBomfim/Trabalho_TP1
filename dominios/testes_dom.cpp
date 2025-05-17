@@ -12,18 +12,18 @@ void CodigoTeste::Run() {
         Codigo codigo;
         codigo.Set(12345);  
         assert(codigo.Get() == 12345);
-        std::cout << "Teste de código passou no teste" << std::endl;
+        std::cout << "Teste de codigo passou no teste" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "Teste de código falhou: " << e.what() << std::endl;
+        std::cout << "Teste de codigo falhou: " << e.what() << std::endl;
     }
 
     // Teste de caso inválido
     try {
         Codigo codigo;
         codigo.Set(123456);  
-        std::cout << "Teste de código falhou: Exceção não foi lançada." << std::endl;
+        std::cout << "Teste de codigo falhou: Exceçao nao foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "Teste de código inválido passou: " << e.what() << std::endl;
+        std::cout << "Teste de codigo invalido passou: " << e.what() << std::endl;
     }
 }
 
@@ -43,9 +43,9 @@ void NomeTeste::Run() {
     try {
         Nome nome;
         nome.Set("Fernando   Chacon");  
-        std::cout << "Teste de nome falhou: Exceção não foi lançada." << std::endl;
+        std::cout << "Teste de nome falhou: Exceçao nao foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "Teste de nome inválido passou: " << e.what() << std::endl;
+        std::cout << "Teste de nome invalido passou: " << e.what() << std::endl;
     }
 }
 
@@ -56,18 +56,18 @@ void Codigo_de_NegociacaoTeste::Run() {
         Codigo_de_Negociacao codigo_de_negociacao;
         codigo_de_negociacao.Set("A1B2C3"); 
         assert(codigo_de_negociacao.Get() == "A1B2C3");
-        std::cout << "Teste do código de negociação passou" << std::endl;
+        std::cout << "Teste do codigo de negociaçao passou" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "Teste do código de negociação falhou: " << e.what() << std::endl;
+        std::cout << "Teste do codigo de negociaçao falhou: " << e.what() << std::endl;
     }
 
     // Teste de caso inválido
     try {
         Codigo_de_Negociacao codigo_de_negociacao;
         codigo_de_negociacao.Set("A1B@C3");  
-        std::cout << "Teste de código de negociação falhou: Exceção não foi lançada." << std::endl;
+        std::cout << "Teste de codigo de negociaçao falhou: Exceçao nao foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "Teste de código de negociação inválido passou: " << e.what() << std::endl;
+        std::cout << "Teste de codigo de negociaçao invalido passou: " << e.what() << std::endl;
     }
 }
 
@@ -87,9 +87,9 @@ void DataTeste::Run() {
     try {
         Data data;
         data.Set("2025/13/32");  
-        std::cout << "Teste de data falhou: Exceção não foi lançada." << std::endl;
+        std::cout << "Teste de data falhou: Exceçao nao foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "Teste de data inválido passou: " << e.what() << std::endl;
+        std::cout << "Teste de data invalido passou: " << e.what() << std::endl;
     }
 }
 
@@ -109,9 +109,9 @@ void PerfilTeste::Run() {
     try {
         Perfil perfil;
         perfil.Set("Extreme");  
-        std::cout << "Teste de perfil falhou: Exceção não foi lançada." << std::endl;
+        std::cout << "Teste de perfil falhou: Exceçao nao foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "Teste de perfil inválido passou: " << e.what() << std::endl;
+        std::cout << "Teste de perfil invalido passou: " << e.what() << std::endl;
     }
 }
 
@@ -131,9 +131,9 @@ void QuantidadeTeste::Run() {
     try {
         Quantidade quantidade;
         quantidade.Set(1000001); 
-        std::cout << "Teste de valor falhou: Exceção não foi lançada." << std::endl;
+        std::cout << "Teste de valor falhou: Exceçao nao foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "Teste de valor inválido passou: " << e.what() << std::endl;
+        std::cout << "Teste de valor invalido passou: " << e.what() << std::endl;
     }
 }
 
@@ -153,9 +153,9 @@ void SenhaTeste::Run() {
     try {
         Senha senha;
         senha.Set("A1bc2");  
-        std::cout << "Teste de senha falhou: Exceção não foi lançada." << std::endl;
+        std::cout << "Teste de senha falhou: Exceçao nao foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "Teste de senha inválido passou: " << e.what() << std::endl;
+        std::cout << "Teste de senha invalido passou: " << e.what() << std::endl;
     }
 }
 
@@ -175,9 +175,9 @@ void DinheiroTeste::Run() {
     try {
         Dinheiro dinheiro;
         dinheiro.Set(1000000.01);  
-        std::cout << "Teste de dinheiro falhou: Exceção não foi lançada." << std::endl;
+        std::cout << "Teste de dinheiro falhou: Exceçao nao foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "Teste de dinheiro inválido passou: " << e.what() << std::endl;
+        std::cout << "Teste de dinheiro invalido passou: " << e.what() << std::endl;
     }
 }
 
@@ -197,8 +197,8 @@ void CpfTeste::Run() {
     try {
         Cpf cpf;
         cpf.Set("123.456.78-01");  
-        std::cout << "Teste de CPF falhou: Exceção não foi lançada." << std::endl;
+        std::cout << "Teste de CPF falhou: Exceçao nao foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
-        std::cout << "Teste de CPF inválido passou: " << e.what() << std::endl;
+        std::cout << "Teste de CPF invalido passou: " << e.what() << std::endl;
     }
 }
