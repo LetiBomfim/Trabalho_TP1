@@ -22,7 +22,7 @@ void Codigo::Set(int novo_valor) {
     valor = novo_valor;
 }
 
-// Classe relativa ao nome --> Implementação por Luisa Ribeiro de Oliveira (241024197)
+// Classe relativa ao nome --> Implementação por Letícia Bomfim (241002411) 
 
 bool Nome::isValid(const std::string& val) const {
     if (val.length() > 20) return false;
@@ -56,7 +56,7 @@ void Nome::Set(const std::string& novo_valor) {
     valor = novo_valor;
 }
 
-// Classe relativa ao código de negociação --> Implementação por 
+// Classe relativa ao código de negociação --> Implementação por VINICIUS FERREIRA MARQUES DE OLIVEIRA (232012947)
 
 bool Codigo_de_Negociacao::isValid(const std::string& val) const {
     if (val.length() > 12) return false;
@@ -82,7 +82,7 @@ void Codigo_de_Negociacao::Set(const std::string& novo_valor) {
     valor = novo_valor;
 }
 
-// Classe relativa a Data --> Implementação por 
+// Classe relativa a Data --> Implementação por VINICIUS FERREIRA MARQUES DE OLIVEIRA (232012947)
 
 bool Data::isValid(const std::string& val) const {
     if (val.length() != 10 || val[4] != '/' || val[7] != '/') {
@@ -124,7 +124,7 @@ void Data::Set(const std::string& novo_valor) {
     valor = novo_valor;
 }
 
-// Classe relativa ao Perfil --> Implementação por 
+// Classe relativa ao Perfil --> Implementação por EDUARDO SILVA BARBOSA (222005439)
 
 bool Perfil::isValid(const std::string& val) const {
     return perfilvalido.find(val) != perfilvalido.end();
@@ -143,7 +143,7 @@ void Perfil::Set(const std::string& novo_valor) {
     valor = novo_valor;
 }
 
-// Classe relativa a Quantidade --> Implementação por 
+// Classe relativa a Quantidade --> Implementação por SARAH NOVAIS MAGALHÃES (232006476)
 
 bool Quantidade::isValid(int val) const {
     return val >= 1 && val <= 1000000;
@@ -162,7 +162,7 @@ void Quantidade::Set(int novo_valor) {
     valor = novo_valor;
 }
 
-// Classe relativa a Senha --> Implementação por 
+// Classe relativa a Senha --> Implementação por Luisa Ribeiro de Oliveira (241024197)
 
 bool Senha::isValid(const std::string& val) const {
     if (val.length() != 6) return false;
@@ -198,7 +198,7 @@ void Senha::Set(const std::string& novo_valor) {
     valor = novo_valor;
 }
 
-// Classe relativa a Dinheiro --> Implementação por 
+// Classe relativa a Dinheiro --> Implementação por Luisa Ribeiro de Oliveira (241024197)
 
 bool Dinheiro::isValid(double val) const {
     return val >= 0.01 && val <= 1000000.00;
@@ -217,7 +217,7 @@ void Dinheiro::Set(double novo_valor) {
     valor = novo_valor;
 }
 
-// Classe relativa a CPF --> Implementação por 
+// Classe relativa a CPF --> Implementação por EDUARDO SILVA BARBOSA (222005439) e SARAH NOVAIS MAGALHÃES (232006476)
 
 bool Cpf::isValid(const std::string& val) const {
     if (val.length() != 14) return false;
