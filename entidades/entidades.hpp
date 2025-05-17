@@ -1,13 +1,20 @@
 #include "../dominios/dominios.hpp"
 
+/// @brief Representa uma conta de usuario contendo CPF, nome e senha.
+/// 
+/// Esta classe e usada para armazenar informacoes pessoais de um usuario
+/// que acessa o sistema. Cada conta possui um CPF unico, um nome de identificacao
+/// e uma senha de acesso.
 class Conta {
 private:
-    Cpf cpf;
-    Nome nome;
-    Senha senha;
+    Cpf cpf; ///< Objeto que representa o CPF do usuario.
+    Nome nome; ///< Objeto que representa o CPF do usuario.
+    Senha senha; ///< Objeto que representa a senha do usuario.
 
 public:
     // Definição dos métodos Get
+        /// @brief Retorna uma referencia ao CPF do usuario.
+    /// @return Referencia ao objeto Cpf.
     Cpf& GetCpf() {
         return cpf;
     }
@@ -33,6 +40,7 @@ public:
         senha = nova_senha;
     }
 };
+
 
 class Carteira {
 private:

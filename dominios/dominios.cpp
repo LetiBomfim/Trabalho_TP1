@@ -22,7 +22,7 @@ void Codigo::Set(int novo_valor) {
     valor = novo_valor;
 }
 
-// Classe relativa ao nome --> Implementação por 
+// Classe relativa ao nome --> Implementação por Luisa Ribeiro de Oliveira (241024197)
 
 bool Nome::isValid(const std::string& val) const {
     if (val.length() > 20) return false;
