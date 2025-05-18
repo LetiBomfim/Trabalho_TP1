@@ -5,7 +5,7 @@
 #include <string>
 #include <array>
 
-// Classe relativa ao código --> Implementação por Letícia Bomfim (241002411) 
+// Classe relativa ao código --> Implementação por Letícia Gonçalves Bomfim (241002411) 
 
 bool Codigo::isValid(int val) const {
     return val >= -99999 && val <= 99999;
@@ -22,7 +22,7 @@ void Codigo::Set(int novo_valor) {
     valor = novo_valor;
 }
 
-// Classe relativa ao nome --> Implementação por Letícia Bomfim (241002411) 
+// Classe relativa ao nome --> Implementação por Letícia Gonçalves Bomfim (241002411) 
 
 bool Nome::isValid(const std::string& val) const {
     if (val.length() > 20) return false;
