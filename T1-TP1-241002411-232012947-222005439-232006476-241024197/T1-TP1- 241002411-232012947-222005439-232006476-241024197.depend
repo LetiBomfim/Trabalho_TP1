@@ -1,0 +1,36 @@
+# depslib dependency file v1.0
+1747586062 source:/home/rafa/tudo/codes/projetos/Trabalho_TP1/dominios/dominios.cpp
+	"dominios.hpp"
+	<cctype>
+	<unordered_set>
+	<stdexcept>
+	<string>
+	<array>
+
+1747586062 /home/rafa/tudo/codes/projetos/Trabalho_TP1/dominios/dominios.hpp
+	<unordered_set>
+	<string>
+
+1747586062 source:/home/rafa/tudo/codes/projetos/Trabalho_TP1/dominios/testes_dom.cpp
+	"testes_dom.hpp"
+	"dominios.hpp"
+	<iostream>
+	<stdexcept>
+	<cassert>
+
+1747586062 /home/rafa/tudo/codes/projetos/Trabalho_TP1/dominios/testes_dom.hpp
+
+1747586062 source:/home/rafa/tudo/codes/projetos/Trabalho_TP1/entidades/teste_ent.cpp
+	"teste_ent.hpp"
+	"entidades.hpp"
+	<iostream>
+
+1747586062 /home/rafa/tudo/codes/projetos/Trabalho_TP1/entidades/teste_ent.hpp
+
+1747586062 /home/rafa/tudo/codes/projetos/Trabalho_TP1/entidades/entidades.hpp
+	"../dominios/dominios.hpp"
+
+1747586062 source:/home/rafa/tudo/codes/projetos/Trabalho_TP1/main.cpp
+	"dominios/testes_dom.hpp"
+	"entidades/teste_ent.hpp"
+

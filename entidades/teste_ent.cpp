@@ -24,7 +24,7 @@ void ContaTeste::TestValidAccount() {
         senha.Set("A1b#c2");
         conta.SetSenha(senha);
 
-        std::cout << "Teste de Conta passou - Valido" << std::endl;
+        std::cout << "Teste de Conta válida passou - Valido" << std::endl;
     } catch (const std::exception& e) {
         std::cout << "Ocorreu erro ao definir Conta: " << e.what() << std::endl;
     }
@@ -43,12 +43,12 @@ void ContaTeste::TestInvalidAccount() {
         conta.SetNome(nome);
 
         Senha senha;
-        senha.Set("123456");  
+        senha.Set("123456");
         conta.SetSenha(senha);
 
-        std::cout << "Teste de Carteira falhou - Invalido" << std::endl;
+        std::cout << "Teste de Conta falhou - Invalido" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "Ocorreu erro ao definir Conta: " << e.what() << std::endl;
+        std::cout << "Teste de Conta inválida passou: Ocorreu erro ao definir Conta: " << e.what() << std::endl;
     }
 }
 
@@ -74,7 +74,7 @@ void CarteiraTeste::TestValidWallet() {
         perfil.Set("Moderado");
         carteira.SetPerfil(perfil);
 
-        std::cout << "Teste de Carteira passou - Valido" << std::endl;
+        std::cout << "Teste de Carteira válida passou - Valido" << std::endl;
     } catch (const std::exception& e) {
         std::cout << "Ocorreu erro ao definir Carteira: " << e.what() << std::endl;
     }
@@ -93,12 +93,12 @@ void CarteiraTeste::TestInvalidWallet() {
         carteira.SetNome(nome);
 
         Perfil perfil;
-        perfil.Set("perfil_invalido");  
+        perfil.Set("perfil_invalido");
         carteira.SetPerfil(perfil);
 
         std::cout << "Teste de Carteira falhou - Invalido" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "Ocorreu erro ao definir Carteira: " << e.what() << std::endl;
+        std::cout << "Teste de carteira inválida passou: Ocorreu erro ao definir Carteira: " << e.what() << std::endl;
     }
 }
 
@@ -132,7 +132,7 @@ void OrdemTeste::TestValidCommand() {
         codigo.Set(12345);
         ordem.SetCodigo(codigo);
 
-        std::cout << "Teste de Ordem passou - Valido" << std::endl;
+        std::cout << "Teste de Ordem válida passou - Valido" << std::endl;
     } catch (const std::exception& e) {
         std::cout << "Ocorreu erro ao definir Ordem: " << e.what() << std::endl;
     }
@@ -155,7 +155,7 @@ void OrdemTeste::TestInvalidCommand() {
         ordem.SetQuantidade(quantidade);
 
         Data data;
-        data.Set("2025/13/32");  
+        data.Set("2025/13/32");
         ordem.SetData(data);
 
         Codigo codigo;
@@ -164,6 +164,6 @@ void OrdemTeste::TestInvalidCommand() {
 
         std::cout << "Teste de Ordem falhou - Invalido" << std::endl;
     } catch (const std::exception& e) {
-        std::cout << "Ocorreu erro ao definir Ordem: " << e.what() << std::endl;
+        std::cout << "Teste de ordem inválida passou: Ocorreu erro ao definir Ordem: " << e.what() << std::endl;
     }
 }
