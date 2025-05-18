@@ -1,11 +1,13 @@
+#include <cstdio>
 #include "dominios.hpp"
 #include <cctype>
 #include <unordered_set>
 #include <stdexcept>
 #include <string>
 #include <array>
+#include <iostream>
 
-// Classe relativa ao código --> Implementação por Letícia Gonçalves Bomfim (241002411) 
+// Classe relativa ao código --> Implementação por Letícia Gonçalves Bomfim (241002411)
 
 bool Codigo::isValid(int val) const {
     return val >= -99999 && val <= 99999;
@@ -22,7 +24,7 @@ void Codigo::Set(int novo_valor) {
     valor = novo_valor;
 }
 
-// Classe relativa ao nome --> Implementação por Letícia Gonçalves Bomfim (241002411) 
+// Classe relativa ao nome --> Implementação por Letícia Gonçalves Bomfim (241002411)
 
 bool Nome::isValid(const std::string& val) const {
     if (val.length() > 20) return false;
@@ -91,9 +93,12 @@ bool Data::isValid(const std::string& val) const {
 
     int ano, mes, dia;
     try {
-        ano = std::stoi(val.substr(0, 4));
-        mes = std::stoi(val.substr(5, 2));
-        dia = std::stoi(val.substr(8, 2));
+        std::string sano = val.substr(0, 4);
+        std::string smes = val.substr(5, 2);
+        std::string sdia = val.substr(8, 2);
+        sscanf(sano.c_str(), "%d", &ano);
+        sscanf(smes.c_str(), "%d", &mes);
+        sscanf(sdia.c_str(), "%d", &dia);
     } catch (...) {
         return false;
     }

@@ -34,3 +34,40 @@
 	"dominios/testes_dom.hpp"
 	"entidades/teste_ent.hpp"
 
+1747589926 source:c:\unb\trabalho_tp1\dominios\dominios.cpp
+	<cstdio>
+	"dominios.hpp"
+	<cctype>
+	<unordered_set>
+	<stdexcept>
+	<string>
+	<array>
+	<iostream>
+
+1747447601 c:\unb\trabalho_tp1\dominios\dominios.hpp
+	<unordered_set>
+	<string>
+
+1747447601 source:c:\unb\trabalho_tp1\dominios\testes_dom.cpp
+	"testes_dom.hpp"
+	"dominios.hpp"
+	<iostream>
+	<stdexcept>
+	<cassert>
+
+1747337176 c:\unb\trabalho_tp1\dominios\testes_dom.hpp
+
+1747588237 source:c:\unb\trabalho_tp1\entidades\teste_ent.cpp
+	"teste_ent.hpp"
+	"entidades.hpp"
+	<iostream>
+
+1747309318 c:\unb\trabalho_tp1\entidades\teste_ent.hpp
+
+1747494414 c:\unb\trabalho_tp1\entidades\entidades.hpp
+	"../dominios/dominios.hpp"
+
+1747336903 source:c:\unb\trabalho_tp1\main.cpp
+	"dominios/testes_dom.hpp"
+	"entidades/teste_ent.hpp"
+
