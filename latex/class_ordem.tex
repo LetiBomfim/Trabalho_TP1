@@ -1,0 +1,193 @@
+\doxysection{Ordem Class Reference}
+\hypertarget{class_ordem}{}\label{class_ordem}\index{Ordem@{Ordem}}
+
+
+Entidade que representa uma transacao financeira.  
+
+
+
+
+{\ttfamily \#include $<$entidades.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_codigo__de___negociacao}{Codigo\+\_\+de\+\_\+\+Negociacao}} \& \mbox{\hyperlink{class_ordem_adb56ce047759bc001d4665944e20a909}{Get\+Codigo\+De\+Negociacao}} ()
+\begin{DoxyCompactList}\small\item\em Obtem o codigo de negociacao. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_dinheiro}{Dinheiro}} \& \mbox{\hyperlink{class_ordem_ac6c93a74d439f73cfa7679ad7f004552}{Get\+Dinheiro}} ()
+\begin{DoxyCompactList}\small\item\em Obtem o valor financeiro. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_quantidade}{Quantidade}} \& \mbox{\hyperlink{class_ordem_a7cbad277f8679fea443a743fdd145a88}{Get\+Quantidade}} ()
+\begin{DoxyCompactList}\small\item\em Obtem a quantidade de ativos. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_data}{Data}} \& \mbox{\hyperlink{class_ordem_ab0b63babc1b4a94c732c4c5cf030d45f}{Get\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Obtem a data da ordem. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_codigo}{Codigo}} \& \mbox{\hyperlink{class_ordem_aec98f534483c87b3d4f428f4b79bbebc}{Get\+Codigo}} ()
+\begin{DoxyCompactList}\small\item\em Obtem o codigo da carteira. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ordem_a5a989d3dec24c6f1b7fedda58a5a8dfa}{Set\+Codigo\+De\+Negociacao}} (const \mbox{\hyperlink{class_codigo__de___negociacao}{Codigo\+\_\+de\+\_\+\+Negociacao}} \&novo\+\_\+codigo\+\_\+de\+\_\+negociacao)
+\begin{DoxyCompactList}\small\item\em Define o codigo de negociacao. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ordem_a7564c84eecadca686a261e22387f905b}{Set\+Dinheiro}} (const \mbox{\hyperlink{class_dinheiro}{Dinheiro}} \&novo\+\_\+dinheiro)
+\begin{DoxyCompactList}\small\item\em Define o valor financeiro. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ordem_ad4f1b5a3bebea24c58f3bcef942294fd}{Set\+Quantidade}} (const \mbox{\hyperlink{class_quantidade}{Quantidade}} \&nova\+\_\+quantidade)
+\begin{DoxyCompactList}\small\item\em Define a quantidade. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ordem_afc7c8c792a1a8ab5edcc6e61e9e8bf9e}{Set\+Data}} (const \mbox{\hyperlink{class_data}{Data}} \&nova\+\_\+data)
+\begin{DoxyCompactList}\small\item\em Define a data da ordem. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_ordem_aa84e7f81a2892fa17211d12fe237849b}{Set\+Codigo}} (const \mbox{\hyperlink{class_codigo}{Codigo}} \&novo\+\_\+codigo)
+\begin{DoxyCompactList}\small\item\em Define a carteira associada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Entidade que representa uma transacao financeira. 
+
+Contem todos os dados necessarios para\+:
+\begin{DoxyItemize}
+\item Identificacao do ativo (codigo de negociacao);
+\item Valor e quantidade da operacao;
+\item \doxylink{class_data}{Data} da transacao;
+\item Vinculo com a carteira; 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_ordem_aec98f534483c87b3d4f428f4b79bbebc}\index{Ordem@{Ordem}!GetCodigo@{GetCodigo}}
+\index{GetCodigo@{GetCodigo}!Ordem@{Ordem}}
+\doxysubsubsection{\texorpdfstring{GetCodigo()}{GetCodigo()}}
+{\footnotesize\ttfamily \label{class_ordem_aec98f534483c87b3d4f428f4b79bbebc} 
+\mbox{\hyperlink{class_codigo}{Codigo}} \& Ordem\+::\+Get\+Codigo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtem o codigo da carteira. 
+
+\begin{DoxyReturn}{Returns}
+Referencia para o objeto \doxylink{class_codigo}{Codigo}. 
+\end{DoxyReturn}
+\Hypertarget{class_ordem_adb56ce047759bc001d4665944e20a909}\index{Ordem@{Ordem}!GetCodigoDeNegociacao@{GetCodigoDeNegociacao}}
+\index{GetCodigoDeNegociacao@{GetCodigoDeNegociacao}!Ordem@{Ordem}}
+\doxysubsubsection{\texorpdfstring{GetCodigoDeNegociacao()}{GetCodigoDeNegociacao()}}
+{\footnotesize\ttfamily \label{class_ordem_adb56ce047759bc001d4665944e20a909} 
+\mbox{\hyperlink{class_codigo__de___negociacao}{Codigo\+\_\+de\+\_\+\+Negociacao}} \& Ordem\+::\+Get\+Codigo\+De\+Negociacao (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtem o codigo de negociacao. 
+
+\begin{DoxyReturn}{Returns}
+Referencia para o objeto \doxylink{class_codigo__de___negociacao}{Codigo\+\_\+de\+\_\+\+Negociacao}. 
+\end{DoxyReturn}
+\Hypertarget{class_ordem_ab0b63babc1b4a94c732c4c5cf030d45f}\index{Ordem@{Ordem}!GetData@{GetData}}
+\index{GetData@{GetData}!Ordem@{Ordem}}
+\doxysubsubsection{\texorpdfstring{GetData()}{GetData()}}
+{\footnotesize\ttfamily \label{class_ordem_ab0b63babc1b4a94c732c4c5cf030d45f} 
+\mbox{\hyperlink{class_data}{Data}} \& Ordem\+::\+Get\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtem a data da ordem. 
+
+\begin{DoxyReturn}{Returns}
+Referencia para o objeto \doxylink{class_data}{Data}. 
+\end{DoxyReturn}
+\Hypertarget{class_ordem_ac6c93a74d439f73cfa7679ad7f004552}\index{Ordem@{Ordem}!GetDinheiro@{GetDinheiro}}
+\index{GetDinheiro@{GetDinheiro}!Ordem@{Ordem}}
+\doxysubsubsection{\texorpdfstring{GetDinheiro()}{GetDinheiro()}}
+{\footnotesize\ttfamily \label{class_ordem_ac6c93a74d439f73cfa7679ad7f004552} 
+\mbox{\hyperlink{class_dinheiro}{Dinheiro}} \& Ordem\+::\+Get\+Dinheiro (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtem o valor financeiro. 
+
+\begin{DoxyReturn}{Returns}
+Referencia para o objeto \doxylink{class_dinheiro}{Dinheiro}. 
+\end{DoxyReturn}
+\Hypertarget{class_ordem_a7cbad277f8679fea443a743fdd145a88}\index{Ordem@{Ordem}!GetQuantidade@{GetQuantidade}}
+\index{GetQuantidade@{GetQuantidade}!Ordem@{Ordem}}
+\doxysubsubsection{\texorpdfstring{GetQuantidade()}{GetQuantidade()}}
+{\footnotesize\ttfamily \label{class_ordem_a7cbad277f8679fea443a743fdd145a88} 
+\mbox{\hyperlink{class_quantidade}{Quantidade}} \& Ordem\+::\+Get\+Quantidade (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtem a quantidade de ativos. 
+
+\begin{DoxyReturn}{Returns}
+Referencia para o objeto \doxylink{class_quantidade}{Quantidade}. 
+\end{DoxyReturn}
+\Hypertarget{class_ordem_aa84e7f81a2892fa17211d12fe237849b}\index{Ordem@{Ordem}!SetCodigo@{SetCodigo}}
+\index{SetCodigo@{SetCodigo}!Ordem@{Ordem}}
+\doxysubsubsection{\texorpdfstring{SetCodigo()}{SetCodigo()}}
+{\footnotesize\ttfamily \label{class_ordem_aa84e7f81a2892fa17211d12fe237849b} 
+void Ordem\+::\+Set\+Codigo (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_codigo}{Codigo}} \&}]{novo\+\_\+codigo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define a carteira associada. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em novo\+\_\+codigo} & Objeto validado. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ordem_a5a989d3dec24c6f1b7fedda58a5a8dfa}\index{Ordem@{Ordem}!SetCodigoDeNegociacao@{SetCodigoDeNegociacao}}
+\index{SetCodigoDeNegociacao@{SetCodigoDeNegociacao}!Ordem@{Ordem}}
+\doxysubsubsection{\texorpdfstring{SetCodigoDeNegociacao()}{SetCodigoDeNegociacao()}}
+{\footnotesize\ttfamily \label{class_ordem_a5a989d3dec24c6f1b7fedda58a5a8dfa} 
+void Ordem\+::\+Set\+Codigo\+De\+Negociacao (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_codigo__de___negociacao}{Codigo\+\_\+de\+\_\+\+Negociacao}} \&}]{novo\+\_\+codigo\+\_\+de\+\_\+negociacao}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define o codigo de negociacao. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em novo\+\_\+codigo\+\_\+de\+\_\+negociacao} & Objeto validado. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ordem_afc7c8c792a1a8ab5edcc6e61e9e8bf9e}\index{Ordem@{Ordem}!SetData@{SetData}}
+\index{SetData@{SetData}!Ordem@{Ordem}}
+\doxysubsubsection{\texorpdfstring{SetData()}{SetData()}}
+{\footnotesize\ttfamily \label{class_ordem_afc7c8c792a1a8ab5edcc6e61e9e8bf9e} 
+void Ordem\+::\+Set\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_data}{Data}} \&}]{nova\+\_\+data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define a data da ordem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nova\+\_\+data} & Objeto validado. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ordem_a7564c84eecadca686a261e22387f905b}\index{Ordem@{Ordem}!SetDinheiro@{SetDinheiro}}
+\index{SetDinheiro@{SetDinheiro}!Ordem@{Ordem}}
+\doxysubsubsection{\texorpdfstring{SetDinheiro()}{SetDinheiro()}}
+{\footnotesize\ttfamily \label{class_ordem_a7564c84eecadca686a261e22387f905b} 
+void Ordem\+::\+Set\+Dinheiro (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_dinheiro}{Dinheiro}} \&}]{novo\+\_\+dinheiro}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define o valor financeiro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em novo\+\_\+dinheiro} & Objeto validado. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_ordem_ad4f1b5a3bebea24c58f3bcef942294fd}\index{Ordem@{Ordem}!SetQuantidade@{SetQuantidade}}
+\index{SetQuantidade@{SetQuantidade}!Ordem@{Ordem}}
+\doxysubsubsection{\texorpdfstring{SetQuantidade()}{SetQuantidade()}}
+{\footnotesize\ttfamily \label{class_ordem_ad4f1b5a3bebea24c58f3bcef942294fd} 
+void Ordem\+::\+Set\+Quantidade (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_quantidade}{Quantidade}} \&}]{nova\+\_\+quantidade}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define a quantidade. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nova\+\_\+quantidade} & Objeto validado \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+entidades/\mbox{\hyperlink{entidades_8hpp}{entidades.\+hpp}}\end{DoxyCompactItemize}

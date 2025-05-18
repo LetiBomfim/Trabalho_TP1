@@ -1,0 +1,63 @@
+\doxysection{Nome Class Reference}
+\hypertarget{class_nome}{}\label{class_nome}\index{Nome@{Nome}}
+
+
+Representa uma string para caracterizar o usuario com no maximo 20 caracteres.  
+
+
+
+
+{\ttfamily \#include $<$dominios.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& \mbox{\hyperlink{class_nome_a692a4c2f6167ecbd40d849aadabebd2e}{Get}} () const
+\begin{DoxyCompactList}\small\item\em Retorna o nome que esta armazenado. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_nome_a45cf13ee5288a1b482db7f09fdb08ad6}{Set}} (const std\+::string \&novo\+\_\+valor)
+\begin{DoxyCompactList}\small\item\em Define um novo valor nome. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa uma string para caracterizar o usuario com no maximo 20 caracteres. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_nome_a692a4c2f6167ecbd40d849aadabebd2e}\index{Nome@{Nome}!Get@{Get}}
+\index{Get@{Get}!Nome@{Nome}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily \label{class_nome_a692a4c2f6167ecbd40d849aadabebd2e} 
+const std\+::string \& Nome\+::\+Get (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retorna o nome que esta armazenado. 
+
+\begin{DoxyReturn}{Returns}
+Referencia constante ao nome. 
+\end{DoxyReturn}
+\Hypertarget{class_nome_a45cf13ee5288a1b482db7f09fdb08ad6}\index{Nome@{Nome}!Set@{Set}}
+\index{Set@{Set}!Nome@{Nome}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}}
+{\footnotesize\ttfamily \label{class_nome_a45cf13ee5288a1b482db7f09fdb08ad6} 
+void Nome\+::\+Set (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{novo\+\_\+valor}{}\end{DoxyParamCaption})}
+
+
+
+Define um novo valor nome. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em novo\+\_\+valor} & Novo nome. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & se tiver mais que 20 caracteres ou nao for constituido apenas por alfanumericos e espacos. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+dominios/\mbox{\hyperlink{dominios_8hpp}{dominios.\+hpp}}\item 
+dominios/dominios.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,122 @@
+\doxysection{entidades.\+hpp}
+\hypertarget{entidades_8hpp_source}{}\label{entidades_8hpp_source}\index{entidades/entidades.hpp@{entidades/entidades.hpp}}
+\mbox{\hyperlink{entidades_8hpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{dominios_8hpp}{../dominios/dominios.hpp}}"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_conta}{Conta}}\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \ \ \ \ \mbox{\hyperlink{class_cpf}{Cpf}}\ cpf;\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_nome}{Nome}}\ nome;\ }
+\DoxyCodeLine{00026\ \ \ \ \ \mbox{\hyperlink{class_senha}{Senha}}\ senha;\ }
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{comment}{//\ Definição\ dos\ metodos\ Get}}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_cpf}{Cpf}}\&\ \mbox{\hyperlink{class_conta_a4760943973b2ad9683e78f4fb427b1b3}{GetCpf}}()\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ cpf;}
+\DoxyCodeLine{00034\ \ \ \ \ \}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{class_nome}{Nome}}\&\ \mbox{\hyperlink{class_conta_a1c69d2d65e5cc3be4e9ceca33510d9e6}{GetNome}}()\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nome;}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ }
+\DoxyCodeLine{00044\ \ \ \ \ \mbox{\hyperlink{class_senha}{Senha}}\&\ \mbox{\hyperlink{class_conta_a40180d8225adddafbff615f9b08c1913}{GetSenha}}()\ \{}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ senha;}
+\DoxyCodeLine{00046\ \ \ \ \ \}}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_conta_ac3023b83e5977d87c1f7d182379d9528}{SetCpf}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_cpf}{Cpf}}\&\ newCpf)\ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ cpf\ =\ newCpf;}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_conta_aae517121203bfd60da1d3c4555a9cf38}{SetNome}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_nome}{Nome}}\&\ novo\_nome)\ \{}
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ nome\ =\ novo\_nome;}
+\DoxyCodeLine{00058\ \ \ \ \ \}}
+\DoxyCodeLine{00059\ }
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_conta_a69ad127dc5337069a3da9c5167b2b6ff}{SetSenha}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_senha}{Senha}}\&\ nova\_senha)\ \{}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ senha\ =\ nova\_senha;}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \};}
+\DoxyCodeLine{00066\ }
+\DoxyCodeLine{00076\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_carteira}{Carteira}}\ \{}
+\DoxyCodeLine{00077\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00078\ \ \ \ \ \mbox{\hyperlink{class_codigo}{Codigo}}\ codigo;\ \ }
+\DoxyCodeLine{00079\ \ \ \ \ \mbox{\hyperlink{class_nome}{Nome}}\ nome;\ \ }
+\DoxyCodeLine{00080\ \ \ \ \ \mbox{\hyperlink{class_perfil}{Perfil}}\ perfil;\ \ }
+\DoxyCodeLine{00081\ }
+\DoxyCodeLine{00082\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00087\ \ \ \ \ \mbox{\hyperlink{class_codigo}{Codigo}}\&\ \mbox{\hyperlink{class_carteira_a4f3b1916480429fba6608625696a8ec3}{GetCodigo}}()\ \{}
+\DoxyCodeLine{00088\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ codigo;}
+\DoxyCodeLine{00089\ \ \ \ \ \}}
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00095\ \ \ \ \ \mbox{\hyperlink{class_nome}{Nome}}\&\ \mbox{\hyperlink{class_carteira_aa6ed84338af372e34421f9d9c3b94222}{GetNome}}()\ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ nome;}
+\DoxyCodeLine{00097\ \ \ \ \ \}}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00103\ \ \ \ \ \mbox{\hyperlink{class_perfil}{Perfil}}\&\ \mbox{\hyperlink{class_carteira_a8fe3ef1de607dff370b798d6cf8aff63}{GetPerfil}}()\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ perfil;}
+\DoxyCodeLine{00105\ \ \ \ \ \}}
+\DoxyCodeLine{00106\ }
+\DoxyCodeLine{00109\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_carteira_ac25131391c3f02da02452a9aa483db01}{SetCodigo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_codigo}{Codigo}}\&\ novo\_codigo)\ \{}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ codigo\ =\ novo\_codigo;}
+\DoxyCodeLine{00111\ \ \ \ \ \}}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00115\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_carteira_aa03c6aee407282d7a7d986b30cfde06c}{SetNome}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_nome}{Nome}}\&\ novo\_nome)\ \{}
+\DoxyCodeLine{00116\ \ \ \ \ \ \ \ \ nome\ =\ novo\_nome;}
+\DoxyCodeLine{00117\ \ \ \ \ \}}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00121\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_carteira_a357deac74d5eaad5d2a983100a385241}{SetPerfil}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_perfil}{Perfil}}\&\ novo\_perfil)\ \{}
+\DoxyCodeLine{00122\ \ \ \ \ \ \ \ \ perfil\ =\ novo\_perfil;}
+\DoxyCodeLine{00123\ \ \ \ \ \}}
+\DoxyCodeLine{00124\ \};}
+\DoxyCodeLine{00125\ }
+\DoxyCodeLine{00136\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_ordem}{Ordem}}\ \{}
+\DoxyCodeLine{00137\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00138\ \ \ \ \ \mbox{\hyperlink{class_codigo__de___negociacao}{Codigo\_de\_Negociacao}}\ codigo\_de\_negociacao;\ \ }
+\DoxyCodeLine{00139\ \ \ \ \ \mbox{\hyperlink{class_dinheiro}{Dinheiro}}\ dinheiro;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00140\ \ \ \ \ \mbox{\hyperlink{class_quantidade}{Quantidade}}\ quantidade;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00141\ \ \ \ \ \mbox{\hyperlink{class_data}{Data}}\ data;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00142\ \ \ \ \ \mbox{\hyperlink{class_codigo}{Codigo}}\ codigo;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00143\ }
+\DoxyCodeLine{00144\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00149\ \ \ \ \ \mbox{\hyperlink{class_codigo__de___negociacao}{Codigo\_de\_Negociacao}}\&\ \mbox{\hyperlink{class_ordem_adb56ce047759bc001d4665944e20a909}{GetCodigoDeNegociacao}}()\ \{}
+\DoxyCodeLine{00150\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ codigo\_de\_negociacao;}
+\DoxyCodeLine{00151\ \ \ \ \ \}}
+\DoxyCodeLine{00152\ }
+\DoxyCodeLine{00157\ \ \ \ \ \mbox{\hyperlink{class_dinheiro}{Dinheiro}}\&\ \mbox{\hyperlink{class_ordem_ac6c93a74d439f73cfa7679ad7f004552}{GetDinheiro}}()\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ dinheiro;}
+\DoxyCodeLine{00159\ \ \ \ \ \}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00165\ \ \ \ \ \mbox{\hyperlink{class_quantidade}{Quantidade}}\&\ \mbox{\hyperlink{class_ordem_a7cbad277f8679fea443a743fdd145a88}{GetQuantidade}}()\ \{}
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ quantidade;}
+\DoxyCodeLine{00167\ \ \ \ \ \}}
+\DoxyCodeLine{00168\ }
+\DoxyCodeLine{00173\ \ \ \ \ \mbox{\hyperlink{class_data}{Data}}\&\ \mbox{\hyperlink{class_ordem_ab0b63babc1b4a94c732c4c5cf030d45f}{GetData}}()\ \{}
+\DoxyCodeLine{00174\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ data;}
+\DoxyCodeLine{00175\ \ \ \ \ \}}
+\DoxyCodeLine{00176\ }
+\DoxyCodeLine{00181\ \ \ \ \ \mbox{\hyperlink{class_codigo}{Codigo}}\&\ \mbox{\hyperlink{class_ordem_aec98f534483c87b3d4f428f4b79bbebc}{GetCodigo}}()\ \{}
+\DoxyCodeLine{00182\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ codigo;}
+\DoxyCodeLine{00183\ \ \ \ \ \}}
+\DoxyCodeLine{00184\ }
+\DoxyCodeLine{00189\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ordem_a5a989d3dec24c6f1b7fedda58a5a8dfa}{SetCodigoDeNegociacao}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_codigo__de___negociacao}{Codigo\_de\_Negociacao}}\&\ novo\_codigo\_de\_negociacao)\ \{}
+\DoxyCodeLine{00190\ \ \ \ \ \ \ \ \ codigo\_de\_negociacao\ =\ novo\_codigo\_de\_negociacao;}
+\DoxyCodeLine{00191\ \ \ \ \ \}}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00197\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ordem_a7564c84eecadca686a261e22387f905b}{SetDinheiro}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_dinheiro}{Dinheiro}}\&\ novo\_dinheiro)\ \{}
+\DoxyCodeLine{00198\ \ \ \ \ \ \ \ \ dinheiro\ =\ novo\_dinheiro;}
+\DoxyCodeLine{00199\ \ \ \ \ \}}
+\DoxyCodeLine{00200\ }
+\DoxyCodeLine{00205\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ordem_ad4f1b5a3bebea24c58f3bcef942294fd}{SetQuantidade}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_quantidade}{Quantidade}}\&\ nova\_quantidade)\ \{}
+\DoxyCodeLine{00206\ \ \ \ \ \ \ \ \ quantidade\ =\ nova\_quantidade;}
+\DoxyCodeLine{00207\ \ \ \ \ \}}
+\DoxyCodeLine{00208\ }
+\DoxyCodeLine{00213\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ordem_afc7c8c792a1a8ab5edcc6e61e9e8bf9e}{SetData}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_data}{Data}}\&\ nova\_data)\ \{}
+\DoxyCodeLine{00214\ \ \ \ \ \ \ \ \ data\ =\ nova\_data;}
+\DoxyCodeLine{00215\ \ \ \ \ \}}
+\DoxyCodeLine{00216\ }
+\DoxyCodeLine{00221\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_ordem_aa84e7f81a2892fa17211d12fe237849b}{SetCodigo}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_codigo}{Codigo}}\&\ novo\_codigo)\ \{}
+\DoxyCodeLine{00222\ \ \ \ \ \ \ \ \ codigo\ =\ novo\_codigo;}
+\DoxyCodeLine{00223\ \ \ \ \ \}}
+\DoxyCodeLine{00224\ \};}
+
+\end{DoxyCode}

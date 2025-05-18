@@ -1,0 +1,63 @@
+\doxysection{Senha Class Reference}
+\hypertarget{class_senha}{}\label{class_senha}\index{Senha@{Senha}}
+
+
+Representa um conjunto de caracteres com funcao de segurança.  
+
+
+
+
+{\ttfamily \#include $<$dominios.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string \& \mbox{\hyperlink{class_senha_a3e61e04b4e75c2f401aaecc96beeb372}{Get}} () const
+\begin{DoxyCompactList}\small\item\em Retorna a senha armazenada. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_senha_a8d90245435cce5a1b18bb20a42ac9717}{Set}} (const std\+::string \&novo\+\_\+valor)
+\begin{DoxyCompactList}\small\item\em Define uma nova senha. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa um conjunto de caracteres com funcao de segurança. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_senha_a3e61e04b4e75c2f401aaecc96beeb372}\index{Senha@{Senha}!Get@{Get}}
+\index{Get@{Get}!Senha@{Senha}}
+\doxysubsubsection{\texorpdfstring{Get()}{Get()}}
+{\footnotesize\ttfamily \label{class_senha_a3e61e04b4e75c2f401aaecc96beeb372} 
+const std\+::string \& Senha\+::\+Get (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retorna a senha armazenada. 
+
+\begin{DoxyReturn}{Returns}
+Referencia constante a senha. 
+\end{DoxyReturn}
+\Hypertarget{class_senha_a8d90245435cce5a1b18bb20a42ac9717}\index{Senha@{Senha}!Set@{Set}}
+\index{Set@{Set}!Senha@{Senha}}
+\doxysubsubsection{\texorpdfstring{Set()}{Set()}}
+{\footnotesize\ttfamily \label{class_senha_a8d90245435cce5a1b18bb20a42ac9717} 
+void Senha\+::\+Set (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{novo\+\_\+valor}{}\end{DoxyParamCaption})}
+
+
+
+Define uma nova senha. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em novo\+\_\+valor} & Nova senha. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & se nao cumprir os criterios de seguranca. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+dominios/\mbox{\hyperlink{dominios_8hpp}{dominios.\+hpp}}\item 
+dominios/dominios.\+cpp\end{DoxyCompactItemize}

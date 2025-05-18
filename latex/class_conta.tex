@@ -1,0 +1,128 @@
+\doxysection{Conta Class Reference}
+\hypertarget{class_conta}{}\label{class_conta}\index{Conta@{Conta}}
+
+
+Entidade que representa uma conta de usuario.  
+
+
+
+
+{\ttfamily \#include $<$entidades.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_cpf}{Cpf}} \& \mbox{\hyperlink{class_conta_a4760943973b2ad9683e78f4fb427b1b3}{Get\+Cpf}} ()
+\begin{DoxyCompactList}\small\item\em Retorna uma referencia ao CPF do usuario. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_nome}{Nome}} \& \mbox{\hyperlink{class_conta_a1c69d2d65e5cc3be4e9ceca33510d9e6}{Get\+Nome}} ()
+\begin{DoxyCompactList}\small\item\em Retorna uma referência ao nome do usuario. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_senha}{Senha}} \& \mbox{\hyperlink{class_conta_a40180d8225adddafbff615f9b08c1913}{Get\+Senha}} ()
+\begin{DoxyCompactList}\small\item\em Retorna uma referencia a senha do usuario. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_conta_ac3023b83e5977d87c1f7d182379d9528}{Set\+Cpf}} (const \mbox{\hyperlink{class_cpf}{Cpf}} \&new\+Cpf)
+\begin{DoxyCompactList}\small\item\em Define um novo CPF para o usuario. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_conta_aae517121203bfd60da1d3c4555a9cf38}{Set\+Nome}} (const \mbox{\hyperlink{class_nome}{Nome}} \&novo\+\_\+nome)
+\begin{DoxyCompactList}\small\item\em Define um novo nome para o usuario. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_conta_a69ad127dc5337069a3da9c5167b2b6ff}{Set\+Senha}} (const \mbox{\hyperlink{class_senha}{Senha}} \&nova\+\_\+senha)
+\begin{DoxyCompactList}\small\item\em Define uma nova senha para o usuario. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Entidade que representa uma conta de usuario. 
+
+Armazena e gerencia as informacoes pessoais de um usuario\+:
+\begin{DoxyItemize}
+\item CPF (identificador unico);
+\item \doxylink{class_nome}{Nome} (identificacao);
+\item \doxylink{class_senha}{Senha} (acesso seguro); 
+\end{DoxyItemize}
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_conta_a4760943973b2ad9683e78f4fb427b1b3}\index{Conta@{Conta}!GetCpf@{GetCpf}}
+\index{GetCpf@{GetCpf}!Conta@{Conta}}
+\doxysubsubsection{\texorpdfstring{GetCpf()}{GetCpf()}}
+{\footnotesize\ttfamily \label{class_conta_a4760943973b2ad9683e78f4fb427b1b3} 
+\mbox{\hyperlink{class_cpf}{Cpf}} \& Conta\+::\+Get\+Cpf (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna uma referencia ao CPF do usuario. 
+
+\begin{DoxyReturn}{Returns}
+Referencia ao objeto \doxylink{class_cpf}{Cpf}. 
+\end{DoxyReturn}
+\Hypertarget{class_conta_a1c69d2d65e5cc3be4e9ceca33510d9e6}\index{Conta@{Conta}!GetNome@{GetNome}}
+\index{GetNome@{GetNome}!Conta@{Conta}}
+\doxysubsubsection{\texorpdfstring{GetNome()}{GetNome()}}
+{\footnotesize\ttfamily \label{class_conta_a1c69d2d65e5cc3be4e9ceca33510d9e6} 
+\mbox{\hyperlink{class_nome}{Nome}} \& Conta\+::\+Get\+Nome (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna uma referência ao nome do usuario. 
+
+\begin{DoxyReturn}{Returns}
+Referência ao obejto \doxylink{class_nome}{Nome}. 
+\end{DoxyReturn}
+\Hypertarget{class_conta_a40180d8225adddafbff615f9b08c1913}\index{Conta@{Conta}!GetSenha@{GetSenha}}
+\index{GetSenha@{GetSenha}!Conta@{Conta}}
+\doxysubsubsection{\texorpdfstring{GetSenha()}{GetSenha()}}
+{\footnotesize\ttfamily \label{class_conta_a40180d8225adddafbff615f9b08c1913} 
+\mbox{\hyperlink{class_senha}{Senha}} \& Conta\+::\+Get\+Senha (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna uma referencia a senha do usuario. 
+
+\begin{DoxyReturn}{Returns}
+Referência ao objeto \doxylink{class_senha}{Senha}. 
+\end{DoxyReturn}
+\Hypertarget{class_conta_ac3023b83e5977d87c1f7d182379d9528}\index{Conta@{Conta}!SetCpf@{SetCpf}}
+\index{SetCpf@{SetCpf}!Conta@{Conta}}
+\doxysubsubsection{\texorpdfstring{SetCpf()}{SetCpf()}}
+{\footnotesize\ttfamily \label{class_conta_ac3023b83e5977d87c1f7d182379d9528} 
+void Conta\+::\+Set\+Cpf (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_cpf}{Cpf}} \&}]{new\+Cpf}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define um novo CPF para o usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em new\+Cpf} & new\+Cpf Novo objeto \doxylink{class_cpf}{Cpf}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_conta_aae517121203bfd60da1d3c4555a9cf38}\index{Conta@{Conta}!SetNome@{SetNome}}
+\index{SetNome@{SetNome}!Conta@{Conta}}
+\doxysubsubsection{\texorpdfstring{SetNome()}{SetNome()}}
+{\footnotesize\ttfamily \label{class_conta_aae517121203bfd60da1d3c4555a9cf38} 
+void Conta\+::\+Set\+Nome (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_nome}{Nome}} \&}]{novo\+\_\+nome}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define um novo nome para o usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em novo\+\_\+nome} & Novo objeto \doxylink{class_nome}{Nome}. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_conta_a69ad127dc5337069a3da9c5167b2b6ff}\index{Conta@{Conta}!SetSenha@{SetSenha}}
+\index{SetSenha@{SetSenha}!Conta@{Conta}}
+\doxysubsubsection{\texorpdfstring{SetSenha()}{SetSenha()}}
+{\footnotesize\ttfamily \label{class_conta_a69ad127dc5337069a3da9c5167b2b6ff} 
+void Conta\+::\+Set\+Senha (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_senha}{Senha}} \&}]{nova\+\_\+senha}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Define uma nova senha para o usuario. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nova\+\_\+senha} & Novo objeto senha. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+entidades/\mbox{\hyperlink{entidades_8hpp}{entidades.\+hpp}}\end{DoxyCompactItemize}
