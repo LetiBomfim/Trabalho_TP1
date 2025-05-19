@@ -55,14 +55,14 @@
 	<stdexcept>
 	<cassert>
 
-1747337176 c:\unb\trabalho_tp1\dominios\testes_dom.hpp
+1747602483 c:\unb\trabalho_tp1\dominios\testes_dom.hpp
 
 1747588237 source:c:\unb\trabalho_tp1\entidades\teste_ent.cpp
 	"teste_ent.hpp"
 	"entidades.hpp"
 	<iostream>
 
-1747309318 c:\unb\trabalho_tp1\entidades\teste_ent.hpp
+1747616486 c:\unb\trabalho_tp1\entidades\teste_ent.hpp
 
 1747494414 c:\unb\trabalho_tp1\entidades\entidades.hpp
 	"../dominios/dominios.hpp"
