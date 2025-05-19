@@ -92,45 +92,70 @@ void Codigo_de_Negociacao::Set(const std::string& novo_valor) {
 }
 
 // Classe relativa a Data --> Implementação por Vinícius Ferreira Marques de Oliveira (232012947)
+bool Data::isBissexto(int val) {
+    return (val % 4 == 0 && (val % 100 != 0 || val % 400 == 0));
+}
 
 bool Data::isValid(const std::string& val) const {
-    if (val.length() != 10 || val[4] != '/' || val[7] != '/') {
+    // Verificar tamanho.
+    if (val.length() != 8) {
         return false;
+    }
+
+    // Verificar se todos os caracteres são dígitos.
+    for (char c : val) {
+        if (!isdigit(c)) {
+            return false;
+        }
     }
 
     int ano, mes, dia;
     try {
-        std::string sano = val.substr(0, 4);
-        std::string smes = val.substr(5, 2);
-        std::string sdia = val.substr(8, 2);
-        sscanf(sano.c_str(), "%d", &ano);
-        sscanf(smes.c_str(), "%d", &mes);
-        sscanf(sdia.c_str(), "%d", &dia);
-    } catch (...) {
+        // Extrair ano, mês e dia para o formato AAAAMMDD.
+        ano = std::stoi(val.substr(0, 4)); 
+        mes = std::stoi(val.substr(4, 2)); 
+        dia = std::stoi(val.substr(6, 2)); 
+    } catch (const std::out_of_range& oor) {
+        return false;
+    } catch (const std::invalid_argument& ia) {
         return false;
     }
 
-    if (ano < 1900 || ano > 2100) return false;
-    if (mes < 1 || mes > 12) return false;
-
-    constexpr std::array<int, 12> dias_do_mes = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    int max = dias_do_mes[mes - 1];
-
-    if (mes == 2 && (ano % 400 == 0 || (ano % 100 != 0 && ano % 4 == 0))) {
-        max = 29; //valor máximo de dias
+    // Validar intervalo de mês.
+    if (mes < 1 || mes > 12) {
+        return false;
     }
 
-    return dia >= 1 && dia <= max;
-}
+    // Validar intervalo de dia.
+    if (dia < 1 || dia > 31) {
+        return false;
+    }
 
-const std::string& Data::Get() const {
-    return valor;
+    // Verificar dias válidos para cada mês.
+    if ((mes == 4 || mes == 6 || mes == 9 || mes == 11) && dia > 30) {
+        return false;
+    }
+
+    // Verificar fevereiro e anos bissextos.
+    if (mes == 2) {
+        if (isBissexto(ano)) {
+            if (dia > 29) {
+                return false;
+            }
+        } else {
+            if (dia > 28) {
+                return false;
+            }
+        }
+    }
+
+    return true; 
 }
 
 void Data::Set(const std::string& novo_valor) {
     if (!isValid(novo_valor)) {
         throw std::invalid_argument(
-            "A data deve estar no formato AAAA/MM/DD com valores de data validos."
+            "A data deve estar no formato AAAAMMDD com valores de data validos."
         );
     }
     valor = novo_valor;

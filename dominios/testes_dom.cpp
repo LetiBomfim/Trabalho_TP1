@@ -76,8 +76,8 @@ void DataTeste::Run() {
     // Teste de caso válido
     try {
         Data data;
-        data.Set("2025/05/13");  
-        assert(data.Get() == "2025/05/13");
+        data.Set("20250513");  
+        assert(data.Get() == "20250513");
         std::cout << "Teste de data passou!" << std::endl;
     } catch (const std::exception& e) {
         std::cout << "Teste de data falhou: " << e.what() << std::endl;
@@ -86,7 +86,7 @@ void DataTeste::Run() {
     // Teste de caso inválido
     try {
         Data data;
-        data.Set("2025/13/32");  
+        data.Set("20251332");  
         std::cout << "Teste de data falhou: Exceçao nao foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
         std::cout << "Teste de data invalido passou: " << e.what() << std::endl;

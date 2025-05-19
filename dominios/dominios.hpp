@@ -90,17 +90,24 @@ public:
 };
 
 /// @class Data
-/// @brief Representa um marco temporal no formato AAAA/MM/DD.
+/// @brief Representa um marco temporal no formato AAAAMMDD.
 class Data {
 private:
     std::string valor; ///< Data armazenada.
 
         /**
-     * @brief Verifica se a data possui dez digitos com barras
+     * @brief Verifica se a data possui 8 digitos numéricos e se é uma data válida.
      * @param val Data a ser validada.
      * @return true caso cumpra o formato requerido e exista.
      */
     bool isValid(const std::string& val) const;  // Função de validação da classe
+
+        /**
+     * @brief Verifica se o ano eh bissexto.
+     * @param ano Ano a ser verificado.
+     * @return true se o ano for bissexto.
+     */
+    bool isBissexto(int ano) const;  // Função de validação da classe
 
 public:
     /**

@@ -125,7 +125,7 @@ void OrdemTeste::TestValidCommand() {
         ordem.SetQuantidade(quantidade);
 
         Data data;
-        data.Set("2025/05/13");
+        data.Set("20250513");
         ordem.SetData(data);
 
         Codigo codigo;
@@ -155,7 +155,7 @@ void OrdemTeste::TestInvalidCommand() {
         ordem.SetQuantidade(quantidade);
 
         Data data;
-        data.Set("2025/13/32");
+        data.Set("20251332");
         ordem.SetData(data);
 
         Codigo codigo;
