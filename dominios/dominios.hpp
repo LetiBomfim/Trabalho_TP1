@@ -8,12 +8,12 @@
 /// @brief Representa um numero presente no intervalo de -99999 a 99999.
 class Codigo { 
 private:
-    int valor;  ///< Valor armazenado do codigo.
+    string valor;  ///< Valor armazenado do codigo.
 
         /**
-     * @brief Verifica se o valor fornecido esta no intervalo de -99999 a 99999.
-     * @param val Valor do tipo inteiro a ser validado.
-     * @return true se o parametro for um inteiro maior que -99999 e menor que 99999
+     * @brief Verifica se o valor fornecido esta possui 5 dígitos exclusivamente numéricos.
+     * @param val Valor do tipo string a ser validado.
+     * @return true se o parametro for um codigo com formato valido.
      */
 
     bool isValid(int val) const;  // Função de validação da classe
@@ -77,7 +77,7 @@ private:
 public:
     /**
      * @brief Retorna o codigo de negociaçao.
-     * @return Referencia constante ao codigo de negocioacao armazenado.
+     * @return Referencia constante ao codigo de negociação armazenado.
      */
     const std::string& Get() const;
 

@@ -9,17 +9,24 @@
 
 // Classe relativa ao código --> Implementação por Letícia Gonçalves Bomfim (241002411)
 
-bool Codigo::isValid(int val) const {
-    return val >= -99999 && val <= 99999;
+bool Codigo::isValid(string val) const {
+    if (val.length() != 5) return false;
+
+    for (char c : val) {
+        if (!isdigit(c)) {
+            return false;
+        }
+    }
+    return true;
 }
 
 int Codigo::Get() const {
     return valor;
 }
 
-void Codigo::Set(int novo_valor) {
+void Codigo::Set(string novo_valor) {
     if (!isValid(novo_valor)) {
-        throw std::invalid_argument("Valor precisa ter 5 digitos ou menos");
+        throw std::invalid_argument("O Código precisa ter 5 digitos e ser constituido apenas por números.");
     }
     valor = novo_valor;
 }
@@ -58,7 +65,7 @@ void Nome::Set(const std::string& novo_valor) {
     valor = novo_valor;
 }
 
-// Classe relativa ao código de negociação --> Implementação por VINICIUS FERREIRA MARQUES DE OLIVEIRA (232012947)
+// Classe relativa ao código de negociação --> Implementação por Vinícius Ferreira Marques de Oliveira (232012947)
 
 bool Codigo_de_Negociacao::isValid(const std::string& val) const {
     if (val.length() > 12) return false;
@@ -78,13 +85,13 @@ const std::string& Codigo_de_Negociacao::Get() const {
 void Codigo_de_Negociacao::Set(const std::string& novo_valor) {
     if (!isValid(novo_valor)) {
         throw std::invalid_argument(
-            "O codigo de negociacao precisa ter até 12 caracteres e conter apenas digitos, letras e espaços em branco."
+            "O codigo de negociacao precisa ter até 12 caracteres e conter apenas digitos, letras e/ou espaços em branco."
         );
     }
     valor = novo_valor;
 }
 
-// Classe relativa a Data --> Implementação por VINICIUS FERREIRA MARQUES DE OLIVEIRA (232012947)
+// Classe relativa a Data --> Implementação por Vinícius Ferreira Marques de Oliveira (232012947)
 
 bool Data::isValid(const std::string& val) const {
     if (val.length() != 10 || val[4] != '/' || val[7] != '/') {
@@ -129,7 +136,7 @@ void Data::Set(const std::string& novo_valor) {
     valor = novo_valor;
 }
 
-// Classe relativa ao Perfil --> Implementação por EDUARDO SILVA BARBOSA (222005439)
+// Classe relativa ao Perfil --> Implementação por Eduardo Silva Barbosa (222005439)
 
 bool Perfil::isValid(const std::string& val) const {
     return perfilvalido.find(val) != perfilvalido.end();
@@ -142,13 +149,13 @@ const std::string& Perfil::Get() const {
 void Perfil::Set(const std::string& novo_valor) {
     if (!isValid(novo_valor)) {
         throw std::invalid_argument(
-            "O Perfil deve ser um dos seguintes: conservador, moderado, agressivo."
+            "O Perfil deve ser um dos seguintes: Conservador, Moderado ou Agressivo."
         );
     }
     valor = novo_valor;
 }
 
-// Classe relativa a Quantidade --> Implementação por SARAH NOVAIS MAGALHÃES (232006476)
+// Classe relativa a Quantidade --> Implementação por Sarah Novais Magalhães (232006476)
 
 bool Quantidade::isValid(int val) const {
     return val >= 1 && val <= 1000000;
@@ -161,7 +168,7 @@ int Quantidade::Get() const {
 void Quantidade::Set(int novo_valor) {
     if (!isValid(novo_valor)) {
         throw std::invalid_argument(
-            "A Quantidade deve estar entre 1 e 1.000.000."
+            "A Quantidade deve ser de 1 a 1.000.000."
         );
     }
     valor = novo_valor;
@@ -222,7 +229,7 @@ void Dinheiro::Set(double novo_valor) {
     valor = novo_valor;
 }
 
-// Classe relativa a CPF --> Implementação por EDUARDO SILVA BARBOSA (222005439) e SARAH NOVAIS MAGALHÃES (232006476)
+// Classe relativa a CPF --> Implementação por Eduardo Silva Barbosa (222005439) e Sarah Novais Magalhães (232006476)
 
 bool Cpf::isValid(const std::string& val) const {
     if (val.length() != 14) return false;

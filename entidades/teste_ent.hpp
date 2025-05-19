@@ -32,7 +32,7 @@ private:
     void TestInvalidAccount();
 };
 
-// // Declaração da Classe de Teste de Carteira
+// Declaração da Classe de Teste de Carteira
 
 /**
  * @class CarteiraTeste
