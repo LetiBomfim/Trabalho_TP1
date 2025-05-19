@@ -63,7 +63,7 @@ void CarteiraTeste::TestValidWallet() {
         Carteira carteira;
 
         Codigo codigo;
-        codigo.Set(12345);
+        codigo.Set("12345");
         carteira.SetCodigo(codigo);
 
         Nome nome;
@@ -85,7 +85,7 @@ void CarteiraTeste::TestInvalidWallet() {
         Carteira carteira;
 
         Codigo codigo;
-        codigo.Set(12345);
+        codigo.Set("12345");
         carteira.SetCodigo(codigo);
 
         Nome nome;
@@ -129,7 +129,7 @@ void OrdemTeste::TestValidCommand() {
         ordem.SetData(data);
 
         Codigo codigo;
-        codigo.Set(12345);
+        codigo.Set("12345");
         ordem.SetCodigo(codigo);
 
         std::cout << "Teste de Ordem válida passou - Valido" << std::endl;
@@ -159,7 +159,7 @@ void OrdemTeste::TestInvalidCommand() {
         ordem.SetData(data);
 
         Codigo codigo;
-        codigo.Set(12345);
+        codigo.Set("12345"); 
         ordem.SetCodigo(codigo);
 
         std::cout << "Teste de Ordem falhou - Invalido" << std::endl;

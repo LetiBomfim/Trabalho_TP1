@@ -9,7 +9,7 @@
 
 // Classe relativa ao código --> Implementação por Letícia Gonçalves Bomfim (241002411)
 
-bool Codigo::isValid(string val) const {
+bool Codigo::isValid(const std::string& val) const {
     if (val.length() != 5) return false;
 
     for (char c : val) {
@@ -20,11 +20,11 @@ bool Codigo::isValid(string val) const {
     return true;
 }
 
-int Codigo::Get() const {
+const std::string& Codigo::Get() const {
     return valor;
 }
 
-void Codigo::Set(string novo_valor) {
+void Codigo::Set(const std::string& novo_valor) {
     if (!isValid(novo_valor)) {
         throw std::invalid_argument("O Código precisa ter 5 digitos e ser constituido apenas por números.");
     }
@@ -92,7 +92,7 @@ void Codigo_de_Negociacao::Set(const std::string& novo_valor) {
 }
 
 // Classe relativa a Data --> Implementação por Vinícius Ferreira Marques de Oliveira (232012947)
-bool Data::isBissexto(int val) {
+bool Data::isBissexto(int val) const {
     return (val % 4 == 0 && (val % 100 != 0 || val % 400 == 0));
 }
 
@@ -109,16 +109,23 @@ bool Data::isValid(const std::string& val) const {
         }
     }
 
-    int ano, mes, dia;
-    try {
-        // Extrair ano, mês e dia para o formato AAAAMMDD.
-        ano = std::stoi(val.substr(0, 4)); 
-        mes = std::stoi(val.substr(4, 2)); 
-        dia = std::stoi(val.substr(6, 2)); 
-    } catch (const std::out_of_range& oor) {
-        return false;
-    } catch (const std::invalid_argument& ia) {
-        return false;
+    int ano = 0;
+    int mes = 0;
+    int dia = 0;
+
+    // Extrair ano (AAAAMMDD)
+    for (int i = 0; i < 4; ++i) {
+        ano = ano * 10 + (val[i] - '0');
+    }
+
+    // Extrair mês (AAAAMMDD)
+    for (int i = 4; i < 6; ++i) {
+        mes = mes * 10 + (val[i] - '0');
+    }
+
+    // Extrair dia (AAAAMMDD)
+    for (int i = 6; i < 8; ++i) {
+        dia = dia * 10 + (val[i] - '0');
     }
 
     // Validar intervalo de mês.
@@ -150,6 +157,10 @@ bool Data::isValid(const std::string& val) const {
     }
 
     return true; 
+}
+
+const std::string& Data::Get() const {
+    return valor;
 }
 
 void Data::Set(const std::string& novo_valor) {

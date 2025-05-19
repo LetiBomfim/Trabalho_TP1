@@ -8,29 +8,28 @@
 /// @brief Representa um numero presente no intervalo de -99999 a 99999.
 class Codigo { 
 private:
-    string valor;  ///< Valor armazenado do codigo.
+    std::string valor;  ///< Valor armazenado do codigo.
 
         /**
      * @brief Verifica se o valor fornecido esta possui 5 dígitos exclusivamente numéricos.
      * @param val Valor do tipo string a ser validado.
      * @return true se o parametro for um codigo com formato valido.
      */
-
-    bool isValid(int val) const;  // Função de validação da classe
+    bool isValid(const std::string& val) const; 
 
 public:
     /**
-     * @brief Retorna o valor armazenado atualmente.
-     * @return Valor inteiro do codigo.
+     * @brief Retorna o valor armazenado atualmente como string.
+     * @return Referencia constante a string do codigo. 
      */
-    int Get() const;
+    const std::string& Get() const; 
 
         /**
      * @brief Define um novo valor para o codigo.
-     * @param novo_valor Novo valor inteiro para definicao.
-     * @throw std::invalid_argument se o valor tiver mais que cinco digitos.
+     * @param novo_valor Novo valor string para definicao. 
+     * @throw std::invalid_argument se o valor nao for um codigo valido.
      */
-    void Set(int novo_valor);
+    void Set(const std::string& novo_valor);
 };
 
 /// @class Nome

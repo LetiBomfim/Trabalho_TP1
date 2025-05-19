@@ -10,8 +10,8 @@ void CodigoTeste::Run() {
     // Teste de caso válido
     try {
         Codigo codigo;
-        codigo.Set(12345);  
-        assert(codigo.Get() == 12345);
+        codigo.Set("12345"); 
+        assert(codigo.Get() == "12345"); 
         std::cout << "Teste de codigo passou no teste" << std::endl;
     } catch (const std::exception& e) {
         std::cout << "Teste de codigo falhou: " << e.what() << std::endl;
@@ -20,7 +20,7 @@ void CodigoTeste::Run() {
     // Teste de caso inválido
     try {
         Codigo codigo;
-        codigo.Set(123456);  
+        codigo.Set("123456");
         std::cout << "Teste de codigo falhou: Exceçao nao foi lançada." << std::endl;
     } catch (const std::invalid_argument& e) {
         std::cout << "Teste de codigo invalido passou: " << e.what() << std::endl;
