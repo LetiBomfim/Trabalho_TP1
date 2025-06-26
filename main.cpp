@@ -1,9 +1,10 @@
 #include "dominios/testes_dom.hpp"
 #include "entidades/teste_ent.hpp"
+#include "modulos/controleglobal/controleglobal.hpp"
 
 
 int main() {
-    CodigoTeste codigoTeste;
+    /*     CodigoTeste codigoTeste;
     codigoTeste.Run();
 
     NomeTeste nomeTeste;
@@ -38,7 +39,10 @@ int main() {
 
     OrdemTeste ordemTeste;
     ordemTeste.Run();
+    */
 
+    auto ctrl = ControleGlobal();
+    ctrl.Run();
 
     return 0;
 }

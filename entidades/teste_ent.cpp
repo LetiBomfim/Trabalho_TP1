@@ -159,7 +159,7 @@ void OrdemTeste::TestInvalidCommand() {
         ordem.SetData(data);
 
         Codigo codigo;
-        codigo.Set("12345"); 
+        codigo.Set("12345");
         ordem.SetCodigo(codigo);
 
         std::cout << "Teste de Ordem falhou - Invalido" << std::endl;

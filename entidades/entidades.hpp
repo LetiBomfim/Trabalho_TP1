@@ -1,8 +1,9 @@
+#pragma once
 #include "../dominios/dominios.hpp"
 /**
  * @file entidades.hpp
  * @brief Definicao das classes de entidades do sistema financeiro
- * 
+ *
  * Contem as classes que representam as entidades principais:
  * - Conta (usuario do sistema);
  * - Carteira (portfolio de investimentos);
@@ -12,12 +13,12 @@
 /**
  * @class Conta
  * @brief Entidade que representa uma conta de usuario
- * 
+ *
  * Armazena e gerencia as informacoes pessoais de um usuario:
  * - CPF (identificador unico);
  * - Nome (identificacao);
  * - Senha (acesso seguro);
- * 
+ *
  */
 class Conta {
 private:
@@ -38,7 +39,7 @@ public:
     Nome& GetNome() {
         return nome;
     }
-    
+
     /// @brief Retorna uma referencia a senha do usuario.
     /// @return Referência ao objeto Senha.
     Senha& GetSenha() {
@@ -67,7 +68,7 @@ public:
 /**
  * @class Carteira
  * @brief Entidade que representa um portfolio de investimentos;
- * 
+ *
  * Contem as informacoes de:
  * - Codigo identificador;
  * - Nome descritivo;
@@ -126,7 +127,7 @@ public:
 /**
  * @class Ordem
  * @brief Entidade que representa uma transacao financeira.
- * 
+ *
  * Contem todos os dados necessarios para:
  * - Identificacao do ativo (codigo de negociacao);
  * - Valor e quantidade da operacao;

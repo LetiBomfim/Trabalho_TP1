@@ -4,8 +4,6 @@
 #include <unordered_set>
 #include <stdexcept>
 #include <string>
-#include <array>
-#include <iostream>
 
 // Classe relativa ao código --> Implementação por Letícia Gonçalves Bomfim (241002411)
 
@@ -156,7 +154,7 @@ bool Data::isValid(const std::string& val) const {
         }
     }
 
-    return true; 
+    return true;
 }
 
 const std::string& Data::Get() const {
