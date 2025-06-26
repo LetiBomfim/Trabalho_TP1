@@ -1,5 +1,3 @@
-#include "dominios/testes_dom.hpp"
-#include "entidades/teste_ent.hpp"
 #include "modulos/controleglobal/controleglobal.hpp"
 
 

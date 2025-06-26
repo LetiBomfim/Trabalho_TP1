@@ -9,18 +9,19 @@ CtrlAprAuth::CtrlAprAuth() {
     this->servico = new MockAuthService();
 }
 
-bool CtrlAprAuth::autenticar() {
-    this->ask_cpf_e_senha();
-    return this->servico->autenticar(this->cpf, this->senha);
+bool CtrlAprAuth::autenticar(Cpf& cpf) {
+    Senha senha;
+    this->ask_cpf_e_senha(cpf, senha);
+    return this->servico->autenticar(cpf, senha);
 }
 
-void CtrlAprAuth::ask_cpf_e_senha() {
+void CtrlAprAuth::ask_cpf_e_senha(Cpf& cpf, Senha& senha) {
     while (true) {
         try {
             string cpf_str = "";
             cout << "Insira o cpf:" << endl;
             cin >> cpf_str;
-            this->cpf.Set(cpf_str);
+            cpf.Set(cpf_str);
         } catch (invalid_argument) {
             cout << "cpf inválido" << endl;
             continue;
@@ -30,7 +31,7 @@ void CtrlAprAuth::ask_cpf_e_senha() {
             string senha_str = "";
             cout << "Insira a senha:" << endl;
             cin >> senha_str;
-            this->senha.Set(senha_str);
+            senha.Set(senha_str);
             break;
         } catch(invalid_argument) {
             cout << "senha iválida" << endl;

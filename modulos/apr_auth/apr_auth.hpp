@@ -4,12 +4,10 @@
 class CtrlAprAuth: public InterApresAuth {
     private:
         InterServAuth* servico = nullptr;
-        Cpf cpf;
-        Senha senha;
 
-        void ask_cpf_e_senha();
+        void ask_cpf_e_senha(Cpf&, Senha&);
 
     public:
         CtrlAprAuth();
-        bool autenticar();
+        bool autenticar(Cpf&);
 };

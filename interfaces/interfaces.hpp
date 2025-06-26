@@ -24,12 +24,12 @@ class InterServInvest {
 
 class InterApresAuth {
     public:
-        virtual bool autenticar() = 0;
+            virtual bool autenticar(Cpf&) = 0;
 };
 
 class InterApresConta {
     public:
-        virtual void executar() = 0;
+        virtual void executar(const Cpf*) = 0;
 };
 
 class InterApresInvest {
