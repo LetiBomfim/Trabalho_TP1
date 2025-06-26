@@ -12,19 +12,24 @@ ControleGlobal* ControleGlobal::singleton = nullptr;
 
 void ControleGlobal::Run() {
     while (true) {
+        cout << "home page" << endl;
         int32_t escolha = this->ask_usuario();
 
         switch (escolha) {
             case (ControleGlobal::LOGIN):
+                cout << "escolheu login" << endl;
                 this->autenticado = this->apr_auth->autenticar(this->cpf_usuario);
                 continue;
             case (ControleGlobal::REGISTER):
+                cout << "escolheu registrar" << endl;
                 this->apr_conta->executar(nullptr);
                 continue;
             case (ControleGlobal::CONTA):
+                cout << "escolheu conta" << endl;
                 this->apr_conta->executar(&this->cpf_usuario);
                 continue;
             case (ControleGlobal::INVESTIMENTO):
+                cout << "escolheu investimento" << endl;
                 this->apr_invest->executar();
                 continue;
             default:

@@ -10,9 +10,16 @@ CtrlAprAuth::CtrlAprAuth() {
 }
 
 bool CtrlAprAuth::autenticar(Cpf& cpf) {
+    cout << "página de login selecionada" << endl;
     Senha senha;
     this->ask_cpf_e_senha(cpf, senha);
-    return this->servico->autenticar(cpf, senha);
+    if (this->servico->autenticar(cpf, senha)) {
+        cout << "autenticado" << endl;
+        return true;
+    } else {
+        cout << "credenciais inválidas";
+        return false;
+    }
 }
 
 void CtrlAprAuth::ask_cpf_e_senha(Cpf& cpf, Senha& senha) {

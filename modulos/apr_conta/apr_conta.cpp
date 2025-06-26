@@ -12,30 +12,30 @@ CtrlAprConta::CtrlAprConta() {
 
 void CtrlAprConta::executar(const Cpf* cpf) {
     int32_t escolha;
+    cout << "pagina conta" << endl;
 
     while (true) {
         if (cpf == nullptr) {
             if (this->criar_conta()) {
-                cout << "conta criada com sucesso!" << endl;
+                cout << "conta criada com sucesso" << endl;
+                return;
+            } else {
+                cout << "falha na criação de conta" << endl;
                 return;
             }
         }
 
         escolha = this->ask_usuario();
 
-        Conta conta;
         switch (escolha) {
             case CtrlAprConta::LER:
-                cout << "lendo conta:" << endl;
-                this->serv_conta->ler(conta);
+                this->ler_conta();
                 continue;
             case CtrlAprConta::ATUALIZAR:
-                cout << "editando conta:" << endl;
-                this->serv_conta->editar(conta);
+                this->atualizar_conta();
                 continue;
             case CtrlAprConta::EXCLUIR:
-                cout << "excluindo conta:" << endl;
-                this->serv_conta->excluir(*cpf);
+                this->excluir_conta();
                 continue;
             case CtrlAprConta::SAIR:
                 cout << "voltando para o menu" << endl;
@@ -65,8 +65,18 @@ int32_t CtrlAprConta::ask_usuario() {
 
 
 bool CtrlAprConta::criar_conta() {
+    cout << "criando conta" << endl;
     return true;
 }
 
-void CtrlAprConta::ler_conta() {};
-void CtrlAprConta::atualizar_conta() {};
+void CtrlAprConta::ler_conta() {
+    cout << "lendo conta" << endl;
+};
+
+void CtrlAprConta::atualizar_conta() {
+    cout << "atualizando conta" << endl;
+};
+
+void CtrlAprConta::excluir_conta() {
+    cout << "excluindo conta" << endl;
+}

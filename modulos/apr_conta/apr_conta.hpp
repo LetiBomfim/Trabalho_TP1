@@ -19,7 +19,7 @@ class CtrlAprConta: public InterApresConta {
     bool criar_conta();
     void ler_conta();
     void atualizar_conta();
-    void excluir();
+    void excluir_conta();
 
 
     public:
