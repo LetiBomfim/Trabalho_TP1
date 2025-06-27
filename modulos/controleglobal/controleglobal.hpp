@@ -25,9 +25,15 @@ class ControleGlobal {
     public:
         static ControleGlobal* singleton;
 
+        // seta a autenticação caso seja necessário
+        static void SetAuth(bool estado) {
+            ControleGlobal::singleton->autenticado = estado;
+        };
+
         // Realiza o setup do projeto
         ControleGlobal();
 
         // Ponto de entrada do sistema
         void Run();
+
 };

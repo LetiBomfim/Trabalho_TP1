@@ -20,10 +20,10 @@ class CtrlAprInvest: public InterApresInvest {
         InterServInvest* serv_invest = nullptr;
 
         int32_t ask_usuario();
-        void criar_cart();
+        void criar_cart(const Cpf&);
         void editar_cart();
         void excluir_cart();
-        void listar_cart();
+        void listar_cart(const Cpf&);
         void criar_invest();
         void editar_invest();
         void excluir_invest();
@@ -35,5 +35,5 @@ class CtrlAprInvest: public InterApresInvest {
             this->serv_invest = new MockServInvest();
         }
 
-        void executar();
+        void executar(const Cpf&);
 };

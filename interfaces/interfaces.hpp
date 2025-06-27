@@ -1,5 +1,6 @@
 #pragma once
 #include "../entidades/entidades.hpp"
+#include "../estruturas/estruturas.cpp"
 
 class InterServAuth {
     public:
@@ -16,10 +17,14 @@ class InterServConta {
 
 class InterServInvest {
     public:
-        virtual void criar() = 0;
-        virtual void editar(const Ordem& conta) = 0;
-        virtual void excluir(const Ordem& cpf) = 0;
-        virtual void listar(Ordem* ordens) = 0;
+        virtual void criar_cart(const Carteira&, const Cpf&) = 0;
+        virtual void editar_cart(const Carteira&) = 0;
+        virtual void excluir_cart(const Carteira&) = 0;
+        virtual lista<Carteira>* listar_cart(const Cpf&) = 0;
+        virtual void criar_ordem(const Carteira&, const Ordem&) = 0;
+        virtual void editar_ordem(const Ordem&) = 0;
+        virtual void excluir_ordem(const Ordem&) = 0;
+        virtual lista<Ordem>* listar_ordem(const Carteira&) = 0;
 };
 
 class InterApresAuth {
