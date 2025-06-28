@@ -1,11 +1,11 @@
-#include "../../estruturas/estruturas.cpp"
+#pragma once
+#include "../../estruturas/estruturas.hpp"
 #include "../../entidades/entidades.hpp"
 
 class Storage {
-    public:
-        static Storage* singleton;
 
     private:
+        static Storage* singleton;
         lista<Conta>* contas;
         lista<StorageCarteira>* carteiras;
         lista<Ordem>* investimentos;
@@ -25,4 +25,6 @@ class Storage {
         bool get_ordem(const Carteira&, const Ordem&);
         bool remover_ordem(const Carteira&, const Ordem&);
         bool add_ordem(const Carteira&, const Ordem&);
+
+        static Storage* get_singleton();
 };

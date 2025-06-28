@@ -17,7 +17,7 @@ class CtrlAprConta: public InterApresConta {
     Cpf cpf_usuario;
     int32_t ask_usuario();
     bool criar_conta();
-    void ler_conta();
+    void ler_conta(const Cpf& cpf);
     void atualizar_conta();
     void excluir_conta();
 

@@ -1,6 +1,6 @@
 #pragma once
 #include "../entidades/entidades.hpp"
-#include "../estruturas/estruturas.cpp"
+#include "../estruturas/estruturas.hpp"
 
 class InterServAuth {
     public:
@@ -9,7 +9,7 @@ class InterServAuth {
 
 class InterServConta {
     public:
-        virtual void criar() = 0;
+        virtual void criar(const Conta&) = 0;
         virtual void ler(Conta& conta) = 0;
         virtual void editar(const Conta& conta) = 0;
         virtual void excluir(const Cpf& cpf) = 0;
