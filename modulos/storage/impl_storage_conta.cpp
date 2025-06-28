@@ -32,7 +32,7 @@ bool Storage::add_conta(const Conta& conta) {
     return true;
 }
 
-bool Storage::remover_conta(Conta& conta) {
+bool Storage::remover_conta(const Conta& conta) {
     lista<Conta>* prev_node = nullptr;
     lista<Conta>* curr_node = this->contas;
 
