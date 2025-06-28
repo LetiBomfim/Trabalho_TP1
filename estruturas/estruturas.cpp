@@ -1,4 +1,3 @@
-// lembrar que a lista passa a ter ownership do valor alocado
 template <typename T>
 class lista {
     public:
@@ -14,9 +13,11 @@ class lista {
             delete this->next;
         }
 
-        void push(T* val) {
+        void push(const T& val) {
             if (this->next == nullptr) {
-                this->next = val;
+                this->next = new lista<T>;
+                this->next->value = val;
+                this->next->next = nullptr;
                 return;
             }
 

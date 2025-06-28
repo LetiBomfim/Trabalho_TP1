@@ -34,9 +34,17 @@ public:
         return cpf;
     }
 
+    const Cpf& GetConstCpf() const {
+        return cpf;
+    }
+
     /// @brief Retorna uma referência ao nome do usuario.
     /// @return Referência ao obejto Nome.
     Nome& GetNome() {
+        return nome;
+    }
+
+    const Nome& GetConstNome() const {
         return nome;
     }
 
@@ -45,6 +53,11 @@ public:
     Senha& GetSenha() {
         return senha;
     }
+
+    const Senha& GetConstSenha() const {
+        return senha;
+    }
+
 
     /// @brief Define um novo CPF para o usuario.
     /// @param newCpf newCpf Novo objeto Cpf.

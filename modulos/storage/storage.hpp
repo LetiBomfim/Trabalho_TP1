@@ -6,14 +6,14 @@ class Storage {
         static Storage* singleton;
 
     private:
-        lista<Conta> contas;
-        lista<StorageCarteira> carteiras;
-        lista<Ordem> investimentos;
+        lista<Conta>* contas;
+        lista<StorageCarteira>* carteiras;
+        lista<Ordem>* investimentos;
 
 
     public:
-        bool get_conta(const Cpf&);
-        bool remover_conta(const Cpf&);
+        bool get_conta(Conta&);
+        bool remover_conta(Conta&);
         bool add_conta(const Conta&);
 
         bool get_carteiras_usuario(const Cpf&);
