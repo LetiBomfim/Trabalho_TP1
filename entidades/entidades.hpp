@@ -223,3 +223,17 @@ public:
         codigo = novo_codigo;
     }
 };
+
+
+class StorageCarteira: public Carteira {
+    Cpf cpf_associado;
+
+    public:
+        Cpf& GetCpfAssociado() {
+            return this->cpf_associado;
+        };
+
+        void SetCpfAssociado(const Cpf& cpf) {
+            this->cpf_associado.Set(cpf.Get());
+        }
+};

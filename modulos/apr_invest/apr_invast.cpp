@@ -1,4 +1,5 @@
 #include "apr_invest.hpp"
+#include <cstdint>
 #include <cstdio>
 #include <ctime>
 #include <iostream>
@@ -10,7 +11,7 @@
 
 using namespace std;
 
-void CtrlAprInvest::executar(const Cpf& cpf){
+void CtrlAprInvest::executar(const Cpf& cpf) {
         int32_t escolha;
         while (true) {
             escolha = this->ask_usuario();
@@ -40,6 +41,24 @@ void CtrlAprInvest::executar(const Cpf& cpf){
             }
 
         }
+}
+
+int32_t CtrlAprInvest::ask_usuario() {
+    while (true) {
+        int32_t escolha;
+
+        try {
+            cout << "decida:\n0) listar carteiras\n1) editar carteira\n2) excluir carteira\n3) criar carterira\n4) listar investimentos\n5) criar investimentos\n6) excluir investimentos" << endl;
+            cin >> escolha;
+            if (escolha > 4) {
+                cout << "entrada inválida" << endl;
+                continue;
+            }
+            return escolha;
+        } catch (exception err) {
+            continue;
+        }
+    }
 }
 
 void CtrlAprInvest::criar_cart(const Cpf& cpf) {
@@ -238,69 +257,6 @@ void CtrlAprInvest::criar_invest() {
         this->serv_invest->criar_ordem(carteira, investimento);
     } catch (invalid_argument) {
         cout << "erro ao criar investimento\noperação cancelada\nvoltando para a pagina de investimento" << endl;
-    }
-}
-
-void CtrlAprInvest::editar_invest() {
-    Carteira carteira;
-    Codigo cod_cart;
-    Codigo_de_Negociacao cod_invest;
-    Quantidade quant;
-    Data data;
-    Ordem investimento;
-    string tmp;
-    int dtmp;
-
-    cout << "edição de investimento selecionado:" << endl;
-
-    cout << "insira o código da carteira do novo investimento" << endl;
-    try {
-        cin >> tmp;
-        cod_cart.Set(tmp);
-        carteira.SetCodigo(cod_cart);
-        investimento.SetCodigo(cod_cart);
-    } catch (invalid_argument) {
-        cout << "código inválido\noperação cancelada\nvoltando para a pagina de investimento" << endl;
-        return;
-    }
-
-
-    cout << "insira o código de negoçiação do ativo" << endl;
-    try {
-        cin >> tmp;
-        cod_invest.Set(tmp);
-        investimento.SetCodigoDeNegociacao(cod_invest);
-    } catch (invalid_argument) {
-        cout << "código inválido\noperação cancelada\nvoltando para a pagina de investimento" << endl;
-        return;
-    }
-
-
-    cout << "inisira a nova quantidade desejada" << endl;
-    try {
-        cin >> dtmp;
-        quant.Set(dtmp);
-        investimento.SetQuantidade(quant);
-    } catch (invalid_argument) {
-        cout << "valor inválido\noperação cancelada\nvoltando para a pagina de investimento" << endl;
-        return;
-    }
-
-    auto t = time(0);
-    auto date = localtime(&t);
-    int mday = date->tm_mday;
-    int month = date->tm_mon;
-    int year = date->tm_year;
-    string full_dt_str = to_string(year) + "/" + to_string(month) + "/" + to_string(mday);
-
-    data.Set(full_dt_str);
-
-    investimento.SetData(data);
-
-    try {
-        this->serv_invest->editar_ordem(investimento);
-    } catch (invalid_argument) {
-        cout << "erro ao editar investimento\noperação cancelada\nvoltando para a pagina de investimento" << endl;
     }
 }
 

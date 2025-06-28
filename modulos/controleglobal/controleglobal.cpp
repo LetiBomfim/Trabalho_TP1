@@ -5,6 +5,7 @@
 #include "../apr_auth/apr_auth.hpp"
 #include "../../interfaces/interfaces.hpp"
 #include "../apr_conta/apr_conta.hpp"
+#include "../apr_invest/apr_invest.hpp"
 
 using namespace std;
 
@@ -30,7 +31,7 @@ void ControleGlobal::Run() {
                 continue;
             case (ControleGlobal::INVESTIMENTO):
                 cout << "escolheu investimento" << endl;
-                this->apr_invest->executar();
+                this->apr_invest->executar(this->cpf_usuario);
                 continue;
             default:
                 cout << "alguma coisa está estranha" << endl;
@@ -61,9 +62,8 @@ int32_t ControleGlobal::ask_usuario() {
 }
 
 ControleGlobal::ControleGlobal() {
-    {
-        this->apr_auth = new CtrlAprAuth();
-        this->apr_conta = new CtrlAprConta();
-        ControleGlobal::singleton = this;
-    };
+    this->apr_auth = new CtrlAprAuth();
+    this->apr_conta = new CtrlAprConta();
+    this->apr_invest = new CtrlAprInvest();
+    ControleGlobal::singleton = this;
 }

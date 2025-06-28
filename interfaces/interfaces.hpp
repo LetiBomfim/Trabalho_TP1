@@ -22,7 +22,6 @@ class InterServInvest {
         virtual void excluir_cart(const Carteira&) = 0;
         virtual lista<Carteira>* listar_cart(const Cpf&) = 0;
         virtual void criar_ordem(const Carteira&, const Ordem&) = 0;
-        virtual void editar_ordem(const Ordem&) = 0;
         virtual void excluir_ordem(const Ordem&) = 0;
         virtual lista<Ordem>* listar_ordem(const Carteira&) = 0;
 };
@@ -39,5 +38,5 @@ class InterApresConta {
 
 class InterApresInvest {
     public:
-        virtual void executar() = 0;
+        virtual void executar(const Cpf&) = 0;
 };
