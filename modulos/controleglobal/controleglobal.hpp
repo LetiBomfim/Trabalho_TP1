@@ -13,6 +13,7 @@ class ControleGlobal {
 
 
     private:
+    static ControleGlobal* singleton;
         InterApresAuth* apr_auth = nullptr;
         InterApresConta* apr_conta = nullptr;
         InterApresInvest* apr_invest = nullptr;
@@ -23,12 +24,12 @@ class ControleGlobal {
         int32_t ask_usuario();
 
     public:
-        static ControleGlobal* singleton;
-
         // seta a autenticação caso seja necessário
         static void SetAuth(bool estado) {
             ControleGlobal::singleton->autenticado = estado;
         };
+
+        static ControleGlobal* get_singleton();
 
         // Realiza o setup do projeto
         ControleGlobal();

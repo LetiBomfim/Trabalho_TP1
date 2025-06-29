@@ -12,6 +12,7 @@
 using namespace std;
 
 void CtrlAprInvest::executar(const Cpf& cpf) {
+        cout << cpf.Get() << endl;
         int32_t escolha;
         while (true) {
             escolha = this->ask_usuario();
@@ -80,14 +81,14 @@ void CtrlAprInvest::criar_cart(const Cpf& cpf) {
         return;
     }
 
-    cout << "insira o perfil da carteira:\n0)conservador\n1)moderado\n2)agressivo" << endl;
+    cout << "insira o perfil da carteira:\n0) conservador\n1) moderado\n2) agressivo" << endl;
     try {
         cin >> tmp;
-        if (tmp == "1") {
+        if (tmp == "0") {
             perfil.Set("Conservador");
-        } else if (tmp == "2") {
+        } else if (tmp == "1") {
             perfil.Set("Moderado");
-        } else if (tmp == "3") {
+        } else if (tmp == "2") {
             perfil.Set("Agressivo");
         }
         carteira.SetPerfil(perfil);
@@ -98,7 +99,8 @@ void CtrlAprInvest::criar_cart(const Cpf& cpf) {
 
     try {
         this->serv_invest->criar_cart(carteira, cpf);
-    } catch (invalid_argument) {
+    } catch (invalid_argument e) {
+        cout << e.what() << endl;
         cout << "erro ao criar carteira\noperação cancelada\nvoltando para a pagina de investimento" << endl;
     }
 }

@@ -23,6 +23,20 @@ class MockServConta: public InterServConta {
             }
         };
 
-        void editar(const Conta& conta) {};
-        void excluir(const Cpf& cpf) {};
+        void editar(const Conta& conta) {
+            Storage* storage = Storage::get_singleton();
+
+            storage->remover_conta(conta);
+            if (!storage->add_conta(conta)) {
+                throw new invalid_argument("algo deu errado");
+            }
+        };
+
+        void excluir(const Cpf& cpf) {
+            Conta conta;
+            Storage* storage = Storage::get_singleton();
+            conta.SetCpf(cpf);
+
+            storage->remover_conta(conta);
+        };
 };

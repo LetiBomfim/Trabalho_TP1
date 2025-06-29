@@ -1,5 +1,5 @@
 #include "../../interfaces/interfaces.hpp"
-#include "../serv_invest/mock_serv_invest.hpp"
+#include "../serv_invest/serv_invest.hpp"
 #include <cstdint>
 
 using namespace std;
@@ -8,12 +8,11 @@ class CtrlAprInvest: public InterApresInvest {
     private:
         static const int32_t LISTAR_CARTEIRA = 0;
         static const int32_t EDITAR_CARTEIRA = 1;
-        static const int32_t CRIAR_CARTEIRA = 2;
-        static const int32_t EXCLUIR_CARTEIRA = 3;
+        static const int32_t EXCLUIR_CARTEIRA = 2;
+        static const int32_t CRIAR_CARTEIRA = 3;
         static const int32_t LISTAR_INVESTIMENTO = 4;
-        static const int32_t EDITAR_INVESTIMENTO = 5;
-        static const int32_t CRIAR_INVESTIMENTO = 6;
-        static const int32_t EXCLUIR_INVESTIMENTO = 7;
+        static const int32_t CRIAR_INVESTIMENTO = 5;
+        static const int32_t EXCLUIR_INVESTIMENTO = 6;
 
         InterServInvest* serv_invest = nullptr;
 
@@ -29,7 +28,7 @@ class CtrlAprInvest: public InterApresInvest {
     public:
 
         CtrlAprInvest() {
-            this->serv_invest = new MockServInvest();
+            this->serv_invest = new ServInvest();
         }
 
         void executar(const Cpf&);

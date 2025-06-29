@@ -22,6 +22,7 @@ class Storage {
         bool get_carteira(StorageCarteira&);
         bool remover_carteira(const StorageCarteira&);
         bool add_carteira(const StorageCarteira&);
+        bool add_carteira_unchecked(const StorageCarteira&);
 
         bool get_ordens_carteira(const Carteira&);
         bool get_ordem(const Carteira&, const Ordem&);

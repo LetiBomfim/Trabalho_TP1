@@ -102,6 +102,10 @@ public:
         return codigo;
     }
 
+    const Codigo& GetConstCodigo() const {
+        return  codigo;
+    }
+
     /**
      * @brief Obtem o nome da carteira
      * @return Referencia para o objeto Nome.
@@ -110,11 +114,19 @@ public:
         return nome;
     }
 
+    const Nome& GetConstNome() const{
+        return nome;
+    }
+
     /**
      * @brief Obtem o perfil da carteira
      * @return Referencia para o objeto Perfil.
      */
     Perfil& GetPerfil() {
+        return perfil;
+    }
+
+    const Perfil& GetConstPerfil() const {
         return perfil;
     }
 
@@ -246,7 +258,12 @@ class StorageCarteira: public Carteira {
             return this->cpf_associado;
         };
 
+        const Cpf& GetConstCpfAssociado() const {
+            return this->cpf_associado;
+        }
+
         void SetCpfAssociado(const Cpf& cpf) {
             this->cpf_associado.Set(cpf.Get());
         }
+
 };

@@ -67,3 +67,7 @@ ControleGlobal::ControleGlobal() {
     this->apr_invest = new CtrlAprInvest();
     ControleGlobal::singleton = this;
 }
+
+ControleGlobal* ControleGlobal::get_singleton() {
+    return ControleGlobal::singleton;
+}

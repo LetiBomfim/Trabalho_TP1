@@ -26,6 +26,7 @@ bool Storage::add_conta(const Conta& conta) {
     if (this->contas == nullptr) {
         this->contas = new lista<Conta>;
         this->contas->value = conta_armazenada;
+        return true;
     }
 
     this->contas->push(conta_armazenada);
