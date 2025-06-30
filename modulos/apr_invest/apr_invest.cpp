@@ -342,11 +342,11 @@ void CtrlAprInvest::listar_invest() {
     auto node = lst;
 
     while (node != nullptr) {
-        cout << "codigo:" << endl << node->value.GetCodigoDeNegociacao().Get() << endl;
-        cout << "data:" << endl << node->value.GetData().Get() << endl;
-        cout << "carteira:" << endl << node->value.GetCodigo().Get() << endl;
-        cout << "quantidade:" << endl << node->value.GetQuantidade().Get() << endl;
-        cout << "valor:" << endl << node->value.GetDinheiro().Get() << endl;
+        cout << "codigo: " << node->value.GetCodigoDeNegociacao().Get() << endl;
+        cout << "data: " << node->value.GetData().Get() << endl;
+        cout << "carteira: " << node->value.GetCodigo().Get() << endl;
+        cout << "quantidade: " << node->value.GetQuantidade().Get() << endl;
+        cout << "valor: " << node->value.GetDinheiro().Get() << endl;
         cout << endl;
         node = node->next;
     }
