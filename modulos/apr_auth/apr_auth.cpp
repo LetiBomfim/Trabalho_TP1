@@ -6,7 +6,7 @@
 using namespace std ;
 
 CtrlAprAuth::CtrlAprAuth() {
-    this->servico = new MockAuthService();
+    this->servico = new AuthService();
 }
 
 bool CtrlAprAuth::autenticar(Cpf& cpf) {

@@ -3,13 +3,18 @@
 #include "../storage/storage.hpp"
 
 
-class MockAuthService: public InterServAuth {
+class AuthService: public InterServAuth {
+    private:
+        InterStorage* storage = nullptr;
+
     public:
+        AuthService() {
+            this->storage = Storage::get_singleton();
+        }
+
         bool autenticar(const Cpf& cpf, const Senha& senha) {
-            Storage* storage;
             Conta conta;
 
-            storage = Storage::get_singleton();
             conta.SetCpf(cpf);
 
             if (!storage->get_conta(conta)) {

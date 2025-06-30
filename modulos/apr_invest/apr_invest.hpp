@@ -13,6 +13,7 @@ class CtrlAprInvest: public InterApresInvest {
         static const int32_t LISTAR_INVESTIMENTO = 4;
         static const int32_t CRIAR_INVESTIMENTO = 5;
         static const int32_t EXCLUIR_INVESTIMENTO = 6;
+        static const int32_t SAIR = 7;
 
         InterServInvest* serv_invest = nullptr;
 

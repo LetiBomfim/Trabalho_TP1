@@ -66,6 +66,7 @@ bool Storage::remover_carteira(const StorageCarteira& carteira) {
             delete curr_node;
             return true;
         }
+        prev_node = curr_node;
         curr_node = curr_node->next;
     }
 
@@ -96,20 +97,12 @@ bool Storage::add_carteira(const StorageCarteira& carteira) {
 
 // usa o código presente na carteira fornecida
 bool Storage::add_carteira_unchecked(const StorageCarteira& carteira) {
-    StorageCarteira cart_armazenada;
-    Codigo novo_codigo;
-
-    cart_armazenada.SetCpfAssociado(carteira.GetConstCpfAssociado());
-    cart_armazenada.SetCodigo(carteira.GetConstCodigo());
-    cart_armazenada.SetNome(carteira.GetConstNome());
-    cart_armazenada.SetPerfil(carteira.GetConstPerfil());
-
-    if (this->contas == nullptr) {
+    if (this->carteiras == nullptr) {
         this->carteiras = new lista<StorageCarteira>;
-        this->carteiras->value = cart_armazenada;
+        this->carteiras->value = carteira;
         return true;
     }
 
-    this->carteiras->push(cart_armazenada);
+    this->carteiras->push(carteira);
     return true;
 }

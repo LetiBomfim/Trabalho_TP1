@@ -1,9 +1,10 @@
 #pragma once
 #include "../../estruturas/estruturas.hpp"
 #include "../../entidades/entidades.hpp"
+#include "../../interfaces/interfaces.hpp"
 #include <cstdint>
 
-class Storage {
+class Storage: public InterStorage {
 
     private:
         static Storage* singleton;
@@ -24,10 +25,10 @@ class Storage {
         bool add_carteira(const StorageCarteira&);
         bool add_carteira_unchecked(const StorageCarteira&);
 
-        bool get_ordens_carteira(const Carteira&);
-        bool get_ordem(const Carteira&, const Ordem&);
-        bool remover_ordem(const Carteira&, const Ordem&);
-        bool add_ordem(const Carteira&, const Ordem&);
+        bool get_ordens_carteira(const Carteira&, lista<Ordem>**);
+        bool get_ordem(Ordem&);
+        bool remover_ordem(const Ordem&);
+        bool add_ordem(const Ordem&);
 
         static Storage* get_singleton();
 };

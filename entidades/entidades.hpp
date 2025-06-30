@@ -176,11 +176,19 @@ public:
         return codigo_de_negociacao;
     }
 
+    const Codigo_de_Negociacao& GetConstCodigoDeNegociacao() const {
+        return codigo_de_negociacao;
+    }
+
       /**
      * @brief Obtem o valor financeiro.
      * @return Referencia para o objeto Dinheiro.
      */
     Dinheiro& GetDinheiro() {
+        return dinheiro;
+    }
+
+    const Dinheiro& GetConstDinheiro() const {
         return dinheiro;
     }
 
@@ -192,6 +200,10 @@ public:
         return quantidade;
     }
 
+    const Quantidade& GetConstQuantidade() const {
+        return quantidade;
+    }
+
       /**
      * @brief Obtem a data da ordem.
      * @return Referencia para o objeto Data.
@@ -200,11 +212,19 @@ public:
         return data;
     }
 
+    const Data& GetConstData() const {
+        return data;
+    }
+
        /**
      * @brief Obtem o codigo da carteira.
      * @return Referencia para o objeto Codigo.
      */
     Codigo& GetCodigo() {
+        return codigo;
+    }
+
+    const Codigo& GetConstCodigo() const {
         return codigo;
     }
 

@@ -9,7 +9,7 @@
 using namespace std ;
 
 CtrlAprConta::CtrlAprConta() {
-    this->serv_conta = new MockServConta();
+    this->serv_conta = new ServConta();
 }
 
 void CtrlAprConta::executar(const Cpf* cpf) {
@@ -188,6 +188,6 @@ bool CtrlAprConta::excluir_conta(const Cpf& cpf) {
         cout << "ocorreu um erro ao excluir a conta" << endl;
         return false;
     }
-    cout << "conta removida com sucesso" << endl;
+    cout << "conta excluida com sucesso" << endl;
     return true;
 }
