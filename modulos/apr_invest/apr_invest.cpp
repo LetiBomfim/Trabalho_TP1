@@ -246,18 +246,22 @@ void CtrlAprInvest::criar_invest() {
         return;
     }
 
+    cout << "inisira a o dia do mes do investimento" << endl;
+    try {
+        cin >> dtmp;
+    } catch (invalid_argument) {
+        cout << "valor inválido\noperação cancelada\nvoltando para a pagina de investimento" << endl;
+        return;
+    }
+
 
     auto t = time(0);
-    auto date = localtime(&t);
-    string mday = to_string(date->tm_mday);
+    string mday = to_string(dtmp);
     mday.insert(0, 2 - mday.length(), '0');
-    string month = to_string(date->tm_mon + 1);
-    month.insert(0, 2 - month.length(), '0');
-    string year = to_string(date->tm_year + 1900) ;
-    year.insert(0, 4 - year.length(), '0');
+    string month = "01";
+    string year = "2025";
     string full_dt_str = year + month + mday;
 
-    cout << full_dt_str << endl;
     data.Set(full_dt_str);
 
     // como eu não tenho um banco de dados do qual puxar o valor, eu vou apenas colocar 10 reais para todo investimento.
@@ -268,7 +272,8 @@ void CtrlAprInvest::criar_invest() {
 
     try {
         this->serv_invest->criar_ordem(investimento);
-    } catch (invalid_argument) {
+    } catch (invalid_argument e) {
+        cout << e.what() << endl;
         cout << "erro ao criar investimento\noperação cancelada\nvoltando para a pagina de investimento" << endl;
     }
 }
@@ -284,7 +289,7 @@ void CtrlAprInvest::excluir_invest() {
 
     cout << "exclusão de investimento selecionado:" << endl;
 
-    cout << "insira o código da carteira do investimento a ser excluido" << endl;
+    cout << "insira o id do investimento a ser excluido" << endl;
     try {
         cin >> tmp;
         cod_cart.Set(tmp);
@@ -294,20 +299,8 @@ void CtrlAprInvest::excluir_invest() {
         return;
     }
 
-
-    cout << "insira o código de negoçiação do ativo" << endl;
     try {
-        cin >> tmp;
-        cod_invest.Set(tmp);
-        investimento.SetCodigoDeNegociacao(cod_invest);
-    } catch (invalid_argument) {
-        cout << "código inválido\noperação cancelada\nvoltando para a pagina de investimento" << endl;
-        return;
-    }
-
-
-    try {
-        this->serv_invest->excluir_ordem(investimento);
+        this->serv_invest->excluir_ordem(cod_cart);
     } catch (invalid_argument) {
         cout << "erro ao editar investimento\noperação cancelada\nvoltando para a pagina de investimento" << endl;
     }
@@ -330,9 +323,13 @@ void CtrlAprInvest::listar_invest() {
 
 
     cout << "listando ordens" << endl;
-    lista<Ordem>* lst = nullptr;
-
-    lst = this->serv_invest->listar_ordem(carteira);
+    lista<StorageOrdem>* lst = nullptr;
+    try {
+        lst = this->serv_invest->listar_ordem(carteira);
+    } catch (invalid_argument e) {
+        cout << e.what() << endl;
+        return;
+    }
 
     if (lst == nullptr) {
         cout << "não existem ordens a serem listadas" << endl;
@@ -342,6 +339,7 @@ void CtrlAprInvest::listar_invest() {
     auto node = lst;
 
     while (node != nullptr) {
+        cout << "id: " << node->value.GetConstId().Get() << endl;
         cout << "codigo: " << node->value.GetCodigoDeNegociacao().Get() << endl;
         cout << "data: " << node->value.GetData().Get() << endl;
         cout << "carteira: " << node->value.GetCodigo().Get() << endl;

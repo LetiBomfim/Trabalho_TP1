@@ -287,3 +287,20 @@ class StorageCarteira: public Carteira {
         }
 
 };
+
+class StorageOrdem: public Ordem {
+    Codigo id;
+
+    public:
+        const Codigo& GetConstId() const {
+            return id;
+        }
+
+        Codigo& GetId() {
+            return id;
+        }
+
+        void SetId(const Codigo& codigo) {
+            this->id = codigo;
+        }
+};

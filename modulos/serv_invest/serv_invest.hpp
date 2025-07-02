@@ -1,5 +1,6 @@
 #include "../../interfaces/interfaces.hpp"
 #include "../storage/storage.hpp"
+#include "../dados_invest/dados_invest.hpp"
 #include <stdexcept>
 
 using namespace std;
@@ -7,15 +8,27 @@ using namespace std;
 class ServInvest: public InterServInvest {
     private:
         InterStorage* storage = nullptr;
+        InterDadosHist* dados_hist = nullptr;
 
     public:
 
         ServInvest() {
             this->storage = Storage::get_singleton();
+            this->dados_hist = DadosHist::get_singleton();
         }
 
         void criar_cart(const Carteira& carteira, const Cpf& cpf) {
+            Conta conta;
+            conta.SetCpf(cpf);
+            if(!this->storage->get_conta(conta)) {
+                throw invalid_argument("o referido cpf não existe no banco de dados");
+            }
+
             StorageCarteira st_carteira;
+            if (storage->count_carteiras_usuario(cpf) >= 5) {
+                throw invalid_argument("não é possível criar mais uma carteira, o máximo é 5");
+            };
+
             st_carteira.SetCpfAssociado(cpf);
             st_carteira.SetNome(carteira.GetConstNome());
             st_carteira.SetPerfil(carteira.GetConstPerfil());
@@ -56,19 +69,41 @@ class ServInvest: public InterServInvest {
         };
 
         void criar_ordem(const Ordem& ordem) {
-            if (!storage->add_ordem(ordem)) {
-                throw new invalid_argument("alguma coisa deu errado na criação da ordem");
+            Ordem storage_ordem;
+            storage_ordem.SetCodigoDeNegociacao(ordem.GetConstCodigoDeNegociacao());
+            storage_ordem.SetCodigo(ordem.GetConstCodigo());
+            storage_ordem.SetData(ordem.GetConstData());
+            storage_ordem.SetQuantidade(ordem.GetConstQuantidade());
+
+            StorageCarteira cart;
+            cart.SetCodigo(ordem.GetConstCodigo());
+            if (!this->storage->get_carteira(cart)) {
+                throw invalid_argument("a carteira indicada pela ordem não existe");
+            }
+
+            if (!this->dados_hist->set_valor_ordem(storage_ordem)) {
+                throw invalid_argument("o valor dessa ordem nesse dia não consta nos dados históricos");
+            }
+
+            if (!storage->add_ordem(storage_ordem)) {
+                throw invalid_argument("alguma coisa deu errado na criação da ordem");
             }
         };
 
-        void excluir_ordem(const Ordem& ordem) {
-            if (!storage->remover_ordem(ordem)) {
+        void excluir_ordem(const Codigo& cod) {
+            if (!storage->remover_ordem(cod)) {
                 throw new invalid_argument("alguma coisa deu errado na remoção da ordem");
             }
         };
 
-        lista<Ordem>* listar_ordem(const Carteira& carteira) {
-            lista<Ordem>* ls = nullptr;
+        lista<StorageOrdem>* listar_ordem(const Carteira& carteira) {
+            lista<StorageOrdem>* ls = nullptr;
+
+            StorageCarteira st_carteira;
+            st_carteira.SetCodigo(carteira.GetConstCodigo());
+            if (!this->storage->get_carteira(st_carteira)) {
+                throw invalid_argument("a carteira indicada não existe");
+            }
 
             if (!storage->get_ordens_carteira(carteira, &ls)) {
                 return ls;

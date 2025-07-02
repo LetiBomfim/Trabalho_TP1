@@ -1,4 +1,5 @@
 #include "storage.hpp"
+#include <cstdint>
 #include <cstdlib>
 #include <string>
 
@@ -33,6 +34,22 @@ bool Storage::get_carteiras_usuario(const Cpf& cpf, lista<Carteira>** ls) {
 
     *ls = carts_usuario;
     return achou_alguma;
+}
+
+int32_t Storage::count_carteiras_usuario(const Cpf& cpf) {
+    auto curr_cart = this->carteiras;
+    int32_t cart_count = 0;
+
+    if (this->carteiras == nullptr) return 0;
+
+    while (curr_cart != nullptr) {
+        if (curr_cart->value.GetCpfAssociado().Get() == cpf.Get()) {
+            cart_count++;
+        }
+        curr_cart = curr_cart->next;
+    }
+
+    return cart_count;
 }
 
 bool Storage::get_carteira(StorageCarteira& carteira) {

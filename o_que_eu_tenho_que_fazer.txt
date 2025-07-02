@@ -1,0 +1,4 @@
+
+limite de cinco carteiras
+pegar dados do arquivo bovespa
+pedir apenas o dia do mês na apresentação

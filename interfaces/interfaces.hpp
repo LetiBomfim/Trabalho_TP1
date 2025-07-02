@@ -22,8 +22,8 @@ class InterServInvest {
         virtual void excluir_cart(const Carteira&) = 0;
         virtual lista<Carteira>* listar_cart(const Cpf&) = 0;
         virtual void criar_ordem(const Ordem&) = 0;
-        virtual void excluir_ordem(const Ordem&) = 0;
-        virtual lista<Ordem>* listar_ordem(const Carteira&) = 0;
+        virtual void excluir_ordem(const Codigo&) = 0;
+        virtual lista<StorageOrdem>* listar_ordem(const Carteira&) = 0;
 };
 
 class InterApresAuth {
@@ -49,6 +49,7 @@ class InterStorage {
         virtual bool add_conta(const Conta&) = 0;
 
         // funções relacionadas à carteira
+        virtual int32_t count_carteiras_usuario(const Cpf&) = 0;
         virtual bool get_carteiras_usuario(const Cpf&, lista<Carteira>**) = 0;
         virtual bool get_carteira(StorageCarteira&) = 0;
         virtual bool remover_carteira(const StorageCarteira&) = 0;
@@ -56,8 +57,14 @@ class InterStorage {
         virtual bool add_carteira_unchecked(const StorageCarteira&) = 0;
 
         // funções relacionadas à ordem
-        virtual bool get_ordens_carteira(const Carteira&, lista<Ordem>**) = 0;
-        virtual bool get_ordem(Ordem&) = 0;
-        virtual bool remover_ordem(const Ordem&) = 0;
+
+        virtual bool get_ordens_carteira(const Carteira&, lista<StorageOrdem>**) = 0;
+        virtual bool get_ordem(StorageOrdem&) = 0;
+        virtual bool remover_ordem(const Codigo&) = 0;
         virtual bool add_ordem(const Ordem&) = 0;
+};
+
+class InterDadosHist {
+    public:
+        virtual bool set_valor_ordem(Ordem&) = 0;
 };
