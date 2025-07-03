@@ -1,7 +1,8 @@
+#pragma once
 /**
  * @file testes_dom.h
  * @brief Verificacao das entidades do sistema e seu funcionamento atraves de testes unitarios
- */ 
+ */
 class CodigoTeste;
 class NomeTeste;
 class Codigo_de_NegociacaoTeste;
@@ -16,7 +17,7 @@ class CpfTeste;
 /**
  * @class CodigoTeste
  * @brief Classe de teste para validaçao da entidade Codigo.
- * 
+ *
  * Faz testes unitarios para acompanhar o funcionamento da classe Codigo.
  */
 class CodigoTeste {
@@ -31,7 +32,7 @@ public:
 /**
  * @class NomeTeste
  * @brief Classe de teste para verificacao da entidade Nome.
- * 
+ *
  * Implementa testes unitarios para validar o funcionamento da classe Nome.
  */
 class NomeTeste {
@@ -46,7 +47,7 @@ public:
 /**
  * @class Codigo_de_NegociacaoTeste
  * @brief Classe de teste para validacao da entidade Codigo de Negociacao.
- * 
+ *
  * Implementa testes unitarios para verificar o funcionamento correto da classe Codigo de Negociacao.
  */
 class Codigo_de_NegociacaoTeste {
@@ -61,7 +62,7 @@ public:
 /**
  * @class DataTeste
  * @brief Classe de teste para validar a entidade Data.
- * 
+ *
  * Implementa testes unitarios para verificar o funcionamento correto da classe Data.
  */
 class DataTeste {
@@ -76,7 +77,7 @@ public:
 /**
  * @class PerfilTeste
  * @brief Classe de teste para validacao da entidade Perfil.
- * 
+ *
  * Implementa testes unitarios para verificar o funcionamento correto da classe Perfil.
  */
 class PerfilTeste {
@@ -91,7 +92,7 @@ public:
 /**
  * @class QuantidadeTeste
  * @brief Classe de teste para validacao da entidade Quantidade.
- * 
+ *
  * Implementa testes unitarios para verificar o funcionamento correto da classe Quantidade.
  */
 class QuantidadeTeste {
@@ -106,7 +107,7 @@ public:
 /**
  * @class SenhaTeste
  * @brief Classe de teste para validacao da entidade Senha.
- * 
+ *
  * Implementa testes unitarios para verificar o funcionamento correto da classe Senha.
  */
 class SenhaTeste {
@@ -121,7 +122,7 @@ public:
 /**
  * @class DinheiroTeste
  * @brief Classe de teste para validacao da entidade Dinheiro.
- * 
+ *
  * Implementa testes unitarios para verificar o funcionamento correto da classe Dinheiro.
  */
 class DinheiroTeste {
@@ -136,7 +137,7 @@ public:
 /**
  * @class CpfTeste
  * @brief Classe de teste para validacao da entidade CPF.
- * 
+ *
  * Implementa testes unitarios para verificar o funcionamento correto da classe CPF.
  */
 class CpfTeste {

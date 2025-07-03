@@ -1,8 +1,9 @@
+#pragma once
 #include "../dominios/dominios.hpp"
 /**
  * @file entidades.hpp
  * @brief Definicao das classes de entidades do sistema financeiro
- * 
+ *
  * Contem as classes que representam as entidades principais:
  * - Conta (usuario do sistema);
  * - Carteira (portfolio de investimentos);
@@ -12,12 +13,12 @@
 /**
  * @class Conta
  * @brief Entidade que representa uma conta de usuario
- * 
+ *
  * Armazena e gerencia as informacoes pessoais de um usuario:
  * - CPF (identificador unico);
  * - Nome (identificacao);
  * - Senha (acesso seguro);
- * 
+ *
  */
 class Conta {
 private:
@@ -33,17 +34,30 @@ public:
         return cpf;
     }
 
+    const Cpf& GetConstCpf() const {
+        return cpf;
+    }
+
     /// @brief Retorna uma referência ao nome do usuario.
     /// @return Referência ao obejto Nome.
     Nome& GetNome() {
         return nome;
     }
-    
+
+    const Nome& GetConstNome() const {
+        return nome;
+    }
+
     /// @brief Retorna uma referencia a senha do usuario.
     /// @return Referência ao objeto Senha.
     Senha& GetSenha() {
         return senha;
     }
+
+    const Senha& GetConstSenha() const {
+        return senha;
+    }
+
 
     /// @brief Define um novo CPF para o usuario.
     /// @param newCpf newCpf Novo objeto Cpf.
@@ -67,7 +81,7 @@ public:
 /**
  * @class Carteira
  * @brief Entidade que representa um portfolio de investimentos;
- * 
+ *
  * Contem as informacoes de:
  * - Codigo identificador;
  * - Nome descritivo;
@@ -88,6 +102,10 @@ public:
         return codigo;
     }
 
+    const Codigo& GetConstCodigo() const {
+        return  codigo;
+    }
+
     /**
      * @brief Obtem o nome da carteira
      * @return Referencia para o objeto Nome.
@@ -96,11 +114,19 @@ public:
         return nome;
     }
 
+    const Nome& GetConstNome() const{
+        return nome;
+    }
+
     /**
      * @brief Obtem o perfil da carteira
      * @return Referencia para o objeto Perfil.
      */
     Perfil& GetPerfil() {
+        return perfil;
+    }
+
+    const Perfil& GetConstPerfil() const {
         return perfil;
     }
 
@@ -126,7 +152,7 @@ public:
 /**
  * @class Ordem
  * @brief Entidade que representa uma transacao financeira.
- * 
+ *
  * Contem todos os dados necessarios para:
  * - Identificacao do ativo (codigo de negociacao);
  * - Valor e quantidade da operacao;
@@ -150,11 +176,19 @@ public:
         return codigo_de_negociacao;
     }
 
+    const Codigo_de_Negociacao& GetConstCodigoDeNegociacao() const {
+        return codigo_de_negociacao;
+    }
+
       /**
      * @brief Obtem o valor financeiro.
      * @return Referencia para o objeto Dinheiro.
      */
     Dinheiro& GetDinheiro() {
+        return dinheiro;
+    }
+
+    const Dinheiro& GetConstDinheiro() const {
         return dinheiro;
     }
 
@@ -166,6 +200,10 @@ public:
         return quantidade;
     }
 
+    const Quantidade& GetConstQuantidade() const {
+        return quantidade;
+    }
+
       /**
      * @brief Obtem a data da ordem.
      * @return Referencia para o objeto Data.
@@ -174,11 +212,19 @@ public:
         return data;
     }
 
+    const Data& GetConstData() const {
+        return data;
+    }
+
        /**
      * @brief Obtem o codigo da carteira.
      * @return Referencia para o objeto Codigo.
      */
     Codigo& GetCodigo() {
+        return codigo;
+    }
+
+    const Codigo& GetConstCodigo() const {
         return codigo;
     }
 
@@ -221,4 +267,40 @@ public:
     void SetCodigo(const Codigo& novo_codigo) {
         codigo = novo_codigo;
     }
+};
+
+
+class StorageCarteira: public Carteira {
+    Cpf cpf_associado;
+
+    public:
+        Cpf& GetCpfAssociado() {
+            return this->cpf_associado;
+        };
+
+        const Cpf& GetConstCpfAssociado() const {
+            return this->cpf_associado;
+        }
+
+        void SetCpfAssociado(const Cpf& cpf) {
+            this->cpf_associado.Set(cpf.Get());
+        }
+
+};
+
+class StorageOrdem: public Ordem {
+    Codigo id;
+
+    public:
+        const Codigo& GetConstId() const {
+            return id;
+        }
+
+        Codigo& GetId() {
+            return id;
+        }
+
+        void SetId(const Codigo& codigo) {
+            this->id = codigo;
+        }
 };
