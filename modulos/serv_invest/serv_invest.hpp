@@ -5,6 +5,12 @@
 
 using namespace std;
 
+/**
+ * @brief Serviço de gerenciamento de investimentos.
+ *
+ * Fornece as operações de negócio para manipulação de carteiras e ordens de investimento no sistema. 
+ * Realiza validações. Também ,permite criar, editar, excluir e listar carteiras e ordens.
+ */
 class ServInvest: public InterServInvest {
     private:
         InterStorage* storage = nullptr;
@@ -12,11 +18,20 @@ class ServInvest: public InterServInvest {
 
     public:
 
+         /**
+        * @brief Construtor padrão. Inicializa os serviços de armazenamento e dados históricos.
+        */
         ServInvest() {
             this->storage = Storage::get_singleton();
             this->dados_hist = DadosHist::get_singleton();
         }
 
+    /**
+     * @brief Cria uma nova carteira para o usuário, caso o mesmo seja válido.
+     * @param carteira Objeto contendo os dados da carteira.
+     * @param cpf Identificador do usuário proprietário da carteira.
+     * @throw invalid_argument 
+     */
         void criar_cart(const Carteira& carteira, const Cpf& cpf) {
             Conta conta;
             conta.SetCpf(cpf);
@@ -35,6 +50,10 @@ class ServInvest: public InterServInvest {
             storage->add_carteira(st_carteira);
         };
 
+         /**
+        * @brief Atualiza as informações de uma carteira já existente.
+        * @param carteira Objeto contendo os dados atualizados da carteira.
+        */
         void editar_cart(const Carteira& carteira) {
             // pega a carteira
             StorageCarteira cart;
@@ -50,6 +69,11 @@ class ServInvest: public InterServInvest {
             storage->add_carteira_unchecked(cart);
         };
 
+
+        /**
+         * @brief Exclui uma carteira já existente.
+         * @param carteira Objeto identificando a carteira a ser excluída.
+         */
         void excluir_cart(const Carteira& carteira) {
             StorageCarteira st_carteira;
             st_carteira.SetCodigo(carteira.GetConstCodigo());
@@ -57,6 +81,11 @@ class ServInvest: public InterServInvest {
             storage->remover_carteira(st_carteira);
         };
 
+         /**
+        * @brief Lista todas as carteiras de um usuário.
+        * @param cpf Identificador do usuário.
+        * @return Ponteiro para uma lista de carteiras pertencentes ao usuário, ou nullptr se não houver carteiras.
+        */
         lista<Carteira>* listar_cart(const Cpf& cpf) {
             lista<Carteira>* lst = nullptr;
 
@@ -68,6 +97,11 @@ class ServInvest: public InterServInvest {
             return lst;
         };
 
+        /**
+        * @brief Cria uma nova ordem de investimento para uma carteira existente.
+        * @param ordem Objeto contendo os dados da ordem.
+        * @throw invalid_argument .
+        */
         void criar_ordem(const Ordem& ordem) {
             Ordem storage_ordem;
             storage_ordem.SetCodigoDeNegociacao(ordem.GetConstCodigoDeNegociacao());
@@ -90,12 +124,24 @@ class ServInvest: public InterServInvest {
             }
         };
 
+    /**
+     * @brief Exclui uma ordem de investimento.
+     * @param cod Código identificador da ordem.
+     * @throw invalid_argument .
+     */
         void excluir_ordem(const Codigo& cod) {
             if (!storage->remover_ordem(cod)) {
                 throw new invalid_argument("alguma coisa deu errado na remoção da ordem");
             }
         };
 
+    /**
+     * @brief Lista todas as ordens de uma carteira.
+     * @param carteira Objeto identificando a carteira.
+     * @return nulltptr se não houver ordens.
+     * @return Ponteiro para uma lista de ordens associadas à carteira.
+     * @throw invalid_argument .
+     */
         lista<StorageOrdem>* listar_ordem(const Carteira& carteira) {
             lista<StorageOrdem>* ls = nullptr;
 
