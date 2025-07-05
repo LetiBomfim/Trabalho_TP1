@@ -93,7 +93,7 @@ class InterApresInvest {
 };
 
 /**
- * @brief Define o contrato para operações de acesso e manipulação dos dados persistentes do sistema.
+ * @brief Define o contrato para operações de acesso e manipulação dos dados do sistema.
  * Inclui métodos para contas, carteiras e ordens de investimento.
  */
 class InterStorage {
