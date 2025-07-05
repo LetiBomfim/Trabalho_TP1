@@ -31,7 +31,7 @@ public:
 
 class Codigo_de_Negociacao {
 private:
-    std::string valor;  ///< Código armazenado.
+    std::string valor;
 
 
     bool isValid(const std::string& val) const;  // Função de validação da classe
@@ -47,7 +47,7 @@ public:
 
 class Data {
 private:
-    std::string valor; ///< Data armazenada.
+    std::string valor; 
 
 
     bool isValid(const std::string& val) const;  // Função de validação da classe
