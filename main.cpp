@@ -1,4 +1,4 @@
-#include "modulos/controleglobal/controleglobal.hpp"
+#include "../modulos/controleglobal/controleglobal.hpp"
 
 int main() {
     auto ctrl = ControleGlobal();
