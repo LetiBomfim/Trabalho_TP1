@@ -2,16 +2,50 @@
 #include "../entidades/entidades.hpp"
 #include "../estruturas/estruturas.hpp"
 
+ /**
+    * @brief Interface de Serviço de Autenticação.
+    * Define o contrato para autenticação de usuários no sistema.
+    */
 class InterServAuth {
     public:
+     /**
+     * @brief Autentica um usuário com base no CPF e senha fornecidos.
+     * @param cpf da conta a ser acessada.
+     * @param senha  da conta a ser acessada.
+     * @return true se as credenciais forem válidas, false caso contrário.
+    */
         virtual bool autenticar(const Cpf&, const Senha&) = 0;
 };
 
+/**
+ * @brief  Define o contrato para operações de gerenciamento de contas de usuário,
+ * incluindo criação, leitura, edição e exclusão de contas.
+ */
 class InterServConta {
     public:
+         /**
+         * @brief Cria uma nova conta de usuário.
+         * @param conta Objeto contendo os dados a serem cadastrados.
+         * @throw invalid_argument 
+         */
         virtual void criar(const Conta&) = 0;
+        /**
+         * @brief Lê os dados de uma conta existente.
+         * @param conta Objeto com o CPF preenchido; 
+         * @throw invalid_argument.
+         */
         virtual void ler(Conta& conta) = 0;
+         /**
+         * @brief Edita os dados de uma conta existente.
+         * @param conta Objeto com os dados atualizados.
+         * @throw invalid_argument 
+         */
         virtual void editar(const Conta& conta) = 0;
+        /**
+         * @brief Exclui uma conta existente com base no CPF fornecido.
+         * @param cpf da conta a ser excluída.
+         * @throw invalid_argument.
+         */
         virtual void excluir(const Cpf& cpf) = 0;
 };
 
@@ -69,13 +103,29 @@ class InterServInvest {
         virtual lista<StorageOrdem>* listar_ordem(const Carteira&) = 0;
 };
 
+/**
+ * @brief Define o contrato que estabelece como será realizada o fluxo de autenticação na interface do usuário.
+ * 
+ */
 class InterApresAuth {
     public:
-            virtual bool autenticar(Cpf&) = 0;
+        /**
+         * @brief Realiza o processo de autenticação do usuário.
+         * @param cpf Objeto onde será armazenado o CPF do usuário autenticado.
+         * @return true se a autenticação for bem-sucedida, false caso contrário.
+         */
+        virtual bool autenticar(Cpf&) = 0;
 };
 
+/**
+ * @brief Define o contrato responsável pelo  fluxo de interação do usuário com funcionalidades de conta.
+ */
 class InterApresConta {
     public:
+        /**
+         * @brief Executa o fluxo de apresentação das operações de conta para o usuário autenticado.
+         * @param cpf Ponteiro para o CPF do usuário logado.
+         */
         virtual void executar(const Cpf*) = 0;
 };
 
