@@ -1,0 +1,47 @@
+\doxysection{controleglobal.\+hpp}
+\hypertarget{controleglobal_8hpp_source}{}\label{controleglobal_8hpp_source}\index{modulos/controleglobal/controleglobal.hpp@{modulos/controleglobal/controleglobal.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../../interfaces/interfaces.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00006}00006\ \textcolor{keyword}{using\ namespace\ }std\ ;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00014}\mbox{\hyperlink{classControleGlobal}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classControleGlobal_a71fc8ed66a89cb223dd231962c6e3a32}{ControleGlobal}}\ \{}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ int32\_t\ LOGIN\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00016}00016\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ int32\_t\ REGISTER\ =\ 1;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00017}00017\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ int32\_t\ CONTA\ =\ 2;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{const}\ int32\_t\ INVESTIMENTO\ =\ 3;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00021}00021\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00022}00022\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classControleGlobal_a71fc8ed66a89cb223dd231962c6e3a32}{ControleGlobal}}*\ singleton;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInterApresAuth}{InterApresAuth}}*\ apr\_auth\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInterApresConta}{InterApresConta}}*\ apr\_conta\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInterApresInvest}{InterApresInvest}}*\ apr\_invest\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00027}00027\ \ \ \ \ \ \ \ \ int32\_t\ escolha\ =\ LOGIN;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ autenticado\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00029}00029\ \ \ \ \ \ \ \ \ Cpf\ cpf\_usuario;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00030}00030\ \ \ \ \ \ \ \ \ int32\_t\ ask\_usuario();}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00032}00032\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ seta\ a\ autenticação\ caso\ seja\ necessário}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00038}\mbox{\hyperlink{classControleGlobal_ae42201f7f9a9763d8b733a1de28d68c6}{00038}}\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classControleGlobal_ae42201f7f9a9763d8b733a1de28d68c6}{SetAuth}}(\textcolor{keywordtype}{bool}\ estado)\ \{}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ ControleGlobal::singleton-\/>autenticado\ =\ estado;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classControleGlobal}{ControleGlobal}}*\ \mbox{\hyperlink{classControleGlobal_a091b8a7aa80afcdf8d4e8f051cad83be}{get\_singleton}}();}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Realiza\ o\ setup\ do\ projeto}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classControleGlobal_a71fc8ed66a89cb223dd231962c6e3a32}{ControleGlobal}}();}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Ponto\ de\ entrada\ do\ sistema}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classControleGlobal_afe5a2e7583e2e258c61bcef7259488e9}{Run}}();}
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8hpp_source_l00061}00061\ \};}
+
+\end{DoxyCode}

@@ -1,0 +1,104 @@
+\doxysection{Dados\+Hist Class Reference}
+\hypertarget{classDadosHist}{}\label{classDadosHist}\index{DadosHist@{DadosHist}}
+
+
+Implementação do serviço de dados históricos de investimentos.  
+
+
+
+
+{\ttfamily \#include $<$dados\+\_\+invest.\+hpp$>$}
+
+
+
+Inheritance diagram for Dados\+Hist\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classDadosHist__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Dados\+Hist\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classDadosHist__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classDadosHist_a6fe04a64f0d4fac080524a22c5f9c4e8}{set\+\_\+valor\+\_\+ordem}} (Ordem \&)
+\begin{DoxyCompactList}\small\item\em Atualiza o valor de uma ordem de investimento com base nos dados históricos disponíveis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classDadosHist}{Dados\+Hist}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classDadosHist_afeb1a6e8b9b727d5b6fb6abb0aa81958}{get\+\_\+singleton}} ()
+\begin{DoxyCompactList}\small\item\em Recupera a instância singleton do serviço de dados históricos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementação do serviço de dados históricos de investimentos. 
+
+Esta classe fornece operações para atualização dos valores de ordens de investimento com base em dados históricos do mercado. Utiliza o padrão Singleton para garantir que apenas uma instância seja utilizada durante a execução do sistema. 
+
+Definition at line \mbox{\hyperlink{dados__invest_8hpp_source_l00010}{10}} of file \mbox{\hyperlink{dados__invest_8hpp_source}{dados\+\_\+invest.\+hpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{classDadosHist_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classDadosHist_afeb1a6e8b9b727d5b6fb6abb0aa81958}\index{DadosHist@{DadosHist}!get\_singleton@{get\_singleton}}
+\index{get\_singleton@{get\_singleton}!DadosHist@{DadosHist}}
+\doxysubsubsection{\texorpdfstring{get\_singleton()}{get\_singleton()}}
+{\footnotesize\ttfamily \label{classDadosHist_afeb1a6e8b9b727d5b6fb6abb0aa81958} 
+\mbox{\hyperlink{classDadosHist}{Dados\+Hist}} \texorpdfstring{$\ast$}{*} Dados\+Hist\+::get\+\_\+singleton (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Recupera a instância singleton do serviço de dados históricos. 
+
+\begin{DoxyReturn}{Returns}
+Ponteiro para a instância única de \doxylink{classDadosHist}{Dados\+Hist}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{dados__invest_8cpp_source_l00010}{10}} of file \mbox{\hyperlink{dados__invest_8cpp_source}{dados\+\_\+invest.\+cpp}}.
+
+\Hypertarget{classDadosHist_a6fe04a64f0d4fac080524a22c5f9c4e8}\index{DadosHist@{DadosHist}!set\_valor\_ordem@{set\_valor\_ordem}}
+\index{set\_valor\_ordem@{set\_valor\_ordem}!DadosHist@{DadosHist}}
+\doxysubsubsection{\texorpdfstring{set\_valor\_ordem()}{set\_valor\_ordem()}}
+{\footnotesize\ttfamily \label{classDadosHist_a6fe04a64f0d4fac080524a22c5f9c4e8} 
+bool Dados\+Hist\+::set\+\_\+valor\+\_\+ordem (\begin{DoxyParamCaption}\item[{Ordem \&}]{ordem}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Atualiza o valor de uma ordem de investimento com base nos dados históricos disponíveis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ordem} & Referência para o objeto ordem a ser atualizado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a atualização foi bem-\/sucedida, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classInterDadosHist_a943b8233dd38dde85e777a13462894e7}{Inter\+Dados\+Hist}}.
+
+
+
+Definition at line \mbox{\hyperlink{dados__invest_8cpp_source_l00018}{18}} of file \mbox{\hyperlink{dados__invest_8cpp_source}{dados\+\_\+invest.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+modulos/dados\+\_\+invest/dados\+\_\+invest.\+hpp\item 
+modulos/dados\+\_\+invest/dados\+\_\+invest.\+cpp\end{DoxyCompactItemize}

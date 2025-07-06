@@ -1,0 +1,35 @@
+\doxysection{mock\+\_\+auth\+\_\+service.\+hpp}
+\hypertarget{mock__auth__service_8hpp_source}{}\label{mock__auth__service_8hpp_source}\index{modulos/serv\_auth/mock\_auth\_service.hpp@{modulos/serv\_auth/mock\_auth\_service.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../../interfaces/interfaces.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}../storage/storage.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00008}\mbox{\hyperlink{classAuthService}{00008}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classAuthService_af5db436314f994cba3ec7c61a2db9ce2}{AuthService}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classInterServAuth}{InterServAuth}}\ \{}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInterStorage}{InterStorage}}*\ storage\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00017}\mbox{\hyperlink{classAuthService_af5db436314f994cba3ec7c61a2db9ce2}{00017}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classAuthService_af5db436314f994cba3ec7c61a2db9ce2}{AuthService}}()\ \{}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>storage\ =\ \mbox{\hyperlink{classStorage_a8d65cd53a14732e6239b4695369cd329}{Storage::get\_singleton}}();}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00027}\mbox{\hyperlink{classAuthService_a8a6f67c83407a8e763bea74b4d7bfb4d}{00027}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classAuthService_a8a6f67c83407a8e763bea74b4d7bfb4d}{autenticar}}(\textcolor{keyword}{const}\ Cpf\&\ cpf,\ \textcolor{keyword}{const}\ Senha\&\ senha)\ \{}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ Conta\ conta;}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ conta.SetCpf(cpf);}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!storage-\/>get\_conta(conta))\ \{}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (conta.GetConstSenha().Get()\ !=\ senha.Get())\ \{}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{mock__auth__service_8hpp_source_l00042}00042\ \};}
+
+\end{DoxyCode}

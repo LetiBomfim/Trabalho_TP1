@@ -1,0 +1,301 @@
+\doxysection{dominios.\+cpp}
+\hypertarget{dominios_8cpp_source}{}\label{dominios_8cpp_source}\index{dominios/dominios.cpp@{dominios/dominios.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ <cstdio>}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}dominios.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <cctype>}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <unordered\_set>}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00008}00008\ \textcolor{comment}{//\ Classe\ relativa\ ao\ código\ -\/-\/>\ Implementação\ por\ Letícia\ Gonçalves\ Bomfim\ (241002411)}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00010}00010\ \textcolor{keywordtype}{bool}\ Codigo::isValid(\textcolor{keyword}{const}\ std::string\&\ val)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (val.length()\ !=\ 5)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{char}\ c\ :\ val)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isdigit(c))\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00017}00017\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00019}00019\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00021}00021\ \textcolor{keyword}{const}\ std::string\&\ Codigo::Get()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00022}00022\ \ \ \ \ \textcolor{keywordflow}{return}\ valor;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00025}00025\ \textcolor{keywordtype}{void}\ Codigo::Set(\textcolor{keyword}{const}\ std::string\&\ novo\_valor)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{if}\ (!isValid(novo\_valor))\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(\textcolor{stringliteral}{"{}O\ Código\ precisa\ ter\ 5\ digitos\ e\ ser\ constituido\ apenas\ por\ números."{}});}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00028}00028\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00029}00029\ \ \ \ \ valor\ =\ novo\_valor;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00030}00030\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00032}00032\ \textcolor{comment}{//\ Classe\ relativa\ ao\ nome\ -\/-\/>\ Implementação\ por\ Letícia\ Gonçalves\ Bomfim\ (241002411)}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00034}00034\ \textcolor{keywordtype}{bool}\ Nome::isValid(\textcolor{keyword}{const}\ std::string\&\ val)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordflow}{if}\ (val.length()\ >\ 20)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{bool}\ espaco\ =\ \textcolor{keyword}{false};\ \textcolor{comment}{//\ bool\ que\ verifica\ se\ o\ caracter\ anterior\ é\ um\ espaço}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{char}\ c\ :\ val)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(isalnum(c)\ ||\ c\ ==\ \textcolor{charliteral}{'\ '}))\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (c\ ==\ \textcolor{charliteral}{'\ '})\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (espaco)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ espaco\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ espaco\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00048}00048\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00049}00049\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00052}00052\ \textcolor{keyword}{const}\ std::string\&\ Nome::Get()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{return}\ valor;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00054}00054\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00056}00056\ \textcolor{keywordtype}{void}\ Nome::Set(\textcolor{keyword}{const}\ std::string\&\ novo\_valor)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{keywordflow}{if}\ (!isValid(novo\_valor))\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}O\ nome\ precisa\ ter\ 20\ ou\ menos\ characteres,\ e\ ser\ constituido\ apenas\ por\ alfanumericos\ e\ espaços,\ "{}}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}e\ nao\ pode\ ter\ espaços\ em\ branco\ em\ sequencia"{}}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00063}00063\ \ \ \ \ valor\ =\ novo\_valor;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00064}00064\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00065}00065\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00066}00066\ \textcolor{comment}{//\ Classe\ relativa\ ao\ código\ de\ negociação\ -\/-\/>\ Implementação\ por\ Vinícius\ Ferreira\ Marques\ de\ Oliveira\ (232012947)}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00068}00068\ \textcolor{keywordtype}{bool}\ Codigo\_de\_Negociacao::isValid(\textcolor{keyword}{const}\ std::string\&\ val)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00069}00069\ \ \ \ \ \textcolor{keywordflow}{if}\ (val.length()\ >\ 12)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00071}00071\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{char}\ c\ :\ val)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!(isalnum(c)\ ||\ c\ ==\ \textcolor{charliteral}{'\ '}))\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00075}00075\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00077}00077\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00079}00079\ \textcolor{keyword}{const}\ std::string\&\ Codigo\_de\_Negociacao::Get()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{return}\ valor;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00081}00081\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00082}00082\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00083}00083\ \textcolor{keywordtype}{void}\ Codigo\_de\_Negociacao::Set(\textcolor{keyword}{const}\ std::string\&\ novo\_valor)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{keywordflow}{if}\ (!isValid(novo\_valor))\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}O\ codigo\ de\ negociacao\ precisa\ ter\ até\ 12\ caracteres\ e\ conter\ apenas\ digitos,\ letras\ e/ou\ espaços\ em\ branco."{}}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00089}00089\ \ \ \ \ valor\ =\ novo\_valor;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00090}00090\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00092}00092\ \textcolor{comment}{//\ Classe\ relativa\ a\ Data\ -\/-\/>\ Implementação\ por\ Vinícius\ Ferreira\ Marques\ de\ Oliveira\ (232012947)}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00093}00093\ \textcolor{keywordtype}{bool}\ Data::isBissexto(\textcolor{keywordtype}{int}\ val)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00094}00094\ \ \ \ \ \textcolor{keywordflow}{return}\ (val\ \%\ 4\ ==\ 0\ \&\&\ (val\ \%\ 100\ !=\ 0\ ||\ val\ \%\ 400\ ==\ 0));}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00095}00095\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00097}00097\ \textcolor{keywordtype}{bool}\ Data::isValid(\textcolor{keyword}{const}\ std::string\&\ val)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{comment}{//\ Verificar\ tamanho.}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{if}\ (val.length()\ !=\ 8)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00101}00101\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00103}00103\ \ \ \ \ \textcolor{comment}{//\ Verificar\ se\ todos\ os\ caracteres\ são\ dígitos.}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{char}\ c\ :\ val)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isdigit(c))\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00108}00108\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{keywordtype}{int}\ ano\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordtype}{int}\ mes\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{keywordtype}{int}\ dia\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00114}00114\ \ \ \ \ \textcolor{comment}{//\ Extrair\ ano\ (AAAAMMDD)}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00115}00115\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 0;\ i\ <\ 4;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00116}00116\ \ \ \ \ \ \ \ \ ano\ =\ ano\ *\ 10\ +\ (val[i]\ -\/\ \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00117}00117\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00118}00118\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00119}00119\ \ \ \ \ \textcolor{comment}{//\ Extrair\ mês\ (AAAAMMDD)}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00120}00120\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 4;\ i\ <\ 6;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00121}00121\ \ \ \ \ \ \ \ \ mes\ =\ mes\ *\ 10\ +\ (val[i]\ -\/\ \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00122}00122\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00123}00123\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{comment}{//\ Extrair\ dia\ (AAAAMMDD)}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00125}00125\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{int}\ i\ =\ 6;\ i\ <\ 8;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00126}00126\ \ \ \ \ \ \ \ \ dia\ =\ dia\ *\ 10\ +\ (val[i]\ -\/\ \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00127}00127\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00129}00129\ \ \ \ \ \textcolor{comment}{//\ Validar\ intervalo\ de\ mês.}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{keywordflow}{if}\ (mes\ <\ 1\ ||\ mes\ >\ 12)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00131}00131\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00132}00132\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00134}00134\ \ \ \ \ \textcolor{comment}{//\ Validar\ intervalo\ de\ dia.}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00135}00135\ \ \ \ \ \textcolor{keywordflow}{if}\ (dia\ <\ 1\ ||\ dia\ >\ 31)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00137}00137\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00138}00138\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00139}00139\ \ \ \ \ \textcolor{comment}{//\ Verificar\ dias\ válidos\ para\ cada\ mês.}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00140}00140\ \ \ \ \ \textcolor{keywordflow}{if}\ ((mes\ ==\ 4\ ||\ mes\ ==\ 6\ ||\ mes\ ==\ 9\ ||\ mes\ ==\ 11)\ \&\&\ dia\ >\ 30)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00142}00142\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00143}00143\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00144}00144\ \ \ \ \ \textcolor{comment}{//\ Verificar\ fevereiro\ e\ anos\ bissextos.}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00145}00145\ \ \ \ \ \textcolor{keywordflow}{if}\ (mes\ ==\ 2)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isBissexto(ano))\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dia\ >\ 29)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (dia\ >\ 28)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00153}00153\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00155}00155\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00156}00156\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00157}00157\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00158}00158\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00159}00159\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00160}00160\ \textcolor{keyword}{const}\ std::string\&\ Data::Get()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00161}00161\ \ \ \ \ \textcolor{keywordflow}{return}\ valor;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00162}00162\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00163}00163\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00164}00164\ \textcolor{keywordtype}{void}\ Data::Set(\textcolor{keyword}{const}\ std::string\&\ novo\_valor)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00165}00165\ \ \ \ \ \textcolor{keywordflow}{if}\ (!isValid(novo\_valor))\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}A\ data\ deve\ estar\ no\ formato\ AAAAMMDD\ com\ valores\ de\ data\ validos."{}}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00169}00169\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00170}00170\ \ \ \ \ valor\ =\ novo\_valor;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00171}00171\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00172}00172\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00173}00173\ \textcolor{comment}{//\ Classe\ relativa\ ao\ Perfil\ -\/-\/>\ Implementação\ por\ Eduardo\ Silva\ Barbosa\ (222005439)}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00174}00174\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00175}00175\ \textcolor{keywordtype}{bool}\ Perfil::isValid(\textcolor{keyword}{const}\ std::string\&\ val)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00176}00176\ \ \ \ \ \textcolor{keywordflow}{return}\ perfilvalido.find(val)\ !=\ perfilvalido.end();}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00177}00177\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00179}00179\ \textcolor{keyword}{const}\ std::string\&\ Perfil::Get()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00180}00180\ \ \ \ \ \textcolor{keywordflow}{return}\ valor;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00181}00181\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00183}00183\ \textcolor{keywordtype}{void}\ Perfil::Set(\textcolor{keyword}{const}\ std::string\&\ novo\_valor)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00184}00184\ \ \ \ \ \textcolor{keywordflow}{if}\ (!isValid(novo\_valor))\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00185}00185\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}O\ Perfil\ deve\ ser\ um\ dos\ seguintes:\ Conservador,\ Moderado\ ou\ Agressivo."{}}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00187}00187\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00188}00188\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00189}00189\ \ \ \ \ valor\ =\ novo\_valor;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00190}00190\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00191}00191\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00192}00192\ \textcolor{comment}{//\ Classe\ relativa\ a\ Quantidade\ -\/-\/>\ Implementação\ por\ Sarah\ Novais\ Magalhães\ (232006476)}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00193}00193\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00194}00194\ \textcolor{keywordtype}{bool}\ Quantidade::isValid(\textcolor{keywordtype}{int}\ val)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00195}00195\ \ \ \ \ \textcolor{keywordflow}{return}\ val\ >=\ 1\ \&\&\ val\ <=\ 1000000;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00196}00196\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00197}00197\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00198}00198\ \textcolor{keywordtype}{int}\ Quantidade::Get()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00199}00199\ \ \ \ \ \textcolor{keywordflow}{return}\ valor;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00200}00200\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00201}00201\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00202}00202\ \textcolor{keywordtype}{void}\ Quantidade::Set(\textcolor{keywordtype}{int}\ novo\_valor)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00203}00203\ \ \ \ \ \textcolor{keywordflow}{if}\ (!isValid(novo\_valor))\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00204}00204\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00205}00205\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}A\ Quantidade\ deve\ ser\ de\ 1\ a\ 1.000.000."{}}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00206}00206\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00207}00207\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00208}00208\ \ \ \ \ valor\ =\ novo\_valor;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00209}00209\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00210}00210\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00211}00211\ \textcolor{comment}{//\ Classe\ relativa\ a\ Senha\ -\/-\/>\ Implementação\ por\ Luisa\ Ribeiro\ de\ Oliveira\ (241024197)}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00212}00212\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00213}00213\ \textcolor{keywordtype}{bool}\ Senha::isValid(\textcolor{keyword}{const}\ std::string\&\ val)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00214}00214\ \ \ \ \ \textcolor{keywordflow}{if}\ (val.length()\ !=\ 6)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00215}00215\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00216}00216\ \ \ \ \ std::unordered\_set<char>\ charSet;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00217}00217\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{char}\ c\ :\ val)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00218}00218\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (charSet.find(c)\ !=\ charSet.end())\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00219}00219\ \ \ \ \ \ \ \ \ charSet.insert(c);}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00220}00220\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00221}00221\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00222}00222\ \ \ \ \ \textcolor{keywordtype}{bool}\ numero\ =\ \textcolor{keyword}{false},\ letra\ =\ \textcolor{keyword}{false},\ letra\_maiuscula\ =\ \textcolor{keyword}{false},\ simbolo\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00223}00223\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{char}\ c\ :\ val)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00224}00224\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (isdigit(c))\ numero\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00225}00225\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (islower(c))\ letra\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00226}00226\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (isupper(c))\ letra\_maiuscula\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00227}00227\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (c\ ==\ \textcolor{charliteral}{'\#'}\ ||\ c\ ==\ \textcolor{charliteral}{'\$'}\ ||\ c\ ==\ \textcolor{charliteral}{'\%'}\ ||\ c\ ==\ \textcolor{charliteral}{'\&'})\ simbolo\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00228}00228\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00229}00229\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00230}00230\ \ \ \ \ \textcolor{keywordflow}{return}\ numero\ \&\&\ letra\ \&\&\ letra\_maiuscula\ \&\&\ simbolo;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00231}00231\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00232}00232\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00233}00233\ \textcolor{keyword}{const}\ std::string\&\ Senha::Get()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00234}00234\ \ \ \ \ \textcolor{keywordflow}{return}\ valor;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00235}00235\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00236}00236\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00237}00237\ \textcolor{keywordtype}{void}\ Senha::Set(\textcolor{keyword}{const}\ std::string\&\ novo\_valor)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00238}00238\ \ \ \ \ \textcolor{keywordflow}{if}\ (!isValid(novo\_valor))\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00239}00239\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00240}00240\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}A\ senha\ deve\ ter\ exatamente\ 6\ caracteres,\ conter\ ao\ menos\ um\ numero,\ "{}}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00241}00241\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}uma\ letra\ minuscula,\ uma\ letra\ maiuscula\ e\ um\ dos\ seguintes\ simbolos:\ \#,\ \$,\ \%\ ou\ \&."{}}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00242}00242\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00243}00243\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00244}00244\ \ \ \ \ valor\ =\ novo\_valor;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00245}00245\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00246}00246\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00247}00247\ \textcolor{comment}{//\ Classe\ relativa\ a\ Dinheiro\ -\/-\/>\ Implementação\ por\ Luisa\ Ribeiro\ de\ Oliveira\ (241024197)}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00248}00248\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00249}00249\ \textcolor{keywordtype}{bool}\ Dinheiro::isValid(\textcolor{keywordtype}{double}\ val)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00250}00250\ \ \ \ \ \textcolor{keywordflow}{return}\ val\ >=\ 0.01\ \&\&\ val\ <=\ 1000000.00;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00251}00251\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00252}00252\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00253}00253\ \textcolor{keywordtype}{double}\ Dinheiro::Get()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00254}00254\ \ \ \ \ \textcolor{keywordflow}{return}\ valor;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00255}00255\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00256}00256\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00257}00257\ \textcolor{keywordtype}{void}\ Dinheiro::Set(\textcolor{keywordtype}{double}\ novo\_valor)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00258}00258\ \ \ \ \ \textcolor{keywordflow}{if}\ (!isValid(novo\_valor))\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00259}00259\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00260}00260\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}O\ valor\ monetario\ deve\ estar\ entre\ 0,01\ e\ 1.000.000,00."{}}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00261}00261\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00262}00262\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00263}00263\ \ \ \ \ valor\ =\ novo\_valor;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00264}00264\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00265}00265\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00266}00266\ \textcolor{comment}{//\ Classe\ relativa\ a\ CPF\ -\/-\/>\ Implementação\ por\ Eduardo\ Silva\ Barbosa\ (222005439)\ e\ Sarah\ Novais\ Magalhães\ (232006476)}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00267}00267\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00268}00268\ \textcolor{keywordtype}{bool}\ Cpf::isValid(\textcolor{keyword}{const}\ std::string\&\ val)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00269}00269\ \ \ \ \ \textcolor{keywordflow}{if}\ (val.length()\ !=\ 14)\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00270}00270\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00271}00271\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ val.length();\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00272}00272\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (i\ ==\ 3\ ||\ i\ ==\ 7)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00273}00273\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (val[i]\ !=\ \textcolor{charliteral}{'.'})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00274}00274\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (i\ ==\ 11)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00275}00275\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (val[i]\ !=\ \textcolor{charliteral}{'-\/'})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00276}00276\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00277}00277\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!isdigit(val[i]))\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00278}00278\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00279}00279\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00280}00280\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00281}00281\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00282}00282\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00283}00283\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00284}00284\ \textcolor{keyword}{const}\ std::string\&\ Cpf::Get()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00285}00285\ \ \ \ \ \textcolor{keywordflow}{return}\ valor;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00286}00286\ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00287}00287\ }
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00288}00288\ \textcolor{keywordtype}{void}\ Cpf::Set(\textcolor{keyword}{const}\ std::string\&\ novo\_valor)\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00289}00289\ \ \ \ \ \textcolor{keywordflow}{if}\ (!isValid(novo\_valor))\ \{}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00290}00290\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::invalid\_argument(}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00291}00291\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{stringliteral}{"{}O\ CPF\ deve\ estar\ no\ formato\ XXX.XXX.XXX-\/XX,\ onde\ X\ eh\ um\ digito."{}}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00292}00292\ \ \ \ \ \ \ \ \ );}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00293}00293\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00294}00294\ \ \ \ \ valor\ =\ novo\_valor;}
+\DoxyCodeLine{\Hypertarget{dominios_8cpp_source_l00295}00295\ \}}
+
+\end{DoxyCode}

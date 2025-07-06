@@ -1,0 +1,54 @@
+\doxysection{apr\+\_\+auth.\+cpp}
+\hypertarget{apr__auth_8cpp_source}{}\label{apr__auth_8cpp_source}\index{modulos/apr\_auth/apr\_auth.cpp@{modulos/apr\_auth/apr\_auth.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}apr\_auth.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../serv\_auth/mock\_auth\_service.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00006}00006\ \textcolor{keyword}{using\ namespace\ }std\ ;}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00008}\mbox{\hyperlink{classCtrlAprAuth_a8727d064361b8bd2eb725554de545915}{00008}}\ \mbox{\hyperlink{classCtrlAprAuth_a8727d064361b8bd2eb725554de545915}{CtrlAprAuth::CtrlAprAuth}}()\ \{}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00009}00009\ \ \ \ \ this-\/>servico\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classAuthService}{AuthService}}();}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00010}00010\ \}}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00012}\mbox{\hyperlink{classCtrlAprAuth_a20542040c0862c47b5bf0b75e7cf957c}{00012}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classCtrlAprAuth_a20542040c0862c47b5bf0b75e7cf957c}{CtrlAprAuth::autenticar}}(Cpf\&\ cpf)\ \{}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00013}00013\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}página\ de\ login\ selecionada"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00014}00014\ \ \ \ \ Senha\ senha;}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00015}00015\ \ \ \ \ this-\/>ask\_cpf\_e\_senha(cpf,\ senha);}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00016}00016\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>servico-\/>autenticar(cpf,\ senha))\ \{}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}autenticado"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00019}00019\ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}credenciais\ inválidas"{}};}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00022}00022\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00023}00023\ \}}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00025}00025\ \textcolor{keywordtype}{void}\ CtrlAprAuth::ask\_cpf\_e\_senha(Cpf\&\ cpf,\ Senha\&\ senha)\ \{}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00026}00026\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ cpf\_str\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Insira\ o\ cpf:"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ cin\ >>\ cpf\_str;}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ cpf.Set(cpf\_str);}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (invalid\_argument)\ \{}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}cpf\ inválido"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{string}\ senha\_str\ =\ \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}Insira\ a\ senha:"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ cin\ >>\ senha\_str;}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ senha.Set(senha\_str);}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}(invalid\_argument)\ \{}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}senha\ iválida"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apr__auth_8cpp_source_l00048}00048\ \}}
+
+\end{DoxyCode}

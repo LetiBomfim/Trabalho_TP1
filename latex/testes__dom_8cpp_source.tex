@@ -1,0 +1,210 @@
+\doxysection{testes\+\_\+dom.\+cpp}
+\hypertarget{testes__dom_8cpp_source}{}\label{testes__dom_8cpp_source}\index{dominios/testes\_dom.cpp@{dominios/testes\_dom.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}testes\_dom.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}dominios.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <cassert>}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00008}00008\ \textcolor{comment}{//\ Implementação\ do\ Teste\ da\ Classe\ Código}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00009}00009\ \textcolor{keywordtype}{void}\ CodigoTeste::Run()\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00010}00010\ \ \ \ \ \textcolor{comment}{//\ Teste\ de\ caso\ válido}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00012}00012\ \ \ \ \ \ \ \ \ Codigo\ codigo;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00013}00013\ \ \ \ \ \ \ \ \ codigo.Set(\textcolor{stringliteral}{"{}12345"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ assert(codigo.Get()\ ==\ \textcolor{stringliteral}{"{}12345"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ codigo\ passou\ no\ teste"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00016}00016\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ codigo\ falhou:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00018}00018\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00020}00020\ \ \ \ \ \textcolor{comment}{//\ Teste\ de\ caso\ inválido}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00021}00021\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ Codigo\ codigo;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ codigo.Set(\textcolor{stringliteral}{"{}123456"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ codigo\ falhou:\ Exceçao\ nao\ foi\ lançada."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00025}00025\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ codigo\ invalido\ passou:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00027}00027\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00028}00028\ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00030}00030\ \textcolor{comment}{//\ Implementação\ do\ Teste\ da\ Classe\ Nome}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00031}00031\ \textcolor{keywordtype}{void}\ NomeTeste::Run()\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00032}00032\ \ \ \ \ \textcolor{comment}{//\ Teste\ de\ caso\ válido}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00033}00033\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ Nome\ nome;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ nome.Set(\textcolor{stringliteral}{"{}Fernando\ Chacon"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ assert(nome.Get()\ ==\ \textcolor{stringliteral}{"{}Fernando\ Chacon"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ nome\ foi\ aprovado"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00038}00038\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ nome\ falhou:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{comment}{//\ Teste\ de\ caso\ inválido}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ Nome\ nome;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ nome.Set(\textcolor{stringliteral}{"{}Fernando\ \ \ Chacon"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ nome\ falhou:\ Exceçao\ nao\ foi\ lançada."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00047}00047\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ nome\ invalido\ passou:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00050}00050\ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00052}00052\ \textcolor{comment}{//\ Implementação\ do\ Teste\ da\ Classe\ Codigo\_de\_Negociacao}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00053}00053\ \textcolor{keywordtype}{void}\ Codigo\_de\_NegociacaoTeste::Run()\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00054}00054\ \ \ \ \ \textcolor{comment}{//\ Teste\ de\ caso\ válido}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ Codigo\_de\_Negociacao\ codigo\_de\_negociacao;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ codigo\_de\_negociacao.Set(\textcolor{stringliteral}{"{}A1B2C3"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ assert(codigo\_de\_negociacao.Get()\ ==\ \textcolor{stringliteral}{"{}A1B2C3"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ do\ codigo\ de\ negociaçao\ passou"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00060}00060\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ do\ codigo\ de\ negociaçao\ falhou:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00062}00062\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{comment}{//\ Teste\ de\ caso\ inválido}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00065}00065\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ Codigo\_de\_Negociacao\ codigo\_de\_negociacao;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ codigo\_de\_negociacao.Set(\textcolor{stringliteral}{"{}A1B@C3"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ codigo\ de\ negociaçao\ falhou:\ Exceçao\ nao\ foi\ lançada."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00069}00069\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ codigo\ de\ negociaçao\ invalido\ passou:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00071}00071\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00072}00072\ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00074}00074\ \textcolor{comment}{//\ Implementação\ do\ Teste\ da\ Classe\ Data}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00075}00075\ \textcolor{keywordtype}{void}\ DataTeste::Run()\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{comment}{//\ Teste\ de\ caso\ válido}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ Data\ data;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ data.Set(\textcolor{stringliteral}{"{}20250513"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ assert(data.Get()\ ==\ \textcolor{stringliteral}{"{}20250513"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ data\ passou!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00082}00082\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ data\ falhou:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00084}00084\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{comment}{//\ Teste\ de\ caso\ inválido}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00087}00087\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00088}00088\ \ \ \ \ \ \ \ \ Data\ data;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00089}00089\ \ \ \ \ \ \ \ \ data.Set(\textcolor{stringliteral}{"{}20251332"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00090}00090\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ data\ falhou:\ Exceçao\ nao\ foi\ lançada."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00091}00091\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ data\ invalido\ passou:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00093}00093\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00094}00094\ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00095}00095\ }
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00096}00096\ \textcolor{comment}{//\ Implementação\ do\ Teste\ da\ Classe\ Perfil}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00097}00097\ \textcolor{keywordtype}{void}\ PerfilTeste::Run()\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00098}00098\ \ \ \ \ \textcolor{comment}{//\ Teste\ de\ caso\ válido}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ Perfil\ perfil;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ perfil.Set(\textcolor{stringliteral}{"{}Moderado"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ assert(perfil.Get()\ ==\ \textcolor{stringliteral}{"{}Moderado"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ do\ perfil\ passou"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00104}00104\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ do\ perfil\ falhou:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00108}00108\ \ \ \ \ \textcolor{comment}{//\ Teste\ de\ caso\ inválido}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00109}00109\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00110}00110\ \ \ \ \ \ \ \ \ Perfil\ perfil;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00111}00111\ \ \ \ \ \ \ \ \ perfil.Set(\textcolor{stringliteral}{"{}Extreme"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00112}00112\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ perfil\ falhou:\ Exceçao\ nao\ foi\ lançada."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00113}00113\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00114}00114\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ perfil\ invalido\ passou:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00115}00115\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00116}00116\ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00118}00118\ \textcolor{comment}{//\ \ Implementação\ do\ Teste\ da\ Classe\ Quantidade}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00119}00119\ \textcolor{keywordtype}{void}\ QuantidadeTeste::Run()\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00120}00120\ \ \ \ \ \textcolor{comment}{//\ Teste\ de\ caso\ válido}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00122}00122\ \ \ \ \ \ \ \ \ Quantidade\ quantidade;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00123}00123\ \ \ \ \ \ \ \ \ quantidade.Set(500000);}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00124}00124\ \ \ \ \ \ \ \ \ assert(quantidade.Get()\ ==\ 500000);}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00125}00125\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ quantidade\ passou!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00126}00126\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00127}00127\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ quantidade\ falhou:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00128}00128\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00129}00129\ }
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00130}00130\ \ \ \ \ \textcolor{comment}{//\ Teste\ de\ caso\ inválido}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00131}00131\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00132}00132\ \ \ \ \ \ \ \ \ Quantidade\ quantidade;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00133}00133\ \ \ \ \ \ \ \ \ quantidade.Set(1000001);}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00134}00134\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ valor\ falhou:\ Exceçao\ nao\ foi\ lançada."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00135}00135\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00136}00136\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ valor\ invalido\ passou:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00137}00137\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00138}00138\ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00140}00140\ \textcolor{comment}{//\ \ Implementação\ do\ Teste\ da\ Classe\ Senha}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00141}00141\ \textcolor{keywordtype}{void}\ SenhaTeste::Run()\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00142}00142\ \ \ \ \ \textcolor{comment}{//\ Teste\ de\ caso\ válido}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00143}00143\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00144}00144\ \ \ \ \ \ \ \ \ Senha\ senha;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ senha.Set(\textcolor{stringliteral}{"{}A1b\#c2"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ assert(senha.Get()\ ==\ \textcolor{stringliteral}{"{}A1b\#c2"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00147}00147\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ senha\ passou!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00148}00148\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00149}00149\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ senha\ falhou:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00150}00150\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00151}00151\ }
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00152}00152\ \ \ \ \ \textcolor{comment}{//\ Teste\ de\ caso\ inválido}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00153}00153\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ Senha\ senha;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ senha.Set(\textcolor{stringliteral}{"{}A1bc2"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00156}00156\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ senha\ falhou:\ Exceçao\ nao\ foi\ lançada."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00157}00157\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00158}00158\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ senha\ invalido\ passou:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00159}00159\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00160}00160\ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00161}00161\ }
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00162}00162\ \textcolor{comment}{//\ \ Implementação\ do\ Teste\ da\ Classe\ Dinheiro}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00163}00163\ \textcolor{keywordtype}{void}\ DinheiroTeste::Run()\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00164}00164\ \ \ \ \ \textcolor{comment}{//\ Teste\ de\ caso\ válido}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00165}00165\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00166}00166\ \ \ \ \ \ \ \ \ Dinheiro\ dinheiro;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00167}00167\ \ \ \ \ \ \ \ \ dinheiro.Set(999999.99);}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00168}00168\ \ \ \ \ \ \ \ \ assert(dinheiro.Get()\ ==\ 999999.99);}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00169}00169\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ dinheiro\ passou!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00170}00170\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00171}00171\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ dinheiro\ falhou:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00172}00172\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00173}00173\ }
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00174}00174\ \ \ \ \ \textcolor{comment}{//\ Teste\ de\ caso\ inválido}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00175}00175\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ Dinheiro\ dinheiro;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00177}00177\ \ \ \ \ \ \ \ \ dinheiro.Set(1000000.01);}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00178}00178\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ dinheiro\ falhou:\ Exceçao\ nao\ foi\ lançada."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00179}00179\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00180}00180\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ dinheiro\ invalido\ passou:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00181}00181\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00182}00182\ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00183}00183\ }
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00184}00184\ \textcolor{comment}{//\ \ Implementação\ do\ Teste\ da\ Classe\ CPF}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00185}00185\ \textcolor{keywordtype}{void}\ CpfTeste::Run()\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00186}00186\ \ \ \ \ \textcolor{comment}{//\ Teste\ de\ caso\ válido}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00187}00187\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ Cpf\ cpf;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ cpf.Set(\textcolor{stringliteral}{"{}123.456.789-\/01"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00190}00190\ \ \ \ \ \ \ \ \ assert(cpf.Get()\ ==\ \textcolor{stringliteral}{"{}123.456.789-\/01"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00191}00191\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ CPF\ passou!"{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00192}00192\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::exception\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00193}00193\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ CPF\ falhou:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00194}00194\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00195}00195\ }
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00196}00196\ \ \ \ \ \textcolor{comment}{//\ Teste\ de\ caso\ inválido}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00197}00197\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00198}00198\ \ \ \ \ \ \ \ \ Cpf\ cpf;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00199}00199\ \ \ \ \ \ \ \ \ cpf.Set(\textcolor{stringliteral}{"{}123.456.78-\/01"{}});}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00200}00200\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ CPF\ falhou:\ Exceçao\ nao\ foi\ lançada."{}}\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00201}00201\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (\textcolor{keyword}{const}\ std::invalid\_argument\&\ e)\ \{}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00202}00202\ \ \ \ \ \ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Teste\ de\ CPF\ invalido\ passou:\ "{}}\ <<\ e.what()\ <<\ std::endl;}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00203}00203\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{testes__dom_8cpp_source_l00204}00204\ \}}
+
+\end{DoxyCode}

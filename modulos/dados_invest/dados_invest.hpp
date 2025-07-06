@@ -1,5 +1,12 @@
 #include "../../interfaces/interfaces.hpp"
 
+/**
+ * @brief Implementação do serviço de dados históricos de investimentos.
+ *
+ * Esta classe fornece operações para atualização dos valores de ordens de investimento
+ * com base em dados históricos do mercado. Utiliza o padrão Singleton para garantir
+ * que apenas uma instância seja utilizada durante a execução do sistema.
+ */
 class DadosHist: public InterDadosHist {
     private:
         static DadosHist* singleton;

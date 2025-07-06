@@ -1,0 +1,33 @@
+\doxysection{estruturas.\+hpp}
+\hypertarget{estruturas_8hpp_source}{}\label{estruturas_8hpp_source}\index{estruturas/estruturas.hpp@{estruturas/estruturas.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00002}00002\ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00003}\mbox{\hyperlink{classlista}{00003}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classlista}{lista}}\ \{}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00004}00004\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00005}00005\ \ \ \ \ \ \ \ \ T\ value;}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00006}00006\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classlista}{lista}}*\ next\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00008}00008\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ free()\ \{}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00009}00009\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>next\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00010}00010\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00011}00011\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>next-\/>free();}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ this-\/>next;}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ push(\textcolor{keyword}{const}\ T\&\ val)\ \{}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>next\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>next\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classlista}{lista<T>}};}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>next-\/>value\ =\ val;}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>next-\/>next\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>next-\/>push(val);}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{estruturas_8hpp_source_l00027}00027\ \};}
+
+\end{DoxyCode}

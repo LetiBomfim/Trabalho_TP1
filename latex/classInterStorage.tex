@@ -1,0 +1,356 @@
+\doxysection{Inter\+Storage Class Reference}
+\hypertarget{classInterStorage}{}\label{classInterStorage}\index{InterStorage@{InterStorage}}
+
+
+Define o contrato para operações de acesso e manipulação dos dados do sistema. Inclui métodos para contas, carteiras e ordens de investimento.  
+
+
+
+
+{\ttfamily \#include $<$interfaces.\+hpp$>$}
+
+
+
+Inheritance diagram for Inter\+Storage\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classInterStorage__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classInterStorage_a568f3b3af585f95fa0d1a6fb460a574e}{get\+\_\+conta}} (Conta \&)=0
+\begin{DoxyCompactList}\small\item\em Recupera os dados de uma conta. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classInterStorage_a841d53f95f20d27f28d78abcb6f11562}{remover\+\_\+conta}} (const Conta \&)=0
+\begin{DoxyCompactList}\small\item\em Remove uma conta do armazenamento. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classInterStorage_ac91e74ce4656680e919d050a43121944}{add\+\_\+conta}} (const Conta \&)=0
+\begin{DoxyCompactList}\small\item\em Adiciona uma nova conta ao armazenamento. \end{DoxyCompactList}\item 
+virtual int32\+\_\+t \mbox{\hyperlink{classInterStorage_a5fe576fde5a750f78d0cd5b45e6c733f}{count\+\_\+carteiras\+\_\+usuario}} (const Cpf \&)=0
+\begin{DoxyCompactList}\small\item\em Conta o número de carteiras associadas a um usuário. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classInterStorage_ac4a18396c5764292abda5927d6af4240}{get\+\_\+carteiras\+\_\+usuario}} (const Cpf \&, lista$<$ Carteira $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})=0
+\begin{DoxyCompactList}\small\item\em Recupera todas as carteiras associadas a um usuário. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classInterStorage_ab0cfcc5ecedb5cdd383396545090f70a}{get\+\_\+carteira}} (Storage\+Carteira \&)=0
+\begin{DoxyCompactList}\small\item\em Recupera os dados de uma carteira específica. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classInterStorage_a10c83d494f3f6219e8d993aaa199c0a1}{remover\+\_\+carteira}} (const Storage\+Carteira \&)=0
+\begin{DoxyCompactList}\small\item\em Remove uma carteira do armazenamento. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classInterStorage_a8f854d332f780a02e54de91dfa89d238}{add\+\_\+carteira}} (const Storage\+Carteira \&)=0
+\begin{DoxyCompactList}\small\item\em Adiciona uma nova carteira ao armazenamento. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classInterStorage_abe00d791bf4ecab4d4b11545496f4d50}{add\+\_\+carteira\+\_\+unchecked}} (const Storage\+Carteira \&)=0
+\begin{DoxyCompactList}\small\item\em Adiciona uma carteira ao armazenamento sem validações adicionais. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classInterStorage_af4fa4c9571a2f4e572828a0b51d45eb4}{get\+\_\+ordens\+\_\+carteira}} (const Carteira \&, lista$<$ Storage\+Ordem $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})=0
+\begin{DoxyCompactList}\small\item\em Recupera todas as ordens associadas a uma carteira. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classInterStorage_ac352ddae66ec05a8ea2956ffd34832ab}{get\+\_\+ordem}} (Storage\+Ordem \&)=0
+\begin{DoxyCompactList}\small\item\em Recupera os dados de uma ordem específica. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classInterStorage_a9ac6d8835e7ffe45512b16cfb344adc1}{remover\+\_\+ordem}} (const Codigo \&)=0
+\begin{DoxyCompactList}\small\item\em Remove uma ordem do armazenamento. \end{DoxyCompactList}\item 
+virtual bool \mbox{\hyperlink{classInterStorage_a97aeefdfbf81596d835b8bacb0d489b4}{add\+\_\+ordem}} (const Ordem \&)=0
+\begin{DoxyCompactList}\small\item\em Adiciona uma nova ordem ao armazenamento. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Define o contrato para operações de acesso e manipulação dos dados do sistema. Inclui métodos para contas, carteiras e ordens de investimento. 
+
+Definition at line \mbox{\hyperlink{interfaces_8hpp_source_l00099}{99}} of file \mbox{\hyperlink{interfaces_8hpp_source}{interfaces.\+hpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{classInterStorage_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classInterStorage_a8f854d332f780a02e54de91dfa89d238}\index{InterStorage@{InterStorage}!add\_carteira@{add\_carteira}}
+\index{add\_carteira@{add\_carteira}!InterStorage@{InterStorage}}
+\doxysubsubsection{\texorpdfstring{add\_carteira()}{add\_carteira()}}
+{\footnotesize\ttfamily \label{classInterStorage_a8f854d332f780a02e54de91dfa89d238} 
+virtual bool Inter\+Storage\+::add\+\_\+carteira (\begin{DoxyParamCaption}\item[{const Storage\+Carteira \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adiciona uma nova carteira ao armazenamento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carteira} & Objeto representando a carteira a ser adicionada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a adição foi bem-\/sucedida, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classStorage_a53ae2efc1ef89201ece370eeba892cf1}{Storage}}.
+
+\Hypertarget{classInterStorage_abe00d791bf4ecab4d4b11545496f4d50}\index{InterStorage@{InterStorage}!add\_carteira\_unchecked@{add\_carteira\_unchecked}}
+\index{add\_carteira\_unchecked@{add\_carteira\_unchecked}!InterStorage@{InterStorage}}
+\doxysubsubsection{\texorpdfstring{add\_carteira\_unchecked()}{add\_carteira\_unchecked()}}
+{\footnotesize\ttfamily \label{classInterStorage_abe00d791bf4ecab4d4b11545496f4d50} 
+virtual bool Inter\+Storage\+::add\+\_\+carteira\+\_\+unchecked (\begin{DoxyParamCaption}\item[{const Storage\+Carteira \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adiciona uma carteira ao armazenamento sem validações adicionais. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carteira} & Objeto representando a carteira a ser adicionada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a adição foi bem-\/sucedida, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classStorage_a5e4b8d05ac8f5cc7e38f568d123d27fa}{Storage}}.
+
+\Hypertarget{classInterStorage_ac91e74ce4656680e919d050a43121944}\index{InterStorage@{InterStorage}!add\_conta@{add\_conta}}
+\index{add\_conta@{add\_conta}!InterStorage@{InterStorage}}
+\doxysubsubsection{\texorpdfstring{add\_conta()}{add\_conta()}}
+{\footnotesize\ttfamily \label{classInterStorage_ac91e74ce4656680e919d050a43121944} 
+virtual bool Inter\+Storage\+::add\+\_\+conta (\begin{DoxyParamCaption}\item[{const Conta \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adiciona uma nova conta ao armazenamento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conta} & Objeto representando a conta a ser adicionada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a adição foi bem-\/sucedida, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classStorage_a7f6fd93543d1717ce77ba765b63679d2}{Storage}}.
+
+\Hypertarget{classInterStorage_a97aeefdfbf81596d835b8bacb0d489b4}\index{InterStorage@{InterStorage}!add\_ordem@{add\_ordem}}
+\index{add\_ordem@{add\_ordem}!InterStorage@{InterStorage}}
+\doxysubsubsection{\texorpdfstring{add\_ordem()}{add\_ordem()}}
+{\footnotesize\ttfamily \label{classInterStorage_a97aeefdfbf81596d835b8bacb0d489b4} 
+virtual bool Inter\+Storage\+::add\+\_\+ordem (\begin{DoxyParamCaption}\item[{const Ordem \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Adiciona uma nova ordem ao armazenamento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ordem} & Objeto representando a ordem a ser adicionada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a adição foi bem-\/sucedida, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classStorage_a8cf0dcf5b003b803f401336f2af0a098}{Storage}}.
+
+\Hypertarget{classInterStorage_a5fe576fde5a750f78d0cd5b45e6c733f}\index{InterStorage@{InterStorage}!count\_carteiras\_usuario@{count\_carteiras\_usuario}}
+\index{count\_carteiras\_usuario@{count\_carteiras\_usuario}!InterStorage@{InterStorage}}
+\doxysubsubsection{\texorpdfstring{count\_carteiras\_usuario()}{count\_carteiras\_usuario()}}
+{\footnotesize\ttfamily \label{classInterStorage_a5fe576fde5a750f78d0cd5b45e6c733f} 
+virtual int32\+\_\+t Inter\+Storage\+::count\+\_\+carteiras\+\_\+usuario (\begin{DoxyParamCaption}\item[{const Cpf \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Conta o número de carteiras associadas a um usuário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cpf} & Identificador do usuário. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Quantidade de carteiras do usuário. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classStorage_a25cef17e8ede4af7f95093b5c8a10332}{Storage}}.
+
+\Hypertarget{classInterStorage_ab0cfcc5ecedb5cdd383396545090f70a}\index{InterStorage@{InterStorage}!get\_carteira@{get\_carteira}}
+\index{get\_carteira@{get\_carteira}!InterStorage@{InterStorage}}
+\doxysubsubsection{\texorpdfstring{get\_carteira()}{get\_carteira()}}
+{\footnotesize\ttfamily \label{classInterStorage_ab0cfcc5ecedb5cdd383396545090f70a} 
+virtual bool Inter\+Storage\+::get\+\_\+carteira (\begin{DoxyParamCaption}\item[{Storage\+Carteira \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Recupera os dados de uma carteira específica. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carteira} & Referência para o objeto carteira a ser preenchido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a carteira foi encontrada, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classStorage_af45cd0e3b9cf1165ecb360bbeae11f69}{Storage}}.
+
+\Hypertarget{classInterStorage_ac4a18396c5764292abda5927d6af4240}\index{InterStorage@{InterStorage}!get\_carteiras\_usuario@{get\_carteiras\_usuario}}
+\index{get\_carteiras\_usuario@{get\_carteiras\_usuario}!InterStorage@{InterStorage}}
+\doxysubsubsection{\texorpdfstring{get\_carteiras\_usuario()}{get\_carteiras\_usuario()}}
+{\footnotesize\ttfamily \label{classInterStorage_ac4a18396c5764292abda5927d6af4240} 
+virtual bool Inter\+Storage\+::get\+\_\+carteiras\+\_\+usuario (\begin{DoxyParamCaption}\item[{const Cpf \&}]{}{, }\item[{lista$<$ Carteira $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Recupera todas as carteiras associadas a um usuário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cpf} & Identificador do usuário. \\
+\hline
+{\em carteiras} & Ponteiro para ponteiro de lista onde as carteiras serão armazenadas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se as carteiras foram encontradas, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classStorage_afb0b9b89f5db6cf1b5a104d8a79e05d1}{Storage}}.
+
+\Hypertarget{classInterStorage_a568f3b3af585f95fa0d1a6fb460a574e}\index{InterStorage@{InterStorage}!get\_conta@{get\_conta}}
+\index{get\_conta@{get\_conta}!InterStorage@{InterStorage}}
+\doxysubsubsection{\texorpdfstring{get\_conta()}{get\_conta()}}
+{\footnotesize\ttfamily \label{classInterStorage_a568f3b3af585f95fa0d1a6fb460a574e} 
+virtual bool Inter\+Storage\+::get\+\_\+conta (\begin{DoxyParamCaption}\item[{Conta \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Recupera os dados de uma conta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conta} & Referência para o objeto conta a ser preenchido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a conta foi encontrada, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classStorage_ae9e46148e1c8fcb56bf541bf52b1286e}{Storage}}.
+
+\Hypertarget{classInterStorage_ac352ddae66ec05a8ea2956ffd34832ab}\index{InterStorage@{InterStorage}!get\_ordem@{get\_ordem}}
+\index{get\_ordem@{get\_ordem}!InterStorage@{InterStorage}}
+\doxysubsubsection{\texorpdfstring{get\_ordem()}{get\_ordem()}}
+{\footnotesize\ttfamily \label{classInterStorage_ac352ddae66ec05a8ea2956ffd34832ab} 
+virtual bool Inter\+Storage\+::get\+\_\+ordem (\begin{DoxyParamCaption}\item[{Storage\+Ordem \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Recupera os dados de uma ordem específica. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ordem} & Referência para o objeto ordem a ser preenchido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a ordem foi encontrada, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classStorage_ac3a65f6b498143ed905a1790d209dc5d}{Storage}}.
+
+\Hypertarget{classInterStorage_af4fa4c9571a2f4e572828a0b51d45eb4}\index{InterStorage@{InterStorage}!get\_ordens\_carteira@{get\_ordens\_carteira}}
+\index{get\_ordens\_carteira@{get\_ordens\_carteira}!InterStorage@{InterStorage}}
+\doxysubsubsection{\texorpdfstring{get\_ordens\_carteira()}{get\_ordens\_carteira()}}
+{\footnotesize\ttfamily \label{classInterStorage_af4fa4c9571a2f4e572828a0b51d45eb4} 
+virtual bool Inter\+Storage\+::get\+\_\+ordens\+\_\+carteira (\begin{DoxyParamCaption}\item[{const Carteira \&}]{}{, }\item[{lista$<$ Storage\+Ordem $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Recupera todas as ordens associadas a uma carteira. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carteira} & Objeto representando a carteira. \\
+\hline
+{\em ordens} & Ponteiro para ponteiro de lista onde as ordens serão armazenadas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se as ordens foram encontradas, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classStorage_ab44e1300d245a7c7b7e77bda8bc33a25}{Storage}}.
+
+\Hypertarget{classInterStorage_a10c83d494f3f6219e8d993aaa199c0a1}\index{InterStorage@{InterStorage}!remover\_carteira@{remover\_carteira}}
+\index{remover\_carteira@{remover\_carteira}!InterStorage@{InterStorage}}
+\doxysubsubsection{\texorpdfstring{remover\_carteira()}{remover\_carteira()}}
+{\footnotesize\ttfamily \label{classInterStorage_a10c83d494f3f6219e8d993aaa199c0a1} 
+virtual bool Inter\+Storage\+::remover\+\_\+carteira (\begin{DoxyParamCaption}\item[{const Storage\+Carteira \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Remove uma carteira do armazenamento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carteira} & Objeto representando a carteira a ser removida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a remoção foi bem-\/sucedida, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classStorage_aac398181e2361ac6b44fa0bfccfdcb7a}{Storage}}.
+
+\Hypertarget{classInterStorage_a841d53f95f20d27f28d78abcb6f11562}\index{InterStorage@{InterStorage}!remover\_conta@{remover\_conta}}
+\index{remover\_conta@{remover\_conta}!InterStorage@{InterStorage}}
+\doxysubsubsection{\texorpdfstring{remover\_conta()}{remover\_conta()}}
+{\footnotesize\ttfamily \label{classInterStorage_a841d53f95f20d27f28d78abcb6f11562} 
+virtual bool Inter\+Storage\+::remover\+\_\+conta (\begin{DoxyParamCaption}\item[{const Conta \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Remove uma conta do armazenamento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conta} & Objeto representando a conta a ser removida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a remoção foi bem-\/sucedida, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classStorage_ae5b8574c8b84f4d1fafcdd509cf4b501}{Storage}}.
+
+\Hypertarget{classInterStorage_a9ac6d8835e7ffe45512b16cfb344adc1}\index{InterStorage@{InterStorage}!remover\_ordem@{remover\_ordem}}
+\index{remover\_ordem@{remover\_ordem}!InterStorage@{InterStorage}}
+\doxysubsubsection{\texorpdfstring{remover\_ordem()}{remover\_ordem()}}
+{\footnotesize\ttfamily \label{classInterStorage_a9ac6d8835e7ffe45512b16cfb344adc1} 
+virtual bool Inter\+Storage\+::remover\+\_\+ordem (\begin{DoxyParamCaption}\item[{const Codigo \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Remove uma ordem do armazenamento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em codigo} & Código identificador da ordem a ser removida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a remoção foi bem-\/sucedida, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classStorage_a1fad52d357bf6ff402d961567933ea00}{Storage}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+interfaces/interfaces.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,79 @@
+\doxysection{controleglobal.\+cpp}
+\hypertarget{controleglobal_8cpp_source}{}\label{controleglobal_8cpp_source}\index{modulos/controleglobal/controleglobal.cpp@{modulos/controleglobal/controleglobal.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}controleglobal.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <exception>}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ "{}../apr\_auth/apr\_auth.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ "{}../../interfaces/interfaces.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}../apr\_conta/apr\_conta.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}../apr\_invest/apr\_invest.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00009}00009\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00010}00010\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00012}00012\ \mbox{\hyperlink{classControleGlobal}{ControleGlobal}}*\ ControleGlobal::singleton\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00014}\mbox{\hyperlink{classControleGlobal_afe5a2e7583e2e258c61bcef7259488e9}{00014}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classControleGlobal_afe5a2e7583e2e258c61bcef7259488e9}{ControleGlobal::Run}}()\ \{}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}home\ page"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ int32\_t\ escolha\ =\ this-\/>ask\_usuario();}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (escolha)\ \{}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ (ControleGlobal::LOGIN):}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}escolheu\ login"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>autenticado\ =\ this-\/>apr\_auth-\/>autenticar(this-\/>cpf\_usuario);}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ (ControleGlobal::REGISTER):}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}escolheu\ registrar"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>apr\_conta-\/>executar(\textcolor{keyword}{nullptr});}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ (ControleGlobal::CONTA):}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}escolheu\ conta"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>apr\_conta-\/>executar(\&this-\/>cpf\_usuario);}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ (ControleGlobal::INVESTIMENTO):}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}escolheu\ investimento"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>apr\_invest-\/>executar(this-\/>cpf\_usuario);}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}alguma\ coisa\ está\ estranha"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00040}00040\ \}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00042}00042\ int32\_t\ ControleGlobal::ask\_usuario()\ \{}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ int32\_t\ escolha;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>autenticado\ ==\ \textcolor{keyword}{false})\ \{}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}decida:\(\backslash\)n0)\ login\(\backslash\)n1)\ registrar-\/se"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}decida:\(\backslash\)n0)\ login\(\backslash\)n1)\ registrar-\/se\(\backslash\)n2)\ conta\(\backslash\)n3)\ investimento"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ cin\ >>\ escolha;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!this-\/>autenticado\ \&\&\ escolha\ >\ 1\ ||\ escolha\ >\ 3)\ \{}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}entrada\ inválida"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ escolha;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (exception\ err)\ \{}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00061}00061\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00062}00062\ \}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00063}00063\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00064}\mbox{\hyperlink{classControleGlobal_a71fc8ed66a89cb223dd231962c6e3a32}{00064}}\ \mbox{\hyperlink{classControleGlobal_a71fc8ed66a89cb223dd231962c6e3a32}{ControleGlobal::ControleGlobal}}()\ \{}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00065}00065\ \ \ \ \ this-\/>apr\_auth\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classCtrlAprAuth}{CtrlAprAuth}}();}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00066}00066\ \ \ \ \ this-\/>apr\_conta\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classCtrlAprConta}{CtrlAprConta}}();}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00067}00067\ \ \ \ \ this-\/>apr\_invest\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classCtrlAprInvest}{CtrlAprInvest}}();}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00068}00068\ \ \ \ \ ControleGlobal::singleton\ =\ \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00069}00069\ \}}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00071}\mbox{\hyperlink{classControleGlobal_a091b8a7aa80afcdf8d4e8f051cad83be}{00071}}\ \mbox{\hyperlink{classControleGlobal_a71fc8ed66a89cb223dd231962c6e3a32}{ControleGlobal}}*\ \mbox{\hyperlink{classControleGlobal_a091b8a7aa80afcdf8d4e8f051cad83be}{ControleGlobal::get\_singleton}}()\ \{}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{return}\ ControleGlobal::singleton;}
+\DoxyCodeLine{\Hypertarget{controleglobal_8cpp_source_l00073}00073\ \}}
+
+\end{DoxyCode}

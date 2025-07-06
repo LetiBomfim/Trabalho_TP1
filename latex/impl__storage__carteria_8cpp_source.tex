@@ -1,0 +1,131 @@
+\doxysection{impl\+\_\+storage\+\_\+carteria.\+cpp}
+\hypertarget{impl__storage__carteria_8cpp_source}{}\label{impl__storage__carteria_8cpp_source}\index{modulos/storage/impl\_storage\_carteria.cpp@{modulos/storage/impl\_storage\_carteria.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}storage.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ <cstdlib>}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00006}00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00008}\mbox{\hyperlink{classStorage_afb0b9b89f5db6cf1b5a104d8a79e05d1}{00008}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_afb0b9b89f5db6cf1b5a104d8a79e05d1}{Storage::get\_carteiras\_usuario}}(\textcolor{keyword}{const}\ Cpf\&\ cpf,\ lista<Carteira>**\ ls)\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keyword}{auto}\ curr\_cart\ =\ this-\/>carteiras;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00010}00010\ \ \ \ \ lista<Carteira>*\ carts\_usuario\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordtype}{bool}\ achou\_alguma\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>carteiras\ ==\ \textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00015}00015\ \ \ \ \ \textcolor{keywordflow}{while}\ (curr\_cart\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (curr\_cart-\/>value.GetCpfAssociado().Get()\ ==\ cpf.Get())\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ achou\_alguma\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (carts\_usuario\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ carts\_usuario\ =\ \textcolor{keyword}{new}\ lista<Carteira>;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ carts\_usuario-\/>value.SetCodigo(curr\_cart-\/>value.GetConstCodigo());}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ carts\_usuario-\/>value.SetNome(curr\_cart-\/>value.GetConstNome());}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ carts\_usuario-\/>value.SetPerfil(curr\_cart-\/>value.GetConstPerfil());}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Carteira\ nova\_cart;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nova\_cart.SetCodigo(curr\_cart-\/>value.GetConstCodigo());}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nova\_cart.SetPerfil(curr\_cart-\/>value.GetConstPerfil());}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nova\_cart.SetNome(curr\_cart-\/>value.GetConstNome());}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ carts\_usuario-\/>push(nova\_cart);}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ curr\_cart\ =\ curr\_cart-\/>next;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00033}00033\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00035}00035\ \ \ \ \ *ls\ =\ carts\_usuario;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{return}\ achou\_alguma;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00037}00037\ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00039}\mbox{\hyperlink{classStorage_a25cef17e8ede4af7f95093b5c8a10332}{00039}}\ int32\_t\ \mbox{\hyperlink{classStorage_a25cef17e8ede4af7f95093b5c8a10332}{Storage::count\_carteiras\_usuario}}(\textcolor{keyword}{const}\ Cpf\&\ cpf)\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keyword}{auto}\ curr\_cart\ =\ this-\/>carteiras;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00041}00041\ \ \ \ \ int32\_t\ cart\_count\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00043}00043\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>carteiras\ ==\ \textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00045}00045\ \ \ \ \ \textcolor{keywordflow}{while}\ (curr\_cart\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (curr\_cart-\/>value.GetCpfAssociado().Get()\ ==\ cpf.Get())\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ cart\_count++;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ curr\_cart\ =\ curr\_cart-\/>next;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{return}\ cart\_count;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00053}00053\ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00055}\mbox{\hyperlink{classStorage_af45cd0e3b9cf1165ecb360bbeae11f69}{00055}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_af45cd0e3b9cf1165ecb360bbeae11f69}{Storage::get\_carteira}}(StorageCarteira\&\ carteira)\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00056}00056\ \ \ \ \ lista<StorageCarteira>*\ curr\_node\ =\ this-\/>carteiras;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{while}\ (curr\_node\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (curr\_node-\/>value.GetCodigo().Get()\ ==\ carteira.GetCodigo().Get())\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ carteira.SetNome(curr\_node-\/>value.GetNome());}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ carteira.SetCpfAssociado(curr\_node-\/>value.GetCpfAssociado());}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ carteira.SetPerfil(curr\_node-\/>value.GetPerfil());}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ curr\_node\ =\ curr\_node-\/>next;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00066}00066\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00068}00068\ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00070}\mbox{\hyperlink{classStorage_aac398181e2361ac6b44fa0bfccfdcb7a}{00070}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_aac398181e2361ac6b44fa0bfccfdcb7a}{Storage::remover\_carteira}}(\textcolor{keyword}{const}\ StorageCarteira\&\ carteira)\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00071}00071\ \ \ \ \ lista<StorageCarteira>*\ prev\_node\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00072}00072\ \ \ \ \ lista<StorageCarteira>*\ curr\_node\ =\ this-\/>carteiras;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{while}\ (curr\_node\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (curr\_node-\/>value.GetConstCodigo().Get()\ ==\ carteira.GetConstCodigo().Get())\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (prev\_node\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>carteiras\ =\ curr\_node-\/>next;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ curr\_node;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ prev\_node-\/>next\ =\ curr\_node-\/>next;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ curr\_node;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00085}00085\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ prev\_node\ =\ curr\_node;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ curr\_node\ =\ curr\_node-\/>next;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00091}00091\ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00093}00093\ \textcolor{comment}{//\ aloca\ um\ código\ padrão}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00094}\mbox{\hyperlink{classStorage_a53ae2efc1ef89201ece370eeba892cf1}{00094}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_a53ae2efc1ef89201ece370eeba892cf1}{Storage::add\_carteira}}(\textcolor{keyword}{const}\ StorageCarteira\&\ carteira)\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00095}00095\ \ \ \ \ StorageCarteira\ cart\_armazenada;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00096}00096\ \ \ \ \ Codigo\ novo\_codigo;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00097}00097\ \ \ \ \ \textcolor{keywordtype}{string}\ str\_novo\_cod\ =\ to\_string(++Storage::maior\_codigo\_de\_carteira);}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00098}00098\ \ \ \ \ str\_novo\_cod.insert(0,\ 5\ -\/\ str\_novo\_cod.length(),\ \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00099}00099\ \ \ \ \ novo\_codigo.Set(str\_novo\_cod);}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00100}00100\ \ \ \ \ cart\_armazenada.SetCpfAssociado(carteira.GetConstCpfAssociado());}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00101}00101\ \ \ \ \ cart\_armazenada.SetCodigo(novo\_codigo);}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00102}00102\ \ \ \ \ cart\_armazenada.SetNome(carteira.GetConstNome());}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00103}00103\ \ \ \ \ cart\_armazenada.SetPerfil(carteira.GetConstPerfil());}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00105}00105\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>carteiras\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ this-\/>carteiras\ =\ \textcolor{keyword}{new}\ lista<StorageCarteira>;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ this-\/>carteiras-\/>value\ =\ cart\_armazenada;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00109}00109\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00111}00111\ \ \ \ \ this-\/>carteiras-\/>push(cart\_armazenada);}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00112}00112\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00113}00113\ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00114}00114\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00115}00115\ \textcolor{comment}{//\ usa\ o\ código\ presente\ na\ carteira\ fornecida}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00116}\mbox{\hyperlink{classStorage_a5e4b8d05ac8f5cc7e38f568d123d27fa}{00116}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_a5e4b8d05ac8f5cc7e38f568d123d27fa}{Storage::add\_carteira\_unchecked}}(\textcolor{keyword}{const}\ StorageCarteira\&\ carteira)\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00117}00117\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>carteiras\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00118}00118\ \ \ \ \ \ \ \ \ this-\/>carteiras\ =\ \textcolor{keyword}{new}\ lista<StorageCarteira>;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00119}00119\ \ \ \ \ \ \ \ \ this-\/>carteiras-\/>value\ =\ carteira;}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00121}00121\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00123}00123\ \ \ \ \ this-\/>carteiras-\/>push(carteira);}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00124}00124\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{impl__storage__carteria_8cpp_source_l00125}00125\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,47 @@
+\doxysection{serv\+\_\+conta.\+hpp}
+\hypertarget{serv__conta_8hpp_source}{}\label{serv__conta_8hpp_source}\index{modulos/serv\_conta/serv\_conta.hpp@{modulos/serv\_conta/serv\_conta.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../../interfaces/interfaces.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}../storage/storage.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00006}00006\ \textcolor{keyword}{using\ namespace\ }std\ ;}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00011}\mbox{\hyperlink{classServConta}{00011}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classServConta_a7260ff17ea72f797eda2dada5da53956}{ServConta}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classInterServConta}{InterServConta}}\ \{}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00012}00012\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00013}00013\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInterStorage}{InterStorage}}*\ storage\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00020}\mbox{\hyperlink{classServConta_a7260ff17ea72f797eda2dada5da53956}{00020}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classServConta_a7260ff17ea72f797eda2dada5da53956}{ServConta}}()\ \{}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>storage\ =\ \mbox{\hyperlink{classStorage_a8d65cd53a14732e6239b4695369cd329}{Storage::get\_singleton}}();}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00023}00023\ }
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00029}\mbox{\hyperlink{classServConta_ae016d548ae03fcd44eb12ca2f1b2f4fd}{00029}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServConta_ae016d548ae03fcd44eb12ca2f1b2f4fd}{criar}}(\textcolor{keyword}{const}\ Conta\&\ conta)\ \{}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!storage-\/>add\_conta(conta))\ \{}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ invalid\_argument(\textcolor{stringliteral}{"{}erro\ no\ serviço\ de\ criar\ conta"{}});}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00040}\mbox{\hyperlink{classServConta_a27b6973537333eab9930c2605612f8c7}{00040}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServConta_a27b6973537333eab9930c2605612f8c7}{ler}}(Conta\&\ conta)\ \{}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!storage-\/>get\_conta(conta))\ \{}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ invalid\_argument(\textcolor{stringliteral}{"{}erro\ no\ serviço\ ler\ conta"{}});}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00051}\mbox{\hyperlink{classServConta_a5e940c3bdf601d03632223e6ea0e3906}{00051}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServConta_a5e940c3bdf601d03632223e6ea0e3906}{editar}}(\textcolor{keyword}{const}\ Conta\&\ conta)\ \{}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ storage-\/>remover\_conta(conta);}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!storage-\/>add\_conta(conta))\ \{}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ invalid\_argument(\textcolor{stringliteral}{"{}algo\ deu\ errado"{}});}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00062}\mbox{\hyperlink{classServConta_a8652a75aff70a60c7523cbe13e478173}{00062}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServConta_a8652a75aff70a60c7523cbe13e478173}{excluir}}(\textcolor{keyword}{const}\ Cpf\&\ cpf)\ \{}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ Conta\ conta;}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ conta.SetCpf(cpf);}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ storage-\/>remover\_conta(conta);}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{serv__conta_8hpp_source_l00067}00067\ \};}
+
+\end{DoxyCode}

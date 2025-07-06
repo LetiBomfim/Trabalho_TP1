@@ -1,0 +1,114 @@
+\doxysection{Controle\+Global Class Reference}
+\hypertarget{classControleGlobal}{}\label{classControleGlobal}\index{ControleGlobal@{ControleGlobal}}
+
+
+Controlador principal do sistema.  
+
+
+
+
+{\ttfamily \#include $<$controleglobal.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classControleGlobal_a71fc8ed66a89cb223dd231962c6e3a32}{Controle\+Global}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão. Realiza o setup inicial do sistema. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classControleGlobal_afe5a2e7583e2e258c61bcef7259488e9}{Run}} ()
+\begin{DoxyCompactList}\small\item\em Ponto de entrada principal do sistema. Inicia o fluxo de execução da aplicação. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{classControleGlobal_ae42201f7f9a9763d8b733a1de28d68c6}{Set\+Auth}} (bool estado)
+\begin{DoxyCompactList}\small\item\em Define o estado de autenticação do sistema. \end{DoxyCompactList}\item 
+static \mbox{\hyperlink{classControleGlobal}{Controle\+Global}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classControleGlobal_a091b8a7aa80afcdf8d4e8f051cad83be}{get\+\_\+singleton}} ()
+\begin{DoxyCompactList}\small\item\em Recupera a instância singleton do controlador global. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controlador principal do sistema. 
+
+Esta classe centraliza o fluxo de execução da aplicação, coordenando a navegação entre os módulos de autenticação, conta e investimento. 
+
+Definition at line \mbox{\hyperlink{controleglobal_8hpp_source_l00014}{14}} of file \mbox{\hyperlink{controleglobal_8hpp_source}{controleglobal.\+hpp}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classControleGlobal_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classControleGlobal_a71fc8ed66a89cb223dd231962c6e3a32}\index{ControleGlobal@{ControleGlobal}!ControleGlobal@{ControleGlobal}}
+\index{ControleGlobal@{ControleGlobal}!ControleGlobal@{ControleGlobal}}
+\doxysubsubsection{\texorpdfstring{ControleGlobal()}{ControleGlobal()}}
+{\footnotesize\ttfamily \label{classControleGlobal_a71fc8ed66a89cb223dd231962c6e3a32} 
+Controle\+Global\+::\+Controle\+Global (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Construtor padrão. Realiza o setup inicial do sistema. 
+
+
+
+Definition at line \mbox{\hyperlink{controleglobal_8cpp_source_l00064}{64}} of file \mbox{\hyperlink{controleglobal_8cpp_source}{controleglobal.\+cpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{classControleGlobal_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classControleGlobal_a091b8a7aa80afcdf8d4e8f051cad83be}\index{ControleGlobal@{ControleGlobal}!get\_singleton@{get\_singleton}}
+\index{get\_singleton@{get\_singleton}!ControleGlobal@{ControleGlobal}}
+\doxysubsubsection{\texorpdfstring{get\_singleton()}{get\_singleton()}}
+{\footnotesize\ttfamily \label{classControleGlobal_a091b8a7aa80afcdf8d4e8f051cad83be} 
+\mbox{\hyperlink{classControleGlobal}{Controle\+Global}} \texorpdfstring{$\ast$}{*} Controle\+Global\+::get\+\_\+singleton (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Recupera a instância singleton do controlador global. 
+
+\begin{DoxyReturn}{Returns}
+Ponteiro para a instância única de \doxylink{classControleGlobal}{Controle\+Global}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{controleglobal_8cpp_source_l00071}{71}} of file \mbox{\hyperlink{controleglobal_8cpp_source}{controleglobal.\+cpp}}.
+
+\Hypertarget{classControleGlobal_afe5a2e7583e2e258c61bcef7259488e9}\index{ControleGlobal@{ControleGlobal}!Run@{Run}}
+\index{Run@{Run}!ControleGlobal@{ControleGlobal}}
+\doxysubsubsection{\texorpdfstring{Run()}{Run()}}
+{\footnotesize\ttfamily \label{classControleGlobal_afe5a2e7583e2e258c61bcef7259488e9} 
+void Controle\+Global\+::\+Run (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Ponto de entrada principal do sistema. Inicia o fluxo de execução da aplicação. 
+
+
+
+Definition at line \mbox{\hyperlink{controleglobal_8cpp_source_l00014}{14}} of file \mbox{\hyperlink{controleglobal_8cpp_source}{controleglobal.\+cpp}}.
+
+\Hypertarget{classControleGlobal_ae42201f7f9a9763d8b733a1de28d68c6}\index{ControleGlobal@{ControleGlobal}!SetAuth@{SetAuth}}
+\index{SetAuth@{SetAuth}!ControleGlobal@{ControleGlobal}}
+\doxysubsubsection{\texorpdfstring{SetAuth()}{SetAuth()}}
+{\footnotesize\ttfamily \label{classControleGlobal_ae42201f7f9a9763d8b733a1de28d68c6} 
+void Controle\+Global\+::\+Set\+Auth (\begin{DoxyParamCaption}\item[{bool}]{estado}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Define o estado de autenticação do sistema. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em estado} & Valor booleano indicando se o usuário está autenticado. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{controleglobal_8hpp_source_l00038}{38}} of file \mbox{\hyperlink{controleglobal_8hpp_source}{controleglobal.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+modulos/controleglobal/controleglobal.\+hpp\item 
+modulos/controleglobal/controleglobal.\+cpp\end{DoxyCompactItemize}

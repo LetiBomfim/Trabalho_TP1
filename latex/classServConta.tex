@@ -1,0 +1,185 @@
+\doxysection{Serv\+Conta Class Reference}
+\hypertarget{classServConta}{}\label{classServConta}\index{ServConta@{ServConta}}
+
+
+Serviço responsável pelas operações de conta.  
+
+
+
+
+{\ttfamily \#include $<$serv\+\_\+conta.\+hpp$>$}
+
+
+
+Inheritance diagram for Serv\+Conta\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classServConta__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Serv\+Conta\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classServConta__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServConta_a7260ff17ea72f797eda2dada5da53956}{Serv\+Conta}} ()
+\begin{DoxyCompactList}\small\item\em Construtor da classe \doxylink{classServConta}{Serv\+Conta}. Inicializa o ponteiro de armazenamento com o singleton da classe \doxylink{classStorage}{Storage}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServConta_ae016d548ae03fcd44eb12ca2f1b2f4fd}{criar}} (const Conta \&conta)
+\begin{DoxyCompactList}\small\item\em Cria uma nova conta. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServConta_a27b6973537333eab9930c2605612f8c7}{ler}} (Conta \&conta)
+\begin{DoxyCompactList}\small\item\em Lê os dados de uma conta existente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServConta_a5e940c3bdf601d03632223e6ea0e3906}{editar}} (const Conta \&conta)
+\begin{DoxyCompactList}\small\item\em Edita uma conta existente substituindo-\/a por uma nova. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServConta_a8652a75aff70a60c7523cbe13e478173}{excluir}} (const Cpf \&cpf)
+\begin{DoxyCompactList}\small\item\em Exclui uma conta com base no CPF fornecido. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serviço responsável pelas operações de conta. 
+
+Definition at line \mbox{\hyperlink{serv__conta_8hpp_source_l00011}{11}} of file \mbox{\hyperlink{serv__conta_8hpp_source}{serv\+\_\+conta.\+hpp}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classServConta_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classServConta_a7260ff17ea72f797eda2dada5da53956}\index{ServConta@{ServConta}!ServConta@{ServConta}}
+\index{ServConta@{ServConta}!ServConta@{ServConta}}
+\doxysubsubsection{\texorpdfstring{ServConta()}{ServConta()}}
+{\footnotesize\ttfamily \label{classServConta_a7260ff17ea72f797eda2dada5da53956} 
+Serv\+Conta\+::\+Serv\+Conta (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor da classe \doxylink{classServConta}{Serv\+Conta}. Inicializa o ponteiro de armazenamento com o singleton da classe \doxylink{classStorage}{Storage}. 
+
+
+
+Definition at line \mbox{\hyperlink{serv__conta_8hpp_source_l00020}{20}} of file \mbox{\hyperlink{serv__conta_8hpp_source}{serv\+\_\+conta.\+hpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{classServConta_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classServConta_ae016d548ae03fcd44eb12ca2f1b2f4fd}\index{ServConta@{ServConta}!criar@{criar}}
+\index{criar@{criar}!ServConta@{ServConta}}
+\doxysubsubsection{\texorpdfstring{criar()}{criar()}}
+{\footnotesize\ttfamily \label{classServConta_ae016d548ae03fcd44eb12ca2f1b2f4fd} 
+void Serv\+Conta\+::criar (\begin{DoxyParamCaption}\item[{const Conta \&}]{conta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Cria uma nova conta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conta} & Objeto contendo os dados da conta a ser criada. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & Caso a conta não possa ser criada. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classInterServConta}{Inter\+Serv\+Conta}}.
+
+
+
+Definition at line \mbox{\hyperlink{serv__conta_8hpp_source_l00029}{29}} of file \mbox{\hyperlink{serv__conta_8hpp_source}{serv\+\_\+conta.\+hpp}}.
+
+\Hypertarget{classServConta_a5e940c3bdf601d03632223e6ea0e3906}\index{ServConta@{ServConta}!editar@{editar}}
+\index{editar@{editar}!ServConta@{ServConta}}
+\doxysubsubsection{\texorpdfstring{editar()}{editar()}}
+{\footnotesize\ttfamily \label{classServConta_a5e940c3bdf601d03632223e6ea0e3906} 
+void Serv\+Conta\+::editar (\begin{DoxyParamCaption}\item[{const Conta \&}]{conta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Edita uma conta existente substituindo-\/a por uma nova. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conta} & Objeto Conta com os dados atualizados. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & Caso não seja possível salvar a nova conta. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classInterServConta}{Inter\+Serv\+Conta}}.
+
+
+
+Definition at line \mbox{\hyperlink{serv__conta_8hpp_source_l00051}{51}} of file \mbox{\hyperlink{serv__conta_8hpp_source}{serv\+\_\+conta.\+hpp}}.
+
+\Hypertarget{classServConta_a8652a75aff70a60c7523cbe13e478173}\index{ServConta@{ServConta}!excluir@{excluir}}
+\index{excluir@{excluir}!ServConta@{ServConta}}
+\doxysubsubsection{\texorpdfstring{excluir()}{excluir()}}
+{\footnotesize\ttfamily \label{classServConta_a8652a75aff70a60c7523cbe13e478173} 
+void Serv\+Conta\+::excluir (\begin{DoxyParamCaption}\item[{const Cpf \&}]{cpf}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Exclui uma conta com base no CPF fornecido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cpf} & CPF associado à conta a ser removida. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classInterServConta}{Inter\+Serv\+Conta}}.
+
+
+
+Definition at line \mbox{\hyperlink{serv__conta_8hpp_source_l00062}{62}} of file \mbox{\hyperlink{serv__conta_8hpp_source}{serv\+\_\+conta.\+hpp}}.
+
+\Hypertarget{classServConta_a27b6973537333eab9930c2605612f8c7}\index{ServConta@{ServConta}!ler@{ler}}
+\index{ler@{ler}!ServConta@{ServConta}}
+\doxysubsubsection{\texorpdfstring{ler()}{ler()}}
+{\footnotesize\ttfamily \label{classServConta_a27b6973537333eab9930c2605612f8c7} 
+void Serv\+Conta\+::ler (\begin{DoxyParamCaption}\item[{Conta \&}]{conta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Lê os dados de uma conta existente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conta} & Objeto Conta com o CPF preenchido. A função preenche os demais dados. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & Caso a conta não seja encontrada. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classInterServConta}{Inter\+Serv\+Conta}}.
+
+
+
+Definition at line \mbox{\hyperlink{serv__conta_8hpp_source_l00040}{40}} of file \mbox{\hyperlink{serv__conta_8hpp_source}{serv\+\_\+conta.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modulos/serv\+\_\+conta/serv\+\_\+conta.\+hpp\end{DoxyCompactItemize}

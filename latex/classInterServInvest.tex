@@ -1,0 +1,219 @@
+\doxysection{Inter\+Serv\+Invest Class Reference}
+\hypertarget{classInterServInvest}{}\label{classInterServInvest}\index{InterServInvest@{InterServInvest}}
+
+
+Define o contrato para operações de gerenciamento de carteiras e ordens de investimento, incluindo criação, edição, exclusão e listagem.  
+
+
+
+
+{\ttfamily \#include $<$interfaces.\+hpp$>$}
+
+
+
+Inheritance diagram for Inter\+Serv\+Invest\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{classInterServInvest__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \mbox{\hyperlink{classInterServInvest_ad4b789de3c6e3b71ad569794d6ed23cf}{criar\+\_\+cart}} (const Carteira \&, const Cpf \&)=0
+\begin{DoxyCompactList}\small\item\em Cria uma nova carteira para o usuário, caso o mesmo seja válido. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classInterServInvest_a82c84753b4065e5bb336ef4605cc390a}{editar\+\_\+cart}} (const Carteira \&)=0
+\begin{DoxyCompactList}\small\item\em Atualiza as informações de uma carteira já existente. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classInterServInvest_abadeea57b9f8eee1c7315ca0029fd2ad}{excluir\+\_\+cart}} (const Carteira \&)=0
+\begin{DoxyCompactList}\small\item\em exclui uma carteira já existente . \end{DoxyCompactList}\item 
+virtual lista$<$ Carteira $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classInterServInvest_ab8f181bc1d3c855324097492ee5b9f99}{listar\+\_\+cart}} (const Cpf \&)=0
+\begin{DoxyCompactList}\small\item\em Armazena o cpf do usuário em uma lista, se somente se, o mesmo ainda não tenha sido cadastrado. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classInterServInvest_acb12b330ae0b24e0060c9ec8081ae1b2}{criar\+\_\+ordem}} (const Ordem \&)=0
+\begin{DoxyCompactList}\small\item\em Cria uma nova ordem de investimento para uma carteira existente, caso os dados informados seja válidos. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classInterServInvest_af4301689ba652bedada7822d42e4cd32}{excluir\+\_\+ordem}} (const Codigo \&)=0
+\begin{DoxyCompactList}\small\item\em exclui a ordem de uma carteira já existente. \end{DoxyCompactList}\item 
+virtual lista$<$ Storage\+Ordem $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classInterServInvest_aaaab00d88bd2940ca310edf9f59c776f}{listar\+\_\+ordem}} (const Carteira \&)=0
+\begin{DoxyCompactList}\small\item\em Armazena a ordem de uma carteria em uma lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Define o contrato para operações de gerenciamento de carteiras e ordens de investimento, incluindo criação, edição, exclusão e listagem. 
+
+Definition at line \mbox{\hyperlink{interfaces_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{interfaces_8hpp_source}{interfaces.\+hpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{classInterServInvest_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classInterServInvest_ad4b789de3c6e3b71ad569794d6ed23cf}\index{InterServInvest@{InterServInvest}!criar\_cart@{criar\_cart}}
+\index{criar\_cart@{criar\_cart}!InterServInvest@{InterServInvest}}
+\doxysubsubsection{\texorpdfstring{criar\_cart()}{criar\_cart()}}
+{\footnotesize\ttfamily \label{classInterServInvest_ad4b789de3c6e3b71ad569794d6ed23cf} 
+virtual void Inter\+Serv\+Invest\+::criar\+\_\+cart (\begin{DoxyParamCaption}\item[{const Carteira \&}]{}{, }\item[{const Cpf \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Cria uma nova carteira para o usuário, caso o mesmo seja válido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carteira} & Objeto contendo os dados do portfólio de investimentos. \\
+\hline
+{\em cpf} & Identificador do usuário proprietário da carteira. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classServInvest_a33beae01f0e254530dbb777233c1a4ee}{Serv\+Invest}}.
+
+\Hypertarget{classInterServInvest_acb12b330ae0b24e0060c9ec8081ae1b2}\index{InterServInvest@{InterServInvest}!criar\_ordem@{criar\_ordem}}
+\index{criar\_ordem@{criar\_ordem}!InterServInvest@{InterServInvest}}
+\doxysubsubsection{\texorpdfstring{criar\_ordem()}{criar\_ordem()}}
+{\footnotesize\ttfamily \label{classInterServInvest_acb12b330ae0b24e0060c9ec8081ae1b2} 
+virtual void Inter\+Serv\+Invest\+::criar\+\_\+ordem (\begin{DoxyParamCaption}\item[{const Ordem \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Cria uma nova ordem de investimento para uma carteira existente, caso os dados informados seja válidos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ordem} & Objeto contendo os dados da ordem, como código de negociação, data e quantidade. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classServInvest_a832988e3c04a5fb911cb8a3b6b09d34e}{Serv\+Invest}}.
+
+\Hypertarget{classInterServInvest_a82c84753b4065e5bb336ef4605cc390a}\index{InterServInvest@{InterServInvest}!editar\_cart@{editar\_cart}}
+\index{editar\_cart@{editar\_cart}!InterServInvest@{InterServInvest}}
+\doxysubsubsection{\texorpdfstring{editar\_cart()}{editar\_cart()}}
+{\footnotesize\ttfamily \label{classInterServInvest_a82c84753b4065e5bb336ef4605cc390a} 
+virtual void Inter\+Serv\+Invest\+::editar\+\_\+cart (\begin{DoxyParamCaption}\item[{const Carteira \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Atualiza as informações de uma carteira já existente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carteira.} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classServInvest_a914be847b99fa591020d150b7106ca09}{Serv\+Invest}}.
+
+\Hypertarget{classInterServInvest_abadeea57b9f8eee1c7315ca0029fd2ad}\index{InterServInvest@{InterServInvest}!excluir\_cart@{excluir\_cart}}
+\index{excluir\_cart@{excluir\_cart}!InterServInvest@{InterServInvest}}
+\doxysubsubsection{\texorpdfstring{excluir\_cart()}{excluir\_cart()}}
+{\footnotesize\ttfamily \label{classInterServInvest_abadeea57b9f8eee1c7315ca0029fd2ad} 
+virtual void Inter\+Serv\+Invest\+::excluir\+\_\+cart (\begin{DoxyParamCaption}\item[{const Carteira \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+exclui uma carteira já existente . 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carteira.} & \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{classServInvest_a93230a22b4d191940509bcd4e27ff78d}{Serv\+Invest}}.
+
+\Hypertarget{classInterServInvest_af4301689ba652bedada7822d42e4cd32}\index{InterServInvest@{InterServInvest}!excluir\_ordem@{excluir\_ordem}}
+\index{excluir\_ordem@{excluir\_ordem}!InterServInvest@{InterServInvest}}
+\doxysubsubsection{\texorpdfstring{excluir\_ordem()}{excluir\_ordem()}}
+{\footnotesize\ttfamily \label{classInterServInvest_af4301689ba652bedada7822d42e4cd32} 
+virtual void Inter\+Serv\+Invest\+::excluir\+\_\+ordem (\begin{DoxyParamCaption}\item[{const Codigo \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+exclui a ordem de uma carteira já existente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em codigo} & número que identifica uma ordem específica \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \mbox{\hyperlink{classServInvest_a73b239867e1f2b92c2a26ebfdbf17ecf}{Serv\+Invest}}.
+
+\Hypertarget{classInterServInvest_ab8f181bc1d3c855324097492ee5b9f99}\index{InterServInvest@{InterServInvest}!listar\_cart@{listar\_cart}}
+\index{listar\_cart@{listar\_cart}!InterServInvest@{InterServInvest}}
+\doxysubsubsection{\texorpdfstring{listar\_cart()}{listar\_cart()}}
+{\footnotesize\ttfamily \label{classInterServInvest_ab8f181bc1d3c855324097492ee5b9f99} 
+virtual lista$<$ Carteira $>$ \texorpdfstring{$\ast$}{*} Inter\+Serv\+Invest\+::listar\+\_\+cart (\begin{DoxyParamCaption}\item[{const Cpf \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Armazena o cpf do usuário em uma lista, se somente se, o mesmo ainda não tenha sido cadastrado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cpf.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nulltpr caso o cpf informado já tenha sido cadastrado. 
+
+lst Ponteiro para uma lista de carteira, se somete se, o cpf ainda não tenha sido cadastrado. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classServInvest_ad599c58d85d6cc1efd2679ac8064bbe7}{Serv\+Invest}}.
+
+\Hypertarget{classInterServInvest_aaaab00d88bd2940ca310edf9f59c776f}\index{InterServInvest@{InterServInvest}!listar\_ordem@{listar\_ordem}}
+\index{listar\_ordem@{listar\_ordem}!InterServInvest@{InterServInvest}}
+\doxysubsubsection{\texorpdfstring{listar\_ordem()}{listar\_ordem()}}
+{\footnotesize\ttfamily \label{classInterServInvest_aaaab00d88bd2940ca310edf9f59c776f} 
+virtual lista$<$ Storage\+Ordem $>$ \texorpdfstring{$\ast$}{*} Inter\+Serv\+Invest\+::listar\+\_\+ordem (\begin{DoxyParamCaption}\item[{const Carteira \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Armazena a ordem de uma carteria em uma lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carteira} & Objeto que contém as informações referentes aos ativos financeiros que um investidor possui. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & \\
+\hline
+\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+nulltptr Caso a carteira do usuário ainda não tenha sido cadastrada. 
+
+ls Ponteiro para a lista de ordens,se somente se, todas as informações declaradas forem válidas. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classServInvest_a7d36415973b4a0fea0846ac580f1434a}{Serv\+Invest}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+interfaces/interfaces.\+hpp\end{DoxyCompactItemize}

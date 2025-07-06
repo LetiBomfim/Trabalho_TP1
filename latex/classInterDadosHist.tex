@@ -1,0 +1,65 @@
+\doxysection{Inter\+Dados\+Hist Class Reference}
+\hypertarget{classInterDadosHist}{}\label{classInterDadosHist}\index{InterDadosHist@{InterDadosHist}}
+
+
+Define o contrato para atualização de valores de ordens com base em dados históricos. Utilizada para garantir que as ordens estejam associadas aos valores corretos do mercado.  
+
+
+
+
+{\ttfamily \#include $<$interfaces.\+hpp$>$}
+
+
+
+Inheritance diagram for Inter\+Dados\+Hist\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classInterDadosHist__inherit__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{classInterDadosHist_a943b8233dd38dde85e777a13462894e7}{set\+\_\+valor\+\_\+ordem}} (Ordem \&)=0
+\begin{DoxyCompactList}\small\item\em Atualiza o valor de uma ordem com base nos dados históricos disponíveis. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Define o contrato para atualização de valores de ordens com base em dados históricos. Utilizada para garantir que as ordens estejam associadas aos valores corretos do mercado. 
+
+Definition at line \mbox{\hyperlink{interfaces_8hpp_source_l00194}{194}} of file \mbox{\hyperlink{interfaces_8hpp_source}{interfaces.\+hpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{classInterDadosHist_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classInterDadosHist_a943b8233dd38dde85e777a13462894e7}\index{InterDadosHist@{InterDadosHist}!set\_valor\_ordem@{set\_valor\_ordem}}
+\index{set\_valor\_ordem@{set\_valor\_ordem}!InterDadosHist@{InterDadosHist}}
+\doxysubsubsection{\texorpdfstring{set\_valor\_ordem()}{set\_valor\_ordem()}}
+{\footnotesize\ttfamily \label{classInterDadosHist_a943b8233dd38dde85e777a13462894e7} 
+virtual bool Inter\+Dados\+Hist\+::set\+\_\+valor\+\_\+ordem (\begin{DoxyParamCaption}\item[{Ordem \&}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Atualiza o valor de uma ordem com base nos dados históricos disponíveis. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ordem} & Referência para o objeto ordem a ser atualizado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a atualização foi bem-\/sucedida, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{classDadosHist_a6fe04a64f0d4fac080524a22c5f9c4e8}{Dados\+Hist}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+interfaces/interfaces.\+hpp\end{DoxyCompactItemize}

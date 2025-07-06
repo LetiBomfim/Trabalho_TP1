@@ -1,0 +1,24 @@
+\doxysection{storage.\+cpp}
+\hypertarget{storage_8cpp_source}{}\label{storage_8cpp_source}\index{modulos/storage/storage.cpp@{modulos/storage/storage.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{storage_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}storage.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{storage_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{storage_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}iostream"{}}}
+\DoxyCodeLine{\Hypertarget{storage_8cpp_source_l00004}00004\ }
+\DoxyCodeLine{\Hypertarget{storage_8cpp_source_l00005}00005\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{storage_8cpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{storage_8cpp_source_l00007}00007\ \mbox{\hyperlink{classStorage}{Storage}}*\ Storage::singleton\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{storage_8cpp_source_l00008}00008\ int64\_t\ Storage::maior\_codigo\_de\_carteira\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{storage_8cpp_source_l00009}00009\ int64\_t\ Storage::maior\_codigo\_de\_ordem\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{storage_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{storage_8cpp_source_l00011}\mbox{\hyperlink{classStorage_a8d65cd53a14732e6239b4695369cd329}{00011}}\ \mbox{\hyperlink{classStorage}{Storage}}*\ \mbox{\hyperlink{classStorage_a8d65cd53a14732e6239b4695369cd329}{Storage::get\_singleton}}()\ \{}
+\DoxyCodeLine{\Hypertarget{storage_8cpp_source_l00012}00012\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}batata"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{storage_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{if}\ (Storage::singleton\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{storage_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ Storage::singleton\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classStorage}{Storage}}();}
+\DoxyCodeLine{\Hypertarget{storage_8cpp_source_l00015}00015\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{storage_8cpp_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{storage_8cpp_source_l00017}00017\ \ \ \ \ \textcolor{keywordflow}{return}\ Storage::singleton;}
+\DoxyCodeLine{\Hypertarget{storage_8cpp_source_l00018}00018\ \}}
+
+\end{DoxyCode}

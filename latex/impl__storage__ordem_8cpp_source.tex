@@ -1,0 +1,118 @@
+\doxysection{impl\+\_\+storage\+\_\+ordem.\+cpp}
+\hypertarget{impl__storage__ordem_8cpp_source}{}\label{impl__storage__ordem_8cpp_source}\index{modulos/storage/impl\_storage\_ordem.cpp@{modulos/storage/impl\_storage\_ordem.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}storage.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}iostream"{}}}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00004}00004\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00006}\mbox{\hyperlink{classStorage_ab44e1300d245a7c7b7e77bda8bc33a25}{00006}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_ab44e1300d245a7c7b7e77bda8bc33a25}{Storage::get\_ordens\_carteira}}(\textcolor{keyword}{const}\ Carteira\&\ cart,\ lista<StorageOrdem>**\ ls)\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00007}00007\ \ \ \ \ \textcolor{keyword}{auto}\ curr\_invest\ =\ this-\/>investimentos;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00008}00008\ \ \ \ \ lista<StorageOrdem>*\ invest\_carteira\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00009}00009\ \ \ \ \ \textcolor{keywordtype}{bool}\ achou\_algum\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00011}00011\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>investimentos\ ==\ \textcolor{keyword}{nullptr})\ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00013}00013\ \ \ \ \ \textcolor{keywordflow}{while}\ (curr\_invest\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00014}00014\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (curr\_invest-\/>value.GetConstCodigo().Get()\ ==\ cart.GetConstCodigo().Get())\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ achou\_algum\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (invest\_carteira\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ invest\_carteira\ =\ \textcolor{keyword}{new}\ lista<StorageOrdem>;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00018}00018\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ invest\_carteira-\/>value.SetCodigo(curr\_invest-\/>value.GetConstCodigo());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ invest\_carteira-\/>value.SetCodigoDeNegociacao(curr\_invest-\/>value.GetConstCodigoDeNegociacao());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ invest\_carteira-\/>value.SetData(curr\_invest-\/>value.GetConstData());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ invest\_carteira-\/>value.SetQuantidade(curr\_invest-\/>value.GetConstQuantidade());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ invest\_carteira-\/>value.SetDinheiro(curr\_invest-\/>value.GetConstDinheiro());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ invest\_carteira-\/>value.SetId(curr\_invest-\/>value.GetConstId());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ StorageOrdem\ nova\_ordem;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nova\_ordem.SetCodigo(curr\_invest-\/>value.GetConstCodigo());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nova\_ordem.SetCodigoDeNegociacao(curr\_invest-\/>value.GetConstCodigoDeNegociacao());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nova\_ordem.SetData(curr\_invest-\/>value.GetConstData());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00029}00029\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nova\_ordem.SetQuantidade(curr\_invest-\/>value.GetConstQuantidade());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nova\_ordem.SetDinheiro(curr\_invest-\/>value.GetConstDinheiro());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00031}00031\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ nova\_ordem.SetId(curr\_invest-\/>value.GetConstId());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ invest\_carteira-\/>push(nova\_ordem);}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ curr\_invest\ =\ curr\_invest-\/>next;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00039}00039\ \ \ \ \ *ls\ =\ invest\_carteira;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{return}\ achou\_algum;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00041}00041\ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00042}00042\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00043}\mbox{\hyperlink{classStorage_ac3a65f6b498143ed905a1790d209dc5d}{00043}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_ac3a65f6b498143ed905a1790d209dc5d}{Storage::get\_ordem}}(StorageOrdem\&\ ordem)\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00044}00044\ \ \ \ \ \textcolor{keyword}{auto}\ curr\_invest\ =\ this-\/>investimentos;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{while}\ (curr\_invest\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (curr\_invest-\/>value.GetConstId().Get()\ ==\ ordem.GetConstId().Get())\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ ordem.SetData(curr\_invest-\/>value.GetConstData());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ ordem.SetDinheiro(curr\_invest-\/>value.GetConstDinheiro());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ ordem.SetQuantidade(curr\_invest-\/>value.GetConstQuantidade());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ curr\_invest\ =\ curr\_invest-\/>next;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00055}00055\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00056}00056\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00057}00057\ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00059}\mbox{\hyperlink{classStorage_a1fad52d357bf6ff402d961567933ea00}{00059}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_a1fad52d357bf6ff402d961567933ea00}{Storage::remover\_ordem}}(\textcolor{keyword}{const}\ Codigo\&\ cod)\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00060}00060\ \ \ \ \ lista<StorageOrdem>*\ prev\_invest\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{keyword}{auto}\ curr\_invest\ =\ this-\/>investimentos;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00063}00063\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>investimentos\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00065}00065\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00067}00067\ \ \ \ \ \textcolor{keywordflow}{while}\ (curr\_invest\ !=\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (curr\_invest-\/>value.GetConstId().Get()\ ==\ cod.Get())\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}investimento\ encontrado"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (prev\_invest\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00071}00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}lista\ única"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>investimentos\ =\ curr\_invest-\/>next;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00073}00073\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ curr\_invest;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}lista\ multipla"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ prev\_invest-\/>next\ =\ curr\_invest-\/>next;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keyword}{delete}\ curr\_invest;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ prev\_invest\ =\ curr\_invest;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ curr\_invest\ =\ curr\_invest-\/>next;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00085}00085\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00086}00086\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00087}00087\ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00089}\mbox{\hyperlink{classStorage_a8cf0dcf5b003b803f401336f2af0a098}{00089}}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_a8cf0dcf5b003b803f401336f2af0a098}{Storage::add\_ordem}}(\textcolor{keyword}{const}\ Ordem\&\ ordem)\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00090}00090\ \ \ \ \ Codigo\ new\_cod;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00091}00091\ \ \ \ \ \textcolor{keywordtype}{string}\ str\_novo\_cod\ =\ to\_string(++Storage::maior\_codigo\_de\_ordem);}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00092}00092\ \ \ \ \ str\_novo\_cod.insert(0,\ 5\ -\/\ str\_novo\_cod.length(),\ \textcolor{charliteral}{'0'});}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00093}00093\ \ \ \ \ new\_cod.Set(str\_novo\_cod);}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00095}00095\ \ \ \ \ StorageOrdem\ st\_ordem;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00096}00096\ \ \ \ \ st\_ordem.SetCodigo(ordem.GetConstCodigo());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00097}00097\ \ \ \ \ st\_ordem.SetCodigoDeNegociacao(ordem.GetConstCodigoDeNegociacao());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00098}00098\ \ \ \ \ st\_ordem.SetData(ordem.GetConstData());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00099}00099\ \ \ \ \ st\_ordem.SetDinheiro(ordem.GetConstDinheiro());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00100}00100\ \ \ \ \ st\_ordem.SetQuantidade(ordem.GetConstQuantidade());}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00101}00101\ \ \ \ \ st\_ordem.SetId(new\_cod);}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00102}00102\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00103}00103\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00104}00104\ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>investimentos\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ this-\/>investimentos\ =\ \textcolor{keyword}{new}\ lista<StorageOrdem>;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ this-\/>investimentos-\/>value\ =\ st\_ordem;}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00108}00108\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00110}00110\ \ \ \ \ this-\/>investimentos-\/>push(st\_ordem);}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{impl__storage__ordem_8cpp_source_l00112}00112\ \}}
+
+\end{DoxyCode}

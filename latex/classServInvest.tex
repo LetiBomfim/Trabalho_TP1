@@ -1,0 +1,277 @@
+\doxysection{Serv\+Invest Class Reference}
+\hypertarget{classServInvest}{}\label{classServInvest}\index{ServInvest@{ServInvest}}
+
+
+Serviço de gerenciamento de investimentos.  
+
+
+
+
+{\ttfamily \#include $<$serv\+\_\+invest.\+hpp$>$}
+
+
+
+Inheritance diagram for Serv\+Invest\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{classServInvest__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Serv\+Invest\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{classServInvest__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classServInvest_a79ec3a701f5afc655f8921bdb55846f4}{Serv\+Invest}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão. Inicializa os serviços de armazenamento e dados históricos. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServInvest_a33beae01f0e254530dbb777233c1a4ee}{criar\+\_\+cart}} (const Carteira \&carteira, const Cpf \&cpf)
+\begin{DoxyCompactList}\small\item\em Cria uma nova carteira para o usuário, caso o mesmo seja válido. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServInvest_a914be847b99fa591020d150b7106ca09}{editar\+\_\+cart}} (const Carteira \&carteira)
+\begin{DoxyCompactList}\small\item\em Atualiza as informações de uma carteira já existente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServInvest_a93230a22b4d191940509bcd4e27ff78d}{excluir\+\_\+cart}} (const Carteira \&carteira)
+\begin{DoxyCompactList}\small\item\em Exclui uma carteira já existente. \end{DoxyCompactList}\item 
+lista$<$ Carteira $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classServInvest_ad599c58d85d6cc1efd2679ac8064bbe7}{listar\+\_\+cart}} (const Cpf \&cpf)
+\begin{DoxyCompactList}\small\item\em Lista todas as carteiras de um usuário. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServInvest_a832988e3c04a5fb911cb8a3b6b09d34e}{criar\+\_\+ordem}} (const Ordem \&ordem)
+\begin{DoxyCompactList}\small\item\em Cria uma nova ordem de investimento para uma carteira existente. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classServInvest_a73b239867e1f2b92c2a26ebfdbf17ecf}{excluir\+\_\+ordem}} (const Codigo \&cod)
+\begin{DoxyCompactList}\small\item\em Exclui uma ordem de investimento. \end{DoxyCompactList}\item 
+lista$<$ Storage\+Ordem $>$ \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classServInvest_a7d36415973b4a0fea0846ac580f1434a}{listar\+\_\+ordem}} (const Carteira \&carteira)
+\begin{DoxyCompactList}\small\item\em Lista todas as ordens de uma carteira. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serviço de gerenciamento de investimentos. 
+
+Fornece as operações de negócio para manipulação de carteiras e ordens de investimento no sistema. Realiza validações. Também ,permite criar, editar, excluir e listar carteiras e ordens. 
+
+Definition at line \mbox{\hyperlink{serv__invest_8hpp_source_l00014}{14}} of file \mbox{\hyperlink{serv__invest_8hpp_source}{serv\+\_\+invest.\+hpp}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classServInvest_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classServInvest_a79ec3a701f5afc655f8921bdb55846f4}\index{ServInvest@{ServInvest}!ServInvest@{ServInvest}}
+\index{ServInvest@{ServInvest}!ServInvest@{ServInvest}}
+\doxysubsubsection{\texorpdfstring{ServInvest()}{ServInvest()}}
+{\footnotesize\ttfamily \label{classServInvest_a79ec3a701f5afc655f8921bdb55846f4} 
+Serv\+Invest\+::\+Serv\+Invest (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor padrão. Inicializa os serviços de armazenamento e dados históricos. 
+
+
+
+Definition at line \mbox{\hyperlink{serv__invest_8hpp_source_l00024}{24}} of file \mbox{\hyperlink{serv__invest_8hpp_source}{serv\+\_\+invest.\+hpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{classServInvest_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classServInvest_a33beae01f0e254530dbb777233c1a4ee}\index{ServInvest@{ServInvest}!criar\_cart@{criar\_cart}}
+\index{criar\_cart@{criar\_cart}!ServInvest@{ServInvest}}
+\doxysubsubsection{\texorpdfstring{criar\_cart()}{criar\_cart()}}
+{\footnotesize\ttfamily \label{classServInvest_a33beae01f0e254530dbb777233c1a4ee} 
+void Serv\+Invest\+::criar\+\_\+cart (\begin{DoxyParamCaption}\item[{const Carteira \&}]{carteira}{, }\item[{const Cpf \&}]{cpf}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Cria uma nova carteira para o usuário, caso o mesmo seja válido. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carteira} & Objeto contendo os dados da carteira. \\
+\hline
+{\em cpf} & Identificador do usuário proprietário da carteira. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classInterServInvest_ad4b789de3c6e3b71ad569794d6ed23cf}{Inter\+Serv\+Invest}}.
+
+
+
+Definition at line \mbox{\hyperlink{serv__invest_8hpp_source_l00035}{35}} of file \mbox{\hyperlink{serv__invest_8hpp_source}{serv\+\_\+invest.\+hpp}}.
+
+\Hypertarget{classServInvest_a832988e3c04a5fb911cb8a3b6b09d34e}\index{ServInvest@{ServInvest}!criar\_ordem@{criar\_ordem}}
+\index{criar\_ordem@{criar\_ordem}!ServInvest@{ServInvest}}
+\doxysubsubsection{\texorpdfstring{criar\_ordem()}{criar\_ordem()}}
+{\footnotesize\ttfamily \label{classServInvest_a832988e3c04a5fb911cb8a3b6b09d34e} 
+void Serv\+Invest\+::criar\+\_\+ordem (\begin{DoxyParamCaption}\item[{const Ordem \&}]{ordem}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Cria uma nova ordem de investimento para uma carteira existente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ordem} & Objeto contendo os dados da ordem. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & . \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classInterServInvest_acb12b330ae0b24e0060c9ec8081ae1b2}{Inter\+Serv\+Invest}}.
+
+
+
+Definition at line \mbox{\hyperlink{serv__invest_8hpp_source_l00105}{105}} of file \mbox{\hyperlink{serv__invest_8hpp_source}{serv\+\_\+invest.\+hpp}}.
+
+\Hypertarget{classServInvest_a914be847b99fa591020d150b7106ca09}\index{ServInvest@{ServInvest}!editar\_cart@{editar\_cart}}
+\index{editar\_cart@{editar\_cart}!ServInvest@{ServInvest}}
+\doxysubsubsection{\texorpdfstring{editar\_cart()}{editar\_cart()}}
+{\footnotesize\ttfamily \label{classServInvest_a914be847b99fa591020d150b7106ca09} 
+void Serv\+Invest\+::editar\+\_\+cart (\begin{DoxyParamCaption}\item[{const Carteira \&}]{carteira}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Atualiza as informações de uma carteira já existente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carteira} & Objeto contendo os dados atualizados da carteira. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classInterServInvest_a82c84753b4065e5bb336ef4605cc390a}{Inter\+Serv\+Invest}}.
+
+
+
+Definition at line \mbox{\hyperlink{serv__invest_8hpp_source_l00057}{57}} of file \mbox{\hyperlink{serv__invest_8hpp_source}{serv\+\_\+invest.\+hpp}}.
+
+\Hypertarget{classServInvest_a93230a22b4d191940509bcd4e27ff78d}\index{ServInvest@{ServInvest}!excluir\_cart@{excluir\_cart}}
+\index{excluir\_cart@{excluir\_cart}!ServInvest@{ServInvest}}
+\doxysubsubsection{\texorpdfstring{excluir\_cart()}{excluir\_cart()}}
+{\footnotesize\ttfamily \label{classServInvest_a93230a22b4d191940509bcd4e27ff78d} 
+void Serv\+Invest\+::excluir\+\_\+cart (\begin{DoxyParamCaption}\item[{const Carteira \&}]{carteira}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Exclui uma carteira já existente. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carteira} & Objeto identificando a carteira a ser excluída. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{classInterServInvest_abadeea57b9f8eee1c7315ca0029fd2ad}{Inter\+Serv\+Invest}}.
+
+
+
+Definition at line \mbox{\hyperlink{serv__invest_8hpp_source_l00077}{77}} of file \mbox{\hyperlink{serv__invest_8hpp_source}{serv\+\_\+invest.\+hpp}}.
+
+\Hypertarget{classServInvest_a73b239867e1f2b92c2a26ebfdbf17ecf}\index{ServInvest@{ServInvest}!excluir\_ordem@{excluir\_ordem}}
+\index{excluir\_ordem@{excluir\_ordem}!ServInvest@{ServInvest}}
+\doxysubsubsection{\texorpdfstring{excluir\_ordem()}{excluir\_ordem()}}
+{\footnotesize\ttfamily \label{classServInvest_a73b239867e1f2b92c2a26ebfdbf17ecf} 
+void Serv\+Invest\+::excluir\+\_\+ordem (\begin{DoxyParamCaption}\item[{const Codigo \&}]{cod}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Exclui uma ordem de investimento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cod} & Código identificador da ordem. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & . \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classInterServInvest_af4301689ba652bedada7822d42e4cd32}{Inter\+Serv\+Invest}}.
+
+
+
+Definition at line \mbox{\hyperlink{serv__invest_8hpp_source_l00132}{132}} of file \mbox{\hyperlink{serv__invest_8hpp_source}{serv\+\_\+invest.\+hpp}}.
+
+\Hypertarget{classServInvest_ad599c58d85d6cc1efd2679ac8064bbe7}\index{ServInvest@{ServInvest}!listar\_cart@{listar\_cart}}
+\index{listar\_cart@{listar\_cart}!ServInvest@{ServInvest}}
+\doxysubsubsection{\texorpdfstring{listar\_cart()}{listar\_cart()}}
+{\footnotesize\ttfamily \label{classServInvest_ad599c58d85d6cc1efd2679ac8064bbe7} 
+lista$<$ Carteira $>$ \texorpdfstring{$\ast$}{*} Serv\+Invest\+::listar\+\_\+cart (\begin{DoxyParamCaption}\item[{const Cpf \&}]{cpf}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Lista todas as carteiras de um usuário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cpf} & Identificador do usuário. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Ponteiro para uma lista de carteiras pertencentes ao usuário, ou nullptr se não houver carteiras. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classInterServInvest_ab8f181bc1d3c855324097492ee5b9f99}{Inter\+Serv\+Invest}}.
+
+
+
+Definition at line \mbox{\hyperlink{serv__invest_8hpp_source_l00089}{89}} of file \mbox{\hyperlink{serv__invest_8hpp_source}{serv\+\_\+invest.\+hpp}}.
+
+\Hypertarget{classServInvest_a7d36415973b4a0fea0846ac580f1434a}\index{ServInvest@{ServInvest}!listar\_ordem@{listar\_ordem}}
+\index{listar\_ordem@{listar\_ordem}!ServInvest@{ServInvest}}
+\doxysubsubsection{\texorpdfstring{listar\_ordem()}{listar\_ordem()}}
+{\footnotesize\ttfamily \label{classServInvest_a7d36415973b4a0fea0846ac580f1434a} 
+lista$<$ Storage\+Ordem $>$ \texorpdfstring{$\ast$}{*} Serv\+Invest\+::listar\+\_\+ordem (\begin{DoxyParamCaption}\item[{const Carteira \&}]{carteira}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Lista todas as ordens de uma carteira. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carteira} & Objeto identificando a carteira. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+nulltptr se não houver ordens. 
+
+Ponteiro para uma lista de ordens associadas à carteira. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em invalid\+\_\+argument} & . \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \mbox{\hyperlink{classInterServInvest_aaaab00d88bd2940ca310edf9f59c776f}{Inter\+Serv\+Invest}}.
+
+
+
+Definition at line \mbox{\hyperlink{serv__invest_8hpp_source_l00145}{145}} of file \mbox{\hyperlink{serv__invest_8hpp_source}{serv\+\_\+invest.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modulos/serv\+\_\+invest/serv\+\_\+invest.\+hpp\end{DoxyCompactItemize}

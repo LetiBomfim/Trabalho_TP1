@@ -1,0 +1,199 @@
+\doxysection{apr\+\_\+conta.\+cpp}
+\hypertarget{apr__conta_8cpp_source}{}\label{apr__conta_8cpp_source}\index{modulos/apr\_conta/apr\_conta.cpp@{modulos/apr\_conta/apr\_conta.cpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}apr\_conta.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../serv\_conta/serv\_conta.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}../controleglobal/controleglobal.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00006}00006\ \textcolor{preprocessor}{\#include\ <sys/types.h>}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00007}00007\ \textcolor{preprocessor}{\#include\ "{}iostream"{}}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00009}00009\ \textcolor{keyword}{using\ namespace\ }std\ ;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00011}\mbox{\hyperlink{classCtrlAprConta_ac9b34f9a5cdbf84073da9d1c998a411d}{00011}}\ \mbox{\hyperlink{classCtrlAprConta_ac9b34f9a5cdbf84073da9d1c998a411d}{CtrlAprConta::CtrlAprConta}}()\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00012}00012\ \ \ \ \ this-\/>serv\_conta\ =\ \textcolor{keyword}{new}\ \mbox{\hyperlink{classServConta}{ServConta}}();}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00013}00013\ \}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00015}\mbox{\hyperlink{classCtrlAprConta_a8753ad7d33ea098dad7f04434e94d0f9}{00015}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classCtrlAprConta_a8753ad7d33ea098dad7f04434e94d0f9}{CtrlAprConta::executar}}(\textcolor{keyword}{const}\ Cpf*\ cpf)\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00016}00016\ \ \ \ \ int32\_t\ escolha;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00017}00017\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}pagina\ conta"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00019}00019\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00020}00020\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cpf\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00021}00021\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>criar\_conta())\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00022}00022\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}conta\ criada\ com\ sucesso"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}falha\ na\ criação\ de\ conta"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00028}00028\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00030}00030\ \ \ \ \ \ \ \ \ escolha\ =\ this-\/>ask\_usuario();}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (escolha)\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ CtrlAprConta::LER:}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>ler\_conta(*cpf);}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ CtrlAprConta::ATUALIZAR:}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>atualizar\_conta();}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ CtrlAprConta::EXCLUIR:}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (this-\/>excluir\_conta(*cpf))\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classControleGlobal_a091b8a7aa80afcdf8d4e8f051cad83be}{ControleGlobal::get\_singleton}}()-\/>\mbox{\hyperlink{classControleGlobal_ae42201f7f9a9763d8b733a1de28d68c6}{SetAuth}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}voltando\ ao\ menu"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ CtrlAprConta::SAIR:}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}voltando\ ao\ menu"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00052}00052\ \}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00054}00054\ int32\_t\ CtrlAprConta::ask\_usuario()\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordflow}{while}\ (\textcolor{keyword}{true})\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ int32\_t\ escolha;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00057}00057\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}decida:\(\backslash\)n0)\ ler\(\backslash\)n1)\ atualizar\(\backslash\)n2)\ excluir\(\backslash\)n3)\ criar\(\backslash\)n4)\ sair"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ cin\ >>\ escolha;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (escolha\ >\ 4)\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}entrada\ inválida"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ escolha;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (exception\ err)\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00069}00069\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00070}00070\ \}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00073}00073\ \textcolor{keywordtype}{bool}\ CtrlAprConta::criar\_conta()\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00074}00074\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}criando\ conta"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00075}00075\ \ \ \ \ Conta\ conta;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00076}00076\ \ \ \ \ Nome\ nome;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00077}00077\ \ \ \ \ Cpf\ cpf;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00078}00078\ \ \ \ \ Senha\ senha;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{keywordtype}{string}\ tmp\_str;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00081}00081\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00082}00082\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}insira\ seu\ nome"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00083}00083\ \ \ \ \ \ \ \ \ cin\ >>\ tmp\_str;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00084}00084\ \ \ \ \ \ \ \ \ nome.Set(tmp\_str);}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00085}00085\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (invalid\_argument)\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}nome\ inválido\(\backslash\)ncancelando\ operação"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00087}00087\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00088}00088\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00089}00089\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00091}00091\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}insira\ seu\ cpf"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ cin\ >>\ tmp\_str;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ cpf.Set(tmp\_str);}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00094}00094\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (invalid\_argument)\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}cpf\ inválido\(\backslash\)ncancelando\ operação"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00097}00097\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00098}00098\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00099}00099\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}insira\ sua\ senha"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ cin\ >>\ tmp\_str;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ senha.Set(tmp\_str);}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00103}00103\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (invalid\_argument)\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00104}00104\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}senha\ inválido\(\backslash\)ncancelando\ operação"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00106}00106\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00107}00107\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00108}00108\ \ \ \ \ conta.SetCpf(cpf);}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00109}00109\ \ \ \ \ conta.SetNome(nome);}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00110}00110\ \ \ \ \ conta.SetSenha(senha);}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00112}00112\ \ \ \ \ this-\/>serv\_conta-\/>criar(conta);}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00113}00113\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00114}00114\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}conta\ criada\ com\ sucesso"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00115}00115\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00116}00116\ \}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00118}00118\ \textcolor{keywordtype}{void}\ CtrlAprConta::ler\_conta(\textcolor{keyword}{const}\ Cpf\&\ cpf)\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00119}00119\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}lendo\ conta"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00120}00120\ \ \ \ \ Conta\ conta;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00121}00121\ \ \ \ \ \textcolor{keywordtype}{string}\ tmp\_str;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00123}00123\ \ \ \ \ conta.SetCpf(cpf);}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00124}00124\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00125}00125\ \ \ \ \ this-\/>serv\_conta-\/>ler(conta);}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00127}00127\ \ \ \ \ cout\ <<\ conta.GetConstCpf().Get()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00128}00128\ \ \ \ \ cout\ <<\ conta.GetConstNome().Get()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00129}00129\ \ \ \ \ cout\ <<\ conta.GetConstSenha().Get()\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00130}00130\ \};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00131}00131\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00132}00132\ \textcolor{keywordtype}{bool}\ CtrlAprConta::atualizar\_conta()\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00133}00133\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}editando\ conta"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00134}00134\ \ \ \ \ Conta\ conta;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00135}00135\ \ \ \ \ Nome\ nome;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00136}00136\ \ \ \ \ Cpf\ cpf;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00137}00137\ \ \ \ \ Senha\ senha;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00138}00138\ \ \ \ \ \textcolor{keywordtype}{string}\ tmp\_str;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00139}00139\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00140}00140\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00141}00141\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}insira\ seu\ cpf"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00142}00142\ \ \ \ \ \ \ \ \ cin\ >>\ tmp\_str;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00143}00143\ \ \ \ \ \ \ \ \ cpf.Set(tmp\_str);}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00144}00144\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (invalid\_argument)\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00145}00145\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}cpf\ inválido\(\backslash\)ncancelando\ operação"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00147}00147\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00148}00148\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00149}00149\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00150}00150\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}insira\ seu\ novo\ nome"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00151}00151\ \ \ \ \ \ \ \ \ cin\ >>\ tmp\_str;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00152}00152\ \ \ \ \ \ \ \ \ nome.Set(tmp\_str);}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00153}00153\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (invalid\_argument)\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00154}00154\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}nome\ inválido\(\backslash\)ncancelando\ operação"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00156}00156\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00158}00158\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00159}00159\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00160}00160\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}insira\ sua\ nova\ senha"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00161}00161\ \ \ \ \ \ \ \ \ cin\ >>\ tmp\_str;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00162}00162\ \ \ \ \ \ \ \ \ senha.Set(tmp\_str);}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00163}00163\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (invalid\_argument)\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00164}00164\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}senha\ inválido\(\backslash\)ncancelando\ operação"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00165}00165\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00166}00166\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00167}00167\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00168}00168\ \ \ \ \ conta.SetCpf(cpf);}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00169}00169\ \ \ \ \ conta.SetNome(nome);}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00170}00170\ \ \ \ \ conta.SetSenha(senha);}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00171}00171\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00172}00172\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00173}00173\ \ \ \ \ \ \ \ \ this-\/>serv\_conta-\/>editar(conta);}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00174}00174\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (invalid\_argument)\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00175}00175\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}ocorreu\ um\ erro\ ao\ editar\ a\ conta"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00176}00176\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00177}00177\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00178}00178\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00179}00179\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}conta\ editada\ com\ sucesso"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00180}00180\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00181}00181\ \};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00182}00182\ }
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00183}00183\ \textcolor{keywordtype}{bool}\ CtrlAprConta::excluir\_conta(\textcolor{keyword}{const}\ Cpf\&\ cpf)\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00184}00184\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}excluindo\ conta"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00185}00185\ \ \ \ \ \textcolor{keywordflow}{try}\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00186}00186\ \ \ \ \ \ \ \ \ this-\/>serv\_conta-\/>excluir(cpf);}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00187}00187\ \ \ \ \ \}\ \textcolor{keywordflow}{catch}\ (invalid\_argument)\ \{}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00188}00188\ \ \ \ \ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}ocorreu\ um\ erro\ ao\ excluir\ a\ conta"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00189}00189\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00190}00190\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00191}00191\ \ \ \ \ cout\ <<\ \textcolor{stringliteral}{"{}conta\ excluida\ com\ sucesso"{}}\ <<\ endl;}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00192}00192\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{apr__conta_8cpp_source_l00193}00193\ \}}
+
+\end{DoxyCode}

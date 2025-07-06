@@ -1,0 +1,121 @@
+\doxysection{serv\+\_\+invest.\+hpp}
+\hypertarget{serv__invest_8hpp_source}{}\label{serv__invest_8hpp_source}\index{modulos/serv\_invest/serv\_invest.hpp@{modulos/serv\_invest/serv\_invest.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#include\ "{}../../interfaces/interfaces.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../storage/storage.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}../dados\_invest/dados\_invest.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00005}00005\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00006}00006\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00014}\mbox{\hyperlink{classServInvest}{00014}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classServInvest_a79ec3a701f5afc655f8921bdb55846f4}{ServInvest}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classInterServInvest}{InterServInvest}}\ \{}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00015}00015\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInterStorage}{InterStorage}}*\ storage\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00017}00017\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classInterDadosHist}{InterDadosHist}}*\ dados\_hist\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00019}00019\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00020}00020\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00024}\mbox{\hyperlink{classServInvest_a79ec3a701f5afc655f8921bdb55846f4}{00024}}\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{classServInvest_a79ec3a701f5afc655f8921bdb55846f4}{ServInvest}}()\ \{}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00025}00025\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>storage\ =\ \mbox{\hyperlink{classStorage_a8d65cd53a14732e6239b4695369cd329}{Storage::get\_singleton}}();}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00026}00026\ \ \ \ \ \ \ \ \ \ \ \ \ this-\/>dados\_hist\ =\ \mbox{\hyperlink{classDadosHist_afeb1a6e8b9b727d5b6fb6abb0aa81958}{DadosHist::get\_singleton}}();}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00027}00027\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00035}\mbox{\hyperlink{classServInvest_a33beae01f0e254530dbb777233c1a4ee}{00035}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServInvest_a33beae01f0e254530dbb777233c1a4ee}{criar\_cart}}(\textcolor{keyword}{const}\ Carteira\&\ carteira,\ \textcolor{keyword}{const}\ Cpf\&\ cpf)\ \{}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ Conta\ conta;}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00037}00037\ \ \ \ \ \ \ \ \ \ \ \ \ conta.SetCpf(cpf);}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}(!this-\/>storage-\/>\mbox{\hyperlink{classInterStorage_a568f3b3af585f95fa0d1a6fb460a574e}{get\_conta}}(conta))\ \{}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ invalid\_argument(\textcolor{stringliteral}{"{}o\ referido\ cpf\ não\ existe\ no\ banco\ de\ dados"{}});}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \ \ \ \ StorageCarteira\ st\_carteira;}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (storage-\/>count\_carteiras\_usuario(cpf)\ >=\ 5)\ \{}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ invalid\_argument(\textcolor{stringliteral}{"{}não\ é\ possível\ criar\ mais\ uma\ carteira,\ o\ máximo\ é\ 5"{}});}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ st\_carteira.SetCpfAssociado(cpf);}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \ \ \ \ st\_carteira.SetNome(carteira.GetConstNome());}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ st\_carteira.SetPerfil(carteira.GetConstPerfil());}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ storage-\/>add\_carteira(st\_carteira);}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00057}\mbox{\hyperlink{classServInvest_a914be847b99fa591020d150b7106ca09}{00057}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServInvest_a914be847b99fa591020d150b7106ca09}{editar\_cart}}(\textcolor{keyword}{const}\ Carteira\&\ carteira)\ \{}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ pega\ a\ carteira}}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ StorageCarteira\ cart;}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ cart.SetCodigo(carteira.GetConstCodigo());}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ storage-\/>get\_carteira(cart);}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00062}00062\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ \ realiza\ a\ edição}}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00064}00064\ \ \ \ \ \ \ \ \ \ \ \ \ cart.SetNome(carteira.GetConstNome());}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00065}00065\ \ \ \ \ \ \ \ \ \ \ \ \ cart.SetPerfil(carteira.GetConstPerfil());}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00067}00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ salva\ a\ edição}}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00068}00068\ \ \ \ \ \ \ \ \ \ \ \ \ storage-\/>remover\_carteira(cart);}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00069}00069\ \ \ \ \ \ \ \ \ \ \ \ \ storage-\/>add\_carteira\_unchecked(cart);}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00070}00070\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00077}\mbox{\hyperlink{classServInvest_a93230a22b4d191940509bcd4e27ff78d}{00077}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServInvest_a93230a22b4d191940509bcd4e27ff78d}{excluir\_cart}}(\textcolor{keyword}{const}\ Carteira\&\ carteira)\ \{}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ StorageCarteira\ st\_carteira;}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ st\_carteira.SetCodigo(carteira.GetConstCodigo());}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ storage-\/>remover\_carteira(st\_carteira);}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00082}00082\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00089}\mbox{\hyperlink{classServInvest_ad599c58d85d6cc1efd2679ac8064bbe7}{00089}}\ \ \ \ \ \ \ \ \ lista<Carteira>*\ \mbox{\hyperlink{classServInvest_ad599c58d85d6cc1efd2679ac8064bbe7}{listar\_cart}}(\textcolor{keyword}{const}\ Cpf\&\ cpf)\ \{}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00090}00090\ \ \ \ \ \ \ \ \ \ \ \ \ lista<Carteira>*\ lst\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00092}00092\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!storage-\/>get\_carteiras\_usuario(cpf\ ,\ \&lst))\ \{}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00096}00096\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ lst;}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00105}\mbox{\hyperlink{classServInvest_a832988e3c04a5fb911cb8a3b6b09d34e}{00105}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServInvest_a832988e3c04a5fb911cb8a3b6b09d34e}{criar\_ordem}}(\textcolor{keyword}{const}\ Ordem\&\ ordem)\ \{}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ Ordem\ storage\_ordem;}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ storage\_ordem.SetCodigoDeNegociacao(ordem.GetConstCodigoDeNegociacao());}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ storage\_ordem.SetCodigo(ordem.GetConstCodigo());}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ storage\_ordem.SetData(ordem.GetConstData());}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00110}00110\ \ \ \ \ \ \ \ \ \ \ \ \ storage\_ordem.SetQuantidade(ordem.GetConstQuantidade());}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00112}00112\ \ \ \ \ \ \ \ \ \ \ \ \ StorageCarteira\ cart;}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00113}00113\ \ \ \ \ \ \ \ \ \ \ \ \ cart.SetCodigo(ordem.GetConstCodigo());}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00114}00114\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!this-\/>storage-\/>\mbox{\hyperlink{classInterStorage_ab0cfcc5ecedb5cdd383396545090f70a}{get\_carteira}}(cart))\ \{}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00115}00115\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ invalid\_argument(\textcolor{stringliteral}{"{}a\ carteira\ indicada\ pela\ ordem\ não\ existe"{}});}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00118}00118\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!this-\/>dados\_hist-\/>\mbox{\hyperlink{classInterDadosHist_a943b8233dd38dde85e777a13462894e7}{set\_valor\_ordem}}(storage\_ordem))\ \{}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00119}00119\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ invalid\_argument(\textcolor{stringliteral}{"{}o\ valor\ dessa\ ordem\ nesse\ dia\ não\ consta\ nos\ dados\ históricos"{}});}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00121}00121\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00122}00122\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!storage-\/>add\_ordem(storage\_ordem))\ \{}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00123}00123\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ invalid\_argument(\textcolor{stringliteral}{"{}alguma\ coisa\ deu\ errado\ na\ criação\ da\ ordem"{}});}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00124}00124\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00125}00125\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00126}00126\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00132}\mbox{\hyperlink{classServInvest_a73b239867e1f2b92c2a26ebfdbf17ecf}{00132}}\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classServInvest_a73b239867e1f2b92c2a26ebfdbf17ecf}{excluir\_ordem}}(\textcolor{keyword}{const}\ Codigo\&\ cod)\ \{}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!storage-\/>remover\_ordem(cod))\ \{}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00134}00134\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ \textcolor{keyword}{new}\ invalid\_argument(\textcolor{stringliteral}{"{}alguma\ coisa\ deu\ errado\ na\ remoção\ da\ ordem"{}});}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00135}00135\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00136}00136\ \ \ \ \ \ \ \ \ \};}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00137}00137\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00145}\mbox{\hyperlink{classServInvest_a7d36415973b4a0fea0846ac580f1434a}{00145}}\ \ \ \ \ \ \ \ \ lista<StorageOrdem>*\ \mbox{\hyperlink{classServInvest_a7d36415973b4a0fea0846ac580f1434a}{listar\_ordem}}(\textcolor{keyword}{const}\ Carteira\&\ carteira)\ \{}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00146}00146\ \ \ \ \ \ \ \ \ \ \ \ \ lista<StorageOrdem>*\ ls\ =\ \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00147}00147\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00148}00148\ \ \ \ \ \ \ \ \ \ \ \ \ StorageCarteira\ st\_carteira;}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00149}00149\ \ \ \ \ \ \ \ \ \ \ \ \ st\_carteira.SetCodigo(carteira.GetConstCodigo());}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00150}00150\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!this-\/>storage-\/>\mbox{\hyperlink{classInterStorage_ab0cfcc5ecedb5cdd383396545090f70a}{get\_carteira}}(st\_carteira))\ \{}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00151}00151\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ invalid\_argument(\textcolor{stringliteral}{"{}a\ carteira\ indicada\ não\ existe"{}});}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00152}00152\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00153}00153\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00154}00154\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (!storage-\/>get\_ordens\_carteira(carteira,\ \&ls))\ \{}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00155}00155\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ls;}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00156}00156\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00157}00157\ }
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00158}00158\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ ls;}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00159}00159\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{serv__invest_8hpp_source_l00160}00160\ \};}
+
+\end{DoxyCode}

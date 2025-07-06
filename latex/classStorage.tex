@@ -1,0 +1,445 @@
+\doxysection{Storage Class Reference}
+\hypertarget{classStorage}{}\label{classStorage}\index{Storage@{Storage}}
+
+
+Serviço de armazenamento de dados do sistema.  
+
+
+
+
+{\ttfamily \#include $<$storage.\+hpp$>$}
+
+
+
+Inheritance diagram for Storage\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classStorage__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Storage\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{classStorage__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classStorage_ae9e46148e1c8fcb56bf541bf52b1286e}{get\+\_\+conta}} (Conta \&)
+\begin{DoxyCompactList}\small\item\em Recupera os dados de uma conta. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStorage_ae5b8574c8b84f4d1fafcdd509cf4b501}{remover\+\_\+conta}} (const Conta \&)
+\begin{DoxyCompactList}\small\item\em Remove uma conta do armazenamento. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStorage_a7f6fd93543d1717ce77ba765b63679d2}{add\+\_\+conta}} (const Conta \&)
+\begin{DoxyCompactList}\small\item\em Adiciona uma nova conta ao armazenamento. \end{DoxyCompactList}\item 
+int32\+\_\+t \mbox{\hyperlink{classStorage_a25cef17e8ede4af7f95093b5c8a10332}{count\+\_\+carteiras\+\_\+usuario}} (const Cpf \&)
+\begin{DoxyCompactList}\small\item\em Conta o número de carteiras associadas a um usuário. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStorage_afb0b9b89f5db6cf1b5a104d8a79e05d1}{get\+\_\+carteiras\+\_\+usuario}} (const Cpf \&, lista$<$ Carteira $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Recupera todas as carteiras associadas a um usuário. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStorage_af45cd0e3b9cf1165ecb360bbeae11f69}{get\+\_\+carteira}} (Storage\+Carteira \&)
+\begin{DoxyCompactList}\small\item\em Recupera os dados de uma carteira específica. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStorage_aac398181e2361ac6b44fa0bfccfdcb7a}{remover\+\_\+carteira}} (const Storage\+Carteira \&)
+\begin{DoxyCompactList}\small\item\em Remove uma carteira do armazenamento. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStorage_a53ae2efc1ef89201ece370eeba892cf1}{add\+\_\+carteira}} (const Storage\+Carteira \&)
+\begin{DoxyCompactList}\small\item\em Adiciona uma nova carteira ao armazenamento. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStorage_a5e4b8d05ac8f5cc7e38f568d123d27fa}{add\+\_\+carteira\+\_\+unchecked}} (const Storage\+Carteira \&)
+\begin{DoxyCompactList}\small\item\em Adiciona uma carteira ao armazenamento sem validações adicionais. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStorage_ab44e1300d245a7c7b7e77bda8bc33a25}{get\+\_\+ordens\+\_\+carteira}} (const Carteira \&, lista$<$ Storage\+Ordem $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*})
+\begin{DoxyCompactList}\small\item\em Recupera todas as ordens associadas a uma carteira. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStorage_ac3a65f6b498143ed905a1790d209dc5d}{get\+\_\+ordem}} (Storage\+Ordem \&)
+\begin{DoxyCompactList}\small\item\em Recupera os dados de uma ordem específica. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStorage_a1fad52d357bf6ff402d961567933ea00}{remover\+\_\+ordem}} (const Codigo \&)
+\begin{DoxyCompactList}\small\item\em Remove uma ordem do armazenamento. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classStorage_a8cf0dcf5b003b803f401336f2af0a098}{add\+\_\+ordem}} (const Ordem \&)
+\begin{DoxyCompactList}\small\item\em Adiciona uma nova ordem ao armazenamento. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classStorage}{Storage}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classStorage_a8d65cd53a14732e6239b4695369cd329}{get\+\_\+singleton}} ()
+\begin{DoxyCompactList}\small\item\em Recupera a instância singleton do serviço de armazenamento. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serviço de armazenamento de dados do sistema. 
+
+Responsável por gerenciar a persistência e o acesso aos dados de contas, carteiras e ordens de investimento. Fornece métodos para adicionar, remover, buscar e listar Implementa o padrão Singleton para garantir uma única instância durante a execução do sistema. 
+
+Definition at line \mbox{\hyperlink{storage_8hpp_source_l00016}{16}} of file \mbox{\hyperlink{storage_8hpp_source}{storage.\+hpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{classStorage_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classStorage_a53ae2efc1ef89201ece370eeba892cf1}\index{Storage@{Storage}!add\_carteira@{add\_carteira}}
+\index{add\_carteira@{add\_carteira}!Storage@{Storage}}
+\doxysubsubsection{\texorpdfstring{add\_carteira()}{add\_carteira()}}
+{\footnotesize\ttfamily \label{classStorage_a53ae2efc1ef89201ece370eeba892cf1} 
+bool Storage\+::add\+\_\+carteira (\begin{DoxyParamCaption}\item[{const Storage\+Carteira \&}]{carteira}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adiciona uma nova carteira ao armazenamento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carteira} & Objeto representando a carteira a ser adicionada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a adição foi bem-\/sucedida, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classInterStorage_a8f854d332f780a02e54de91dfa89d238}{Inter\+Storage}}.
+
+
+
+Definition at line \mbox{\hyperlink{impl__storage__carteria_8cpp_source_l00094}{94}} of file \mbox{\hyperlink{impl__storage__carteria_8cpp_source}{impl\+\_\+storage\+\_\+carteria.\+cpp}}.
+
+\Hypertarget{classStorage_a5e4b8d05ac8f5cc7e38f568d123d27fa}\index{Storage@{Storage}!add\_carteira\_unchecked@{add\_carteira\_unchecked}}
+\index{add\_carteira\_unchecked@{add\_carteira\_unchecked}!Storage@{Storage}}
+\doxysubsubsection{\texorpdfstring{add\_carteira\_unchecked()}{add\_carteira\_unchecked()}}
+{\footnotesize\ttfamily \label{classStorage_a5e4b8d05ac8f5cc7e38f568d123d27fa} 
+bool Storage\+::add\+\_\+carteira\+\_\+unchecked (\begin{DoxyParamCaption}\item[{const Storage\+Carteira \&}]{carteira}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adiciona uma carteira ao armazenamento sem validações adicionais. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carteira} & Objeto representando a carteira a ser adicionada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a adição foi bem-\/sucedida, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classInterStorage_abe00d791bf4ecab4d4b11545496f4d50}{Inter\+Storage}}.
+
+
+
+Definition at line \mbox{\hyperlink{impl__storage__carteria_8cpp_source_l00116}{116}} of file \mbox{\hyperlink{impl__storage__carteria_8cpp_source}{impl\+\_\+storage\+\_\+carteria.\+cpp}}.
+
+\Hypertarget{classStorage_a7f6fd93543d1717ce77ba765b63679d2}\index{Storage@{Storage}!add\_conta@{add\_conta}}
+\index{add\_conta@{add\_conta}!Storage@{Storage}}
+\doxysubsubsection{\texorpdfstring{add\_conta()}{add\_conta()}}
+{\footnotesize\ttfamily \label{classStorage_a7f6fd93543d1717ce77ba765b63679d2} 
+bool Storage\+::add\+\_\+conta (\begin{DoxyParamCaption}\item[{const Conta \&}]{conta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adiciona uma nova conta ao armazenamento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conta} & Objeto representando a conta a ser adicionada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a adição foi bem-\/sucedida, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classInterStorage_ac91e74ce4656680e919d050a43121944}{Inter\+Storage}}.
+
+
+
+Definition at line \mbox{\hyperlink{impl__storage__conta_8cpp_source_l00020}{20}} of file \mbox{\hyperlink{impl__storage__conta_8cpp_source}{impl\+\_\+storage\+\_\+conta.\+cpp}}.
+
+\Hypertarget{classStorage_a8cf0dcf5b003b803f401336f2af0a098}\index{Storage@{Storage}!add\_ordem@{add\_ordem}}
+\index{add\_ordem@{add\_ordem}!Storage@{Storage}}
+\doxysubsubsection{\texorpdfstring{add\_ordem()}{add\_ordem()}}
+{\footnotesize\ttfamily \label{classStorage_a8cf0dcf5b003b803f401336f2af0a098} 
+bool Storage\+::add\+\_\+ordem (\begin{DoxyParamCaption}\item[{const Ordem \&}]{ordem}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Adiciona uma nova ordem ao armazenamento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ordem} & Objeto representando a ordem a ser adicionada. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a adição foi bem-\/sucedida, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classInterStorage_a97aeefdfbf81596d835b8bacb0d489b4}{Inter\+Storage}}.
+
+
+
+Definition at line \mbox{\hyperlink{impl__storage__ordem_8cpp_source_l00089}{89}} of file \mbox{\hyperlink{impl__storage__ordem_8cpp_source}{impl\+\_\+storage\+\_\+ordem.\+cpp}}.
+
+\Hypertarget{classStorage_a25cef17e8ede4af7f95093b5c8a10332}\index{Storage@{Storage}!count\_carteiras\_usuario@{count\_carteiras\_usuario}}
+\index{count\_carteiras\_usuario@{count\_carteiras\_usuario}!Storage@{Storage}}
+\doxysubsubsection{\texorpdfstring{count\_carteiras\_usuario()}{count\_carteiras\_usuario()}}
+{\footnotesize\ttfamily \label{classStorage_a25cef17e8ede4af7f95093b5c8a10332} 
+int32\+\_\+t Storage\+::count\+\_\+carteiras\+\_\+usuario (\begin{DoxyParamCaption}\item[{const Cpf \&}]{cpf}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Conta o número de carteiras associadas a um usuário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cpf} & Identificador do usuário. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Quantidade de carteiras do usuário. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classInterStorage_a5fe576fde5a750f78d0cd5b45e6c733f}{Inter\+Storage}}.
+
+
+
+Definition at line \mbox{\hyperlink{impl__storage__carteria_8cpp_source_l00039}{39}} of file \mbox{\hyperlink{impl__storage__carteria_8cpp_source}{impl\+\_\+storage\+\_\+carteria.\+cpp}}.
+
+\Hypertarget{classStorage_af45cd0e3b9cf1165ecb360bbeae11f69}\index{Storage@{Storage}!get\_carteira@{get\_carteira}}
+\index{get\_carteira@{get\_carteira}!Storage@{Storage}}
+\doxysubsubsection{\texorpdfstring{get\_carteira()}{get\_carteira()}}
+{\footnotesize\ttfamily \label{classStorage_af45cd0e3b9cf1165ecb360bbeae11f69} 
+bool Storage\+::get\+\_\+carteira (\begin{DoxyParamCaption}\item[{Storage\+Carteira \&}]{carteira}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recupera os dados de uma carteira específica. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carteira} & Referência para o objeto carteira a ser preenchido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a carteira foi encontrada, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classInterStorage_ab0cfcc5ecedb5cdd383396545090f70a}{Inter\+Storage}}.
+
+
+
+Definition at line \mbox{\hyperlink{impl__storage__carteria_8cpp_source_l00055}{55}} of file \mbox{\hyperlink{impl__storage__carteria_8cpp_source}{impl\+\_\+storage\+\_\+carteria.\+cpp}}.
+
+\Hypertarget{classStorage_afb0b9b89f5db6cf1b5a104d8a79e05d1}\index{Storage@{Storage}!get\_carteiras\_usuario@{get\_carteiras\_usuario}}
+\index{get\_carteiras\_usuario@{get\_carteiras\_usuario}!Storage@{Storage}}
+\doxysubsubsection{\texorpdfstring{get\_carteiras\_usuario()}{get\_carteiras\_usuario()}}
+{\footnotesize\ttfamily \label{classStorage_afb0b9b89f5db6cf1b5a104d8a79e05d1} 
+bool Storage\+::get\+\_\+carteiras\+\_\+usuario (\begin{DoxyParamCaption}\item[{const Cpf \&}]{cpf}{, }\item[{lista$<$ Carteira $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{ls}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recupera todas as carteiras associadas a um usuário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cpf} & Identificador do usuário. \\
+\hline
+{\em carteiras} & Ponteiro para ponteiro de lista onde as carteiras serão armazenadas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se as carteiras foram encontradas, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classInterStorage_ac4a18396c5764292abda5927d6af4240}{Inter\+Storage}}.
+
+
+
+Definition at line \mbox{\hyperlink{impl__storage__carteria_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{impl__storage__carteria_8cpp_source}{impl\+\_\+storage\+\_\+carteria.\+cpp}}.
+
+\Hypertarget{classStorage_ae9e46148e1c8fcb56bf541bf52b1286e}\index{Storage@{Storage}!get\_conta@{get\_conta}}
+\index{get\_conta@{get\_conta}!Storage@{Storage}}
+\doxysubsubsection{\texorpdfstring{get\_conta()}{get\_conta()}}
+{\footnotesize\ttfamily \label{classStorage_ae9e46148e1c8fcb56bf541bf52b1286e} 
+bool Storage\+::get\+\_\+conta (\begin{DoxyParamCaption}\item[{Conta \&}]{conta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recupera os dados de uma conta. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conta} & Referência para o objeto conta a ser preenchido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a conta foi encontrada, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classInterStorage_a568f3b3af585f95fa0d1a6fb460a574e}{Inter\+Storage}}.
+
+
+
+Definition at line \mbox{\hyperlink{impl__storage__conta_8cpp_source_l00005}{5}} of file \mbox{\hyperlink{impl__storage__conta_8cpp_source}{impl\+\_\+storage\+\_\+conta.\+cpp}}.
+
+\Hypertarget{classStorage_ac3a65f6b498143ed905a1790d209dc5d}\index{Storage@{Storage}!get\_ordem@{get\_ordem}}
+\index{get\_ordem@{get\_ordem}!Storage@{Storage}}
+\doxysubsubsection{\texorpdfstring{get\_ordem()}{get\_ordem()}}
+{\footnotesize\ttfamily \label{classStorage_ac3a65f6b498143ed905a1790d209dc5d} 
+bool Storage\+::get\+\_\+ordem (\begin{DoxyParamCaption}\item[{Storage\+Ordem \&}]{ordem}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recupera os dados de uma ordem específica. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ordem} & Referência para o objeto ordem a ser preenchido. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a ordem foi encontrada, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classInterStorage_ac352ddae66ec05a8ea2956ffd34832ab}{Inter\+Storage}}.
+
+
+
+Definition at line \mbox{\hyperlink{impl__storage__ordem_8cpp_source_l00043}{43}} of file \mbox{\hyperlink{impl__storage__ordem_8cpp_source}{impl\+\_\+storage\+\_\+ordem.\+cpp}}.
+
+\Hypertarget{classStorage_ab44e1300d245a7c7b7e77bda8bc33a25}\index{Storage@{Storage}!get\_ordens\_carteira@{get\_ordens\_carteira}}
+\index{get\_ordens\_carteira@{get\_ordens\_carteira}!Storage@{Storage}}
+\doxysubsubsection{\texorpdfstring{get\_ordens\_carteira()}{get\_ordens\_carteira()}}
+{\footnotesize\ttfamily \label{classStorage_ab44e1300d245a7c7b7e77bda8bc33a25} 
+bool Storage\+::get\+\_\+ordens\+\_\+carteira (\begin{DoxyParamCaption}\item[{const Carteira \&}]{cart}{, }\item[{lista$<$ Storage\+Ordem $>$ \texorpdfstring{$\ast$}{*}\texorpdfstring{$\ast$}{*}}]{ls}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Recupera todas as ordens associadas a uma carteira. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carteira} & Objeto representando a carteira. \\
+\hline
+{\em ordens} & Ponteiro para ponteiro de lista onde as ordens serão armazenadas. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se as ordens foram encontradas, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classInterStorage_af4fa4c9571a2f4e572828a0b51d45eb4}{Inter\+Storage}}.
+
+
+
+Definition at line \mbox{\hyperlink{impl__storage__ordem_8cpp_source_l00006}{6}} of file \mbox{\hyperlink{impl__storage__ordem_8cpp_source}{impl\+\_\+storage\+\_\+ordem.\+cpp}}.
+
+\Hypertarget{classStorage_a8d65cd53a14732e6239b4695369cd329}\index{Storage@{Storage}!get\_singleton@{get\_singleton}}
+\index{get\_singleton@{get\_singleton}!Storage@{Storage}}
+\doxysubsubsection{\texorpdfstring{get\_singleton()}{get\_singleton()}}
+{\footnotesize\ttfamily \label{classStorage_a8d65cd53a14732e6239b4695369cd329} 
+\mbox{\hyperlink{classStorage}{Storage}} \texorpdfstring{$\ast$}{*} Storage\+::get\+\_\+singleton (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Recupera a instância singleton do serviço de armazenamento. 
+
+\begin{DoxyReturn}{Returns}
+Ponteiro para a instância única de \doxylink{classStorage}{Storage}. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{storage_8cpp_source_l00011}{11}} of file \mbox{\hyperlink{storage_8cpp_source}{storage.\+cpp}}.
+
+\Hypertarget{classStorage_aac398181e2361ac6b44fa0bfccfdcb7a}\index{Storage@{Storage}!remover\_carteira@{remover\_carteira}}
+\index{remover\_carteira@{remover\_carteira}!Storage@{Storage}}
+\doxysubsubsection{\texorpdfstring{remover\_carteira()}{remover\_carteira()}}
+{\footnotesize\ttfamily \label{classStorage_aac398181e2361ac6b44fa0bfccfdcb7a} 
+bool Storage\+::remover\+\_\+carteira (\begin{DoxyParamCaption}\item[{const Storage\+Carteira \&}]{carteira}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Remove uma carteira do armazenamento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em carteira} & Objeto representando a carteira a ser removida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a remoção foi bem-\/sucedida, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classInterStorage_a10c83d494f3f6219e8d993aaa199c0a1}{Inter\+Storage}}.
+
+
+
+Definition at line \mbox{\hyperlink{impl__storage__carteria_8cpp_source_l00070}{70}} of file \mbox{\hyperlink{impl__storage__carteria_8cpp_source}{impl\+\_\+storage\+\_\+carteria.\+cpp}}.
+
+\Hypertarget{classStorage_ae5b8574c8b84f4d1fafcdd509cf4b501}\index{Storage@{Storage}!remover\_conta@{remover\_conta}}
+\index{remover\_conta@{remover\_conta}!Storage@{Storage}}
+\doxysubsubsection{\texorpdfstring{remover\_conta()}{remover\_conta()}}
+{\footnotesize\ttfamily \label{classStorage_ae5b8574c8b84f4d1fafcdd509cf4b501} 
+bool Storage\+::remover\+\_\+conta (\begin{DoxyParamCaption}\item[{const Conta \&}]{conta}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Remove uma conta do armazenamento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em conta} & Objeto representando a conta a ser removida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a remoção foi bem-\/sucedida, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classInterStorage_a841d53f95f20d27f28d78abcb6f11562}{Inter\+Storage}}.
+
+
+
+Definition at line \mbox{\hyperlink{impl__storage__conta_8cpp_source_l00036}{36}} of file \mbox{\hyperlink{impl__storage__conta_8cpp_source}{impl\+\_\+storage\+\_\+conta.\+cpp}}.
+
+\Hypertarget{classStorage_a1fad52d357bf6ff402d961567933ea00}\index{Storage@{Storage}!remover\_ordem@{remover\_ordem}}
+\index{remover\_ordem@{remover\_ordem}!Storage@{Storage}}
+\doxysubsubsection{\texorpdfstring{remover\_ordem()}{remover\_ordem()}}
+{\footnotesize\ttfamily \label{classStorage_a1fad52d357bf6ff402d961567933ea00} 
+bool Storage\+::remover\+\_\+ordem (\begin{DoxyParamCaption}\item[{const Codigo \&}]{cod}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Remove uma ordem do armazenamento. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em codigo} & Código identificador da ordem a ser removida. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a remoção foi bem-\/sucedida, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classInterStorage_a9ac6d8835e7ffe45512b16cfb344adc1}{Inter\+Storage}}.
+
+
+
+Definition at line \mbox{\hyperlink{impl__storage__ordem_8cpp_source_l00059}{59}} of file \mbox{\hyperlink{impl__storage__ordem_8cpp_source}{impl\+\_\+storage\+\_\+ordem.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+modulos/storage/storage.\+hpp\item 
+modulos/storage/impl\+\_\+storage\+\_\+carteria.\+cpp\item 
+modulos/storage/impl\+\_\+storage\+\_\+conta.\+cpp\item 
+modulos/storage/impl\+\_\+storage\+\_\+ordem.\+cpp\item 
+modulos/storage/storage.\+cpp\end{DoxyCompactItemize}

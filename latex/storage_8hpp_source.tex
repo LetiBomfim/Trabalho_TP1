@@ -1,0 +1,43 @@
+\doxysection{storage.\+hpp}
+\hypertarget{storage_8hpp_source}{}\label{storage_8hpp_source}\index{modulos/storage/storage.hpp@{modulos/storage/storage.hpp}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00001}00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00002}00002\ \textcolor{preprocessor}{\#include\ "{}../../estruturas/estruturas.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00003}00003\ \textcolor{preprocessor}{\#include\ "{}../../entidades/entidades.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00004}00004\ \textcolor{preprocessor}{\#include\ "{}../../interfaces/interfaces.hpp"{}}}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00005}00005\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00006}00006\ }
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00016}\mbox{\hyperlink{classStorage}{00016}}\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classStorage}{Storage}}:\ \textcolor{keyword}{public}\ \mbox{\hyperlink{classInterStorage}{InterStorage}}\ \{}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00018}00018\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classStorage}{Storage}}*\ singleton;}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00020}00020\ \ \ \ \ \ \ \ \ lista<Conta>*\ contas;}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00021}00021\ \ \ \ \ \ \ \ \ lista<StorageCarteira>*\ carteiras;}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00022}00022\ \ \ \ \ \ \ \ \ lista<StorageOrdem>*\ investimentos;}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00023}00023\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ int64\_t\ maior\_codigo\_de\_carteira;}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00024}00024\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ int64\_t\ maior\_codigo\_de\_ordem;}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00027}00027\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00033}00033\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_ae9e46148e1c8fcb56bf541bf52b1286e}{get\_conta}}(Conta\&);}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_ae5b8574c8b84f4d1fafcdd509cf4b501}{remover\_conta}}(\textcolor{keyword}{const}\ Conta\&);}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_a7f6fd93543d1717ce77ba765b63679d2}{add\_conta}}(\textcolor{keyword}{const}\ Conta\&);}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00052}00052\ \ \ \ \ \ \ \ \ int32\_t\ \mbox{\hyperlink{classStorage_a25cef17e8ede4af7f95093b5c8a10332}{count\_carteiras\_usuario}}(\textcolor{keyword}{const}\ Cpf\&);}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00060}00060\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_afb0b9b89f5db6cf1b5a104d8a79e05d1}{get\_carteiras\_usuario}}(\textcolor{keyword}{const}\ Cpf\&,\ lista<Carteira>**);}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00066}00066\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_af45cd0e3b9cf1165ecb360bbeae11f69}{get\_carteira}}(StorageCarteira\&);}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00072}00072\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_aac398181e2361ac6b44fa0bfccfdcb7a}{remover\_carteira}}(\textcolor{keyword}{const}\ StorageCarteira\&);}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00078}00078\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_a53ae2efc1ef89201ece370eeba892cf1}{add\_carteira}}(\textcolor{keyword}{const}\ StorageCarteira\&);}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00084}00084\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_a5e4b8d05ac8f5cc7e38f568d123d27fa}{add\_carteira\_unchecked}}(\textcolor{keyword}{const}\ StorageCarteira\&);}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00085}00085\ }
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_ab44e1300d245a7c7b7e77bda8bc33a25}{get\_ordens\_carteira}}(\textcolor{keyword}{const}\ Carteira\&,\ lista<StorageOrdem>**);}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00099}00099\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_ac3a65f6b498143ed905a1790d209dc5d}{get\_ordem}}(StorageOrdem\&);}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_a1fad52d357bf6ff402d961567933ea00}{remover\_ordem}}(\textcolor{keyword}{const}\ Codigo\&);}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00111}00111\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{classStorage_a8cf0dcf5b003b803f401336f2af0a098}{add\_ordem}}(\textcolor{keyword}{const}\ Ordem\&);}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00116}00116\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classStorage}{Storage}}*\ \mbox{\hyperlink{classStorage_a8d65cd53a14732e6239b4695369cd329}{get\_singleton}}();}
+\DoxyCodeLine{\Hypertarget{storage_8hpp_source_l00117}00117\ \};}
+
+\end{DoxyCode}

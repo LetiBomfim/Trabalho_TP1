@@ -1,0 +1,99 @@
+\doxysection{Ctrl\+Apr\+Auth Class Reference}
+\hypertarget{classCtrlAprAuth}{}\label{classCtrlAprAuth}\index{CtrlAprAuth@{CtrlAprAuth}}
+
+
+Controlador da camada de apresentação responsável pela autenticação de usuários. Implementa a interface \doxylink{classInterApresAuth}{Inter\+Apres\+Auth}.  
+
+
+
+
+{\ttfamily \#include $<$apr\+\_\+auth.\+hpp$>$}
+
+
+
+Inheritance diagram for Ctrl\+Apr\+Auth\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classCtrlAprAuth__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Ctrl\+Apr\+Auth\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=169pt]{classCtrlAprAuth__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classCtrlAprAuth_a8727d064361b8bd2eb725554de545915}{Ctrl\+Apr\+Auth}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão do controlador de autenticação. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classCtrlAprAuth_a20542040c0862c47b5bf0b75e7cf957c}{autenticar}} (Cpf \&cpf)
+\begin{DoxyCompactList}\small\item\em Realiza o processo de autenticação. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Controlador da camada de apresentação responsável pela autenticação de usuários. Implementa a interface \doxylink{classInterApresAuth}{Inter\+Apres\+Auth}. 
+
+Definition at line \mbox{\hyperlink{apr__auth_8hpp_source_l00008}{8}} of file \mbox{\hyperlink{apr__auth_8hpp_source}{apr\+\_\+auth.\+hpp}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classCtrlAprAuth_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classCtrlAprAuth_a8727d064361b8bd2eb725554de545915}\index{CtrlAprAuth@{CtrlAprAuth}!CtrlAprAuth@{CtrlAprAuth}}
+\index{CtrlAprAuth@{CtrlAprAuth}!CtrlAprAuth@{CtrlAprAuth}}
+\doxysubsubsection{\texorpdfstring{CtrlAprAuth()}{CtrlAprAuth()}}
+{\footnotesize\ttfamily \label{classCtrlAprAuth_a8727d064361b8bd2eb725554de545915} 
+Ctrl\+Apr\+Auth\+::\+Ctrl\+Apr\+Auth (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Construtor padrão do controlador de autenticação. 
+
+
+
+Definition at line \mbox{\hyperlink{apr__auth_8cpp_source_l00008}{8}} of file \mbox{\hyperlink{apr__auth_8cpp_source}{apr\+\_\+auth.\+cpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{classCtrlAprAuth_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classCtrlAprAuth_a20542040c0862c47b5bf0b75e7cf957c}\index{CtrlAprAuth@{CtrlAprAuth}!autenticar@{autenticar}}
+\index{autenticar@{autenticar}!CtrlAprAuth@{CtrlAprAuth}}
+\doxysubsubsection{\texorpdfstring{autenticar()}{autenticar()}}
+{\footnotesize\ttfamily \label{classCtrlAprAuth_a20542040c0862c47b5bf0b75e7cf957c} 
+bool Ctrl\+Apr\+Auth\+::autenticar (\begin{DoxyParamCaption}\item[{Cpf \&}]{cpf}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Realiza o processo de autenticação. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cpf} & Objeto onde será armazenado o CPF do usuário autenticado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se a autenticação for bem-\/sucedida, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classInterApresAuth}{Inter\+Apres\+Auth}}.
+
+
+
+Definition at line \mbox{\hyperlink{apr__auth_8cpp_source_l00012}{12}} of file \mbox{\hyperlink{apr__auth_8cpp_source}{apr\+\_\+auth.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+modulos/apr\+\_\+auth/apr\+\_\+auth.\+hpp\item 
+modulos/apr\+\_\+auth/apr\+\_\+auth.\+cpp\end{DoxyCompactItemize}

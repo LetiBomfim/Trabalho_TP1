@@ -1,0 +1,100 @@
+\doxysection{Auth\+Service Class Reference}
+\hypertarget{classAuthService}{}\label{classAuthService}\index{AuthService@{AuthService}}
+
+
+Serviço responsável por autenticar usuários com base em CPF e senha.  
+
+
+
+
+{\ttfamily \#include $<$mock\+\_\+auth\+\_\+service.\+hpp$>$}
+
+
+
+Inheritance diagram for Auth\+Service\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classAuthService__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Auth\+Service\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=163pt]{classAuthService__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classAuthService_af5db436314f994cba3ec7c61a2db9ce2}{Auth\+Service}} ()
+\begin{DoxyCompactList}\small\item\em Construtor da classe \doxylink{classAuthService}{Auth\+Service}. Inicializa o ponteiro de armazenamento com o singleton da classe \doxylink{classStorage}{Storage}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classAuthService_a8a6f67c83407a8e763bea74b4d7bfb4d}{autenticar}} (const Cpf \&cpf, const Senha \&senha)
+\begin{DoxyCompactList}\small\item\em Autentica um usuário com base no CPF e senha fornecidos. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Serviço responsável por autenticar usuários com base em CPF e senha. 
+
+Definition at line \mbox{\hyperlink{mock__auth__service_8hpp_source_l00008}{8}} of file \mbox{\hyperlink{mock__auth__service_8hpp_source}{mock\+\_\+auth\+\_\+service.\+hpp}}.
+
+
+
+\label{doc-constructors}
+\Hypertarget{classAuthService_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classAuthService_af5db436314f994cba3ec7c61a2db9ce2}\index{AuthService@{AuthService}!AuthService@{AuthService}}
+\index{AuthService@{AuthService}!AuthService@{AuthService}}
+\doxysubsubsection{\texorpdfstring{AuthService()}{AuthService()}}
+{\footnotesize\ttfamily \label{classAuthService_af5db436314f994cba3ec7c61a2db9ce2} 
+Auth\+Service\+::\+Auth\+Service (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construtor da classe \doxylink{classAuthService}{Auth\+Service}. Inicializa o ponteiro de armazenamento com o singleton da classe \doxylink{classStorage}{Storage}. 
+
+
+
+Definition at line \mbox{\hyperlink{mock__auth__service_8hpp_source_l00017}{17}} of file \mbox{\hyperlink{mock__auth__service_8hpp_source}{mock\+\_\+auth\+\_\+service.\+hpp}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{classAuthService_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classAuthService_a8a6f67c83407a8e763bea74b4d7bfb4d}\index{AuthService@{AuthService}!autenticar@{autenticar}}
+\index{autenticar@{autenticar}!AuthService@{AuthService}}
+\doxysubsubsection{\texorpdfstring{autenticar()}{autenticar()}}
+{\footnotesize\ttfamily \label{classAuthService_a8a6f67c83407a8e763bea74b4d7bfb4d} 
+bool Auth\+Service\+::autenticar (\begin{DoxyParamCaption}\item[{const Cpf \&}]{cpf}{, }\item[{const Senha \&}]{senha}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Autentica um usuário com base no CPF e senha fornecidos. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cpf} & CPF do usuário. \\
+\hline
+{\em senha} & Senha do usuário. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se as credenciais forem válidas, false caso contrário. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classInterServAuth}{Inter\+Serv\+Auth}}.
+
+
+
+Definition at line \mbox{\hyperlink{mock__auth__service_8hpp_source_l00027}{27}} of file \mbox{\hyperlink{mock__auth__service_8hpp_source}{mock\+\_\+auth\+\_\+service.\+hpp}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+modulos/serv\+\_\+auth/mock\+\_\+auth\+\_\+service.\+hpp\end{DoxyCompactItemize}
